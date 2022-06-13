@@ -48,10 +48,10 @@ class Region:
         return self.x, self.y, self.width, self.height
 
 
-region = Region()
-region.run()
-region_x, region_y, region_width, region_height = region.get_region()
-print(region_x, region_y, region_width, region_height)
-time.sleep(.3)
-myScreenshot = pyautogui.screenshot(region=(region_x, region_y, region_width, region_height))
-myScreenshot.save(r'z.png')
+# region = Region()
+# region.run()
+# region_x, region_y, region_width, region_height = region.get_region()
+# print(region_x, region_y, region_width, region_height)
+# time.sleep(.3)
+# myScreenshot = pyautogui.screenshot(region=(region_x, region_y, region_width, region_height))
+# myScreenshot.save(r'z.png')
