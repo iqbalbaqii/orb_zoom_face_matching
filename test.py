@@ -1,12 +1,35 @@
 import cv2
+import sys
 import numpy as np
 from matplotlib import pyplot as plt
+import time
 
+start_time = time.time()
 
-# == Processing =======================================================================
+FIXED_SIZE = 256
 
-# -- Read image -----------------------------------------------------------------------
+def maintain_aspect_ratio_resize(image, width=None, height=None, inter=cv2.INTER_AREA):
+    # Grab the image size and initialize dimensions
+    dim = None
+    (h, w) = image.shape[:2]
 
+    # Return original image if no need to resize
+    if width is None and height is None:
+        return image
+
+    # We are resizing height if width is none
+    if width is None:
+        # Calculate the ratio of the height and construct the dimensions
+        r = height / float(h)
+        dim = (int(w * r), height)
+    # We are resizing width if height is none
+    else:
+        # Calculate the ratio of the width and construct the dimensions
+        r = width / float(w)
+        dim = (width, int(h * r))
+
+    # Return the resized image
+    return cv2.resize(image, dim, interpolation=inter)
 
 def show_image(img, time):
     time = time * 1000
@@ -44,7 +67,9 @@ opening = cv2.morphologyEx(opening, cv2.MORPH_OPEN,
                            smooth_kernel, iterations=3)
 
 
-result = cv2.bitwise_and(image, image, mask=opening)
+# result = cv2.bitwise_and(image, image, mask=opening)
+result = image
+
 height, width, _ = result.shape
 
 x_max, y_max, x_min, y_min = -1, -1, 9999, 9999
@@ -56,22 +81,56 @@ for j in range(0, height):
         if px != 0:
             if(i < x_min):
                 x_min = i
-            
-            if( i >= x_max):
+
+            if(i >= x_max):
                 x_max = i
 
             if(j < y_min):
                 y_min = j
-            
+
             if(j >= y_max):
                 y_max = j
 
+
+blank_image = np.zeros((FIXED_SIZE, FIXED_SIZE, 3), np.uint8)
+temp_width = x_max - x_min
+temp_height = y_max - y_min
+
+if(temp_height > FIXED_SIZE):
+    diff = y_max - FIXED_SIZE
+    y_min = y_min + int(diff / 2)
+
+    if(diff % 2 == 0):
+        y_max = y_max - int(diff / 2)
+    else:
+        y_max = y_max - int(diff / 2) - 1
+
+
+if(temp_width > FIXED_SIZE):
+
+    diff = x_max - FIXED_SIZE
+    x_min = x_min + int(diff / 2)
+
+    if(diff % 2 == 0):
+        x_max = x_max - int(diff / 2)
+    else:
+        x_max = x_max - int(diff / 2) - 1
+
+image_then = image[y_min:y_max, x_min:x_max]
+
+# show_image(image_then, 0)
+height, width, _ = image_then.shape
+
+starting_x_plot = int(abs(FIXED_SIZE - width) / 2)
+starting_y_plot = int(abs(FIXED_SIZE - height) / 2)
+
 for j in range(0, height):
     for i in range(0, width):
-        if(i > x_min and i < x_max):
-            print('')
+        
+        blank_image[starting_y_plot+j, starting_x_plot+i] = image_then[j, i]
 
 
+show_image(blank_image, 0)
+# for j in range(0, FIXED_SIZE):
 
-
-show_image(result[y_min:y_max, x_min:x_max], 6)
+sys.exit("--- %s seconds ---" % (time.time() - start_time))
