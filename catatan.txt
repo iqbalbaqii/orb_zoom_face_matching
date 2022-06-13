@@ -1,0 +1,5 @@
+
+
+ORB
+1. from the image make it black and white
+2. show the bnw image
