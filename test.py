@@ -67,8 +67,8 @@ opening = cv2.morphologyEx(opening, cv2.MORPH_OPEN,
                            smooth_kernel, iterations=3)
 
 
-# result = cv2.bitwise_and(image, image, mask=opening)
-result = image
+result = cv2.bitwise_and(image, image, mask=opening)
+# result = image
 
 height, width, _ = result.shape
 
@@ -130,7 +130,7 @@ for j in range(0, height):
         blank_image[starting_y_plot+j, starting_x_plot+i] = image_then[j, i]
 
 
-show_image(blank_image, 0)
+show_image(result, 0)
 # for j in range(0, FIXED_SIZE):
 
 sys.exit("--- %s seconds ---" % (time.time() - start_time))
