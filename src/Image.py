@@ -1,16 +1,13 @@
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
+import cv2
+import numpy as np
 
+  
 
-class Image:
+def define_image_from_ss(image):
+    return cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
+    
 
-    def __init__(self):
-        self.image = None
-
-    def set_image(self, image):
-        self.image = mpimg.imread(image)
-
-    def show_image(self):
-        imgplot = plt.imshow(self.image)
-        plt.show()
+def show_image(image):
+    cv2.imshow('image', image)
+    cv2.waitKey(0)
         

@@ -50,7 +50,7 @@ def show_image(img, time):
     key = cv2.waitKey(time)
 
 
-image = cv2.imread('assets/we.png')
+image = cv2.imread('assets/naya.jpg')
 
 min_YCrCb = np.array([0, 133, 77], np.uint8)
 max_YCrCb = np.array([235, 173, 127], np.uint8)
@@ -70,67 +70,5 @@ opening = cv2.morphologyEx(opening, cv2.MORPH_OPEN,
 result = cv2.bitwise_and(image, image, mask=opening)
 # result = image
 
-height, width, _ = result.shape
-
-x_max, y_max, x_min, y_min = -1, -1, 9999, 9999
-
-for j in range(0, height):
-    for i in range(0, width):
-        blue, green, red = result[j, i]
-        px = blue + green + red
-        if px != 0:
-            if(i < x_min):
-                x_min = i
-
-            if(i >= x_max):
-                x_max = i
-
-            if(j < y_min):
-                y_min = j
-
-            if(j >= y_max):
-                y_max = j
-
-
-blank_image = np.zeros((FIXED_SIZE, FIXED_SIZE, 3), np.uint8)
-temp_width = x_max - x_min
-temp_height = y_max - y_min
-
-if(temp_height > FIXED_SIZE):
-    diff = y_max - FIXED_SIZE
-    y_min = y_min + int(diff / 2)
-
-    if(diff % 2 == 0):
-        y_max = y_max - int(diff / 2)
-    else:
-        y_max = y_max - int(diff / 2) - 1
-
-
-if(temp_width > FIXED_SIZE):
-
-    diff = x_max - FIXED_SIZE
-    x_min = x_min + int(diff / 2)
-
-    if(diff % 2 == 0):
-        x_max = x_max - int(diff / 2)
-    else:
-        x_max = x_max - int(diff / 2) - 1
-
-image_then = image[y_min:y_max, x_min:x_max]
-
-# show_image(image_then, 0)
-height, width, _ = image_then.shape
-
-starting_x_plot = int(abs(FIXED_SIZE - width) / 2)
-starting_y_plot = int(abs(FIXED_SIZE - height) / 2)
-
-for j in range(0, height):
-    for i in range(0, width):
-        
-        blank_image[starting_y_plot+j, starting_x_plot+i] = image_then[j, i]
-
-
 show_image(result, 0)
-# for j in range(0, FIXED_SIZE):
-
 sys.exit("--- %s seconds ---" % (time.time() - start_time))
