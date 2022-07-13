@@ -1,6 +1,6 @@
-from src import CaptureScreen
-from src import Image
-from src import Face
+from src.bll import CaptureScreen
+from src.bll import Image
+from src.bll import Face
 import pyautogui
 import time
 
@@ -12,7 +12,9 @@ myScreenshot = pyautogui.screenshot(region=(region_x, region_y, region_width, re
 
 screenshot = Image.define_image_from_ss(myScreenshot)
 face_region = Face.segment_face(screenshot)
-Image.show_image(face_region)
+
+
+
 
 
 

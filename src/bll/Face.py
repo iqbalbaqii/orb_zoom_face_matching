@@ -8,6 +8,7 @@ def segment_face(image):
 
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+    
     if len(faces) < 1:
         return False
 

@@ -11,7 +11,7 @@ eye_cascade = cv2.CascadeClassifier('other/haarcascade_eye.xml')
 def zoom(img, zoom_factor= .5):
 		return cv2.resize(img, None, fx=zoom_factor, fy=zoom_factor)
 
-img = zoom(cv2.imread('assets/naya.jpg'))
+img = zoom(cv2.imread('assets/we.png'))
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 faces = face_cascade.detectMultiScale(gray, 1.3,5)
 
