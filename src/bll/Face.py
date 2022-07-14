@@ -12,7 +12,7 @@ def segment_face(image):
     if len(faces) < 1:
         return False
 
-    x,y,w,h = faces[0]
+    x,y,w,h = faces[len(faces)-1]
     original_segmented = image[y:y+h, x:x+w]
     
     return original_segmented

@@ -4,11 +4,13 @@ cursor = connection.cursor
 table = 'dataset_image'
 
 
-def store(data):
+def store(data: dict):
     keys = ', '.join(data.keys())
     values = list(data.values())
+    quest_mark = ['?' for k in range(len(values))]
+    mark = ','.join(quest_mark)
     cursor.execute('INSERT INTO '+table +
-                   '('+keys+') VALUES (?,?,?,?,?,?)', values)
+                   '('+keys+') VALUES ('+mark+')', values)
     connection.cnn.commit()
 
 
