@@ -3,7 +3,9 @@ from tkinter import *
 import time
 
 
-class Region:
+class CaptureScreen:
+
+    # Area tangkapan layar disini, return image tangkapan ? atau region aja
 
     def __init__(self):
         self.x = -1
