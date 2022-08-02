@@ -1,5 +1,3 @@
-from src.bll.Data import Data
+from src.bll.Image import Image
 
-data_handler = Data()
-
-data_handler.clean_raw('')
+a = Image()
