@@ -57,13 +57,17 @@ class Data:
                 self.parrent_dir+label+'/result/face_'+str(i)+'.png')
             self.orb_handler.set_image(img)
             keypoint, descriptor = self.orb_handler.get_keypoint_descriptor()
-
+            keypoint = [{'angle': k.angle, 'response': k.response}
+                    for k in keypoint]
+            descriptor = descriptor.tolist()
             DatasetImage().store({
                 'label': code,
-                'image': self.parrent_dir+label+'/result/face_'+str(i)+'.png',
+                'image': '/result/face_'+str(i)+'.png',
                 'keypoint': json.dumps(keypoint),
                 'deskriptor': json.dumps(descriptor),
                 'meet_id': '0',
                 'created_at': time.strftime('%Y-%m-%d %H:%M:%S'),
                 'updated_at': time.strftime('%Y-%m-%d %H:%M:%S')
             })
+
+

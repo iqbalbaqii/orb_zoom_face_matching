@@ -21,9 +21,7 @@ class ORB:
         test_gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
 
         keypoint, descriptor = self.orb.detectAndCompute(test_gray, None)
-        keypoint = [{'angle': k.angle, 'response': k.response}
-                    for k in keypoint]
-        descriptor = descriptor.tolist()
+        
         return keypoint, descriptor
 
 

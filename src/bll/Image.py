@@ -36,7 +36,6 @@ class Image:
 
     def show_image(self, image):
         cv2.imshow('preview', image)
-        cv2.waitKey(0)
 
     def save_image(self, path, image):
         cv2.imwrite(path, image)
