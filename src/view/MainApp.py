@@ -14,7 +14,6 @@ class MainApp:
         self.HEIGHT = 400
         self.APP_WIDTH = 400
         self.APP_HEIGHT = 120
-        self.APP_PATH = "/home/bucky/Documents/Py/final/orb_zoom_face_matching/{}"
         # color
         self.primary = "#1F3BB3"
         self.secondary = "#F1F1F1"
