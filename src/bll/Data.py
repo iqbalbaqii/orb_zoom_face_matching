@@ -62,10 +62,9 @@ class Data:
             descriptor = descriptor.tolist()
             DatasetImage().store({
                 'label': code,
-                'image': '/result/face_'+str(i)+'.png',
+                'image': self.parrent_dir+label+'/result/face_'+str(i)+'.png',
                 'keypoint': json.dumps(keypoint),
                 'deskriptor': json.dumps(descriptor),
-                'meet_id': '0',
                 'created_at': time.strftime('%Y-%m-%d %H:%M:%S'),
                 'updated_at': time.strftime('%Y-%m-%d %H:%M:%S')
             })

@@ -1,8 +1,6 @@
-from src.model.General import General
+from src.bll.Data import Data
 
 
-DB = General()
+handler = Data()
 
-raw = DB.select("SELECT * FROM dataset_image")
-
-print(raw)
+handler.define_orb_on_label('0a26bc')

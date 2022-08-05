@@ -195,7 +195,7 @@ class MainApp:
         region = self.x, self.y, self.width, self.height
         found = self.identification_controller.identification_task(region=region)
 
-        if(not found):
+        if(found == FALSE):
             self.insert_notification("Kesalahan pengambilan gambar,", "wajah tidak didapatkan\n", 'danger')
 
 # END EVENT LISTENERS

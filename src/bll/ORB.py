@@ -25,7 +25,7 @@ class ORB:
         return keypoint, descriptor
 
 
-    def compare_2_face(main_desc, train_desc):
+    def compare_2_face(self,main_desc, train_desc):
 
         bf = cv2.BFMatcher(cv2.NORM_HAMMING)
         matches = bf.match(main_desc, train_desc)
