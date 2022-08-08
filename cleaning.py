@@ -1,3 +1,5 @@
-from src.bll.Image import Image
+from src.bll.Data import Data
 
-a = Image()
+data = Data()
+
+data.clean_raw('Adinda_Aisyah')

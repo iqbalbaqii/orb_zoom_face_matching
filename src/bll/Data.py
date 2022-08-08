@@ -58,7 +58,7 @@ class Data:
             self.orb_handler.set_image(img)
             keypoint, descriptor = self.orb_handler.get_keypoint_descriptor()
             keypoint = [{'angle': k.angle, 'response': k.response}
-                    for k in keypoint]
+                        for k in keypoint]
             descriptor = descriptor.tolist()
             DatasetImage().store({
                 'label': code,
@@ -69,4 +69,32 @@ class Data:
                 'updated_at': time.strftime('%Y-%m-%d %H:%M:%S')
             })
 
+    def define_orb_on_label_batch(self, kelas="group_0"):
+        students = self.data_label.get('nama', "kelas =    '{}' ORDER BY nama asc".format(kelas))
+        
+        ret = {}
+        not_found = []
+        for student in students:
+            name  = student.nama
+            label = str(name).replace(' ', '_')
+            try:
+                directory = self.parrent_dir+label+'/result/'
+                temp = os.listdir(directory)
+            except:
+                not_found.append(name)
+                continue
 
+            paths = []
+            for i, filename in enumerate(temp):
+                path = os.path.join(directory, filename)
+                paths.append(path)
+
+            if paths == []: continue
+                
+            ret[name] = paths
+        return ret, not_found
+            
+
+            
+
+        

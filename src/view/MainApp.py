@@ -106,6 +106,8 @@ class MainApp:
 
         self.log.pack(padx=3)
 
+        self.identification_controller.load_data_image()
+
     def capture_area_window(self):
         self.grey_dragging_frame = Toplevel(self.master)
 
@@ -193,8 +195,9 @@ class MainApp:
 
         ran = random.randint(0, 2)
         region = self.x, self.y, self.width, self.height
-        found = self.identification_controller.identification_task(region=region)
-
+        self.identification_controller.identification_task(region=region)
+        found = self.identification_controller.get_result()
+        print(found)
         if(found == FALSE):
             self.insert_notification("Kesalahan pengambilan gambar,", "wajah tidak didapatkan\n", 'danger')
 
