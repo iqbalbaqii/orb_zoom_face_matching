@@ -78,28 +78,39 @@ class IdentificationController:
     #     return sorted(comparation, key=operator.itemgetter('len_match_descriptor'), reverse=True)
 
     def load_data_image(self):
-        load_data = {}
-        datas, _ = self.data_handler.define_orb_on_label_batch("group_0")
+        raw_label = self.data_handler.define_orb_on_label()
 
-        for label, row in datas.items():
-            temp = []
-            for i, path in enumerate(row):
-                image = self.image_handler.load_image(path)
-                try:
-                    self.orb_handler.set_image(image)
-                    key, desc = self.orb_handler.get_keypoint_descriptor()
-                    temp.append({
-                        'label': label,
-                        'path': path,
-                        'keypoint': key,
-                        'descriptor': desc
-                    })
-                except:
-                    continue
+        keypoints = []
+        descriptors = []
+        responses = []
+        for idx, row in raw_label.items():
+            try:
+                image = self.image_handler.load_image(row['path'])
+                self.orb_handler.set_image(image)
+                face_keypoints, face_descriptors = self.orb_handler.get_keypoint_descriptor()
 
-            load_data[label] = temp
+                desc_row = face_descriptors.shape[0]
+                desc_col = face_descriptors.shape[1]
+                
+                flat_face_descriptors = face_descriptors.reshape(desc_row*desc_col)
 
-        self.data_set = load_data
+                keypoints.append(face_keypoints)
+                descriptors.append(face_descriptors)
+                responses.append(row['name'])
+            except:
+                continue
+
+        
+        data = []
+        for row in descriptors:
+            data.append([x.tolist() for x in row])
+        return data
+        descriptors = np.asarray(descriptors, dtype=np.float32)
+        responses = np.asarray(responses)
+
+        
+        knn = cv2.ml.KNearest_create()
+        knn.train(descriptors,cv2.ml.ROW_SAMPLE,responses)
 
     def identify(self, face):
         

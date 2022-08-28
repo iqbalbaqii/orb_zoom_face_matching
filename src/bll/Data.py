@@ -5,6 +5,7 @@ from src.bll.ORB import ORB
 import os
 import json
 import time
+import numpy as np
 
 
 class Data:
@@ -40,42 +41,14 @@ class Data:
 
     # the result is put ORB info to image (resul forlder) dan the label
 
-    def define_orb_on_label(self, code):
+    def define_orb_on_label(self, kelas="group_0"):
 
-        detail_label = self.data_label.get('*', "label = '"+code+"'")
-
-        if detail_label == []:
-            label = ''
-            return -1
-        else:
-            label = detail_label[0].nama
-
-        label = label.replace(' ', '_')
-
-        for i in range(0, 10):
-            img = self.image_handler.load_image(
-                self.parrent_dir+label+'/result/face_'+str(i)+'.png')
-            self.orb_handler.set_image(img)
-            keypoint, descriptor = self.orb_handler.get_keypoint_descriptor()
-            keypoint = [{'angle': k.angle, 'response': k.response}
-                        for k in keypoint]
-            descriptor = descriptor.tolist()
-            DatasetImage().store({
-                'label': code,
-                'image': self.parrent_dir+label+'/result/face_'+str(i)+'.png',
-                'keypoint': json.dumps(keypoint),
-                'deskriptor': json.dumps(descriptor),
-                'created_at': time.strftime('%Y-%m-%d %H:%M:%S'),
-                'updated_at': time.strftime('%Y-%m-%d %H:%M:%S')
-            })
-
-    def define_orb_on_label_batch(self, kelas="group_0"):
-        students = self.data_label.get('nama', "kelas =    '{}' ORDER BY nama asc".format(kelas))
-        
+        students = self.data_label.get(
+            'nama', "kelas =    '{}' ORDER BY nama asc".format(kelas))
         ret = {}
         not_found = []
-        for student in students:
-            name  = student.nama
+        for i, student in enumerate(students):
+            name = student.nama
             label = str(name).replace(' ', '_')
             try:
                 directory = self.parrent_dir+label+'/result/'
@@ -84,17 +57,21 @@ class Data:
                 not_found.append(name)
                 continue
 
-            paths = []
-            for i, filename in enumerate(temp):
+            for j, filename in enumerate(temp):
                 path = os.path.join(directory, filename)
-                paths.append(path)
-
-            if paths == []: continue
                 
-            ret[name] = paths
-        return ret, not_found
-            
+                ret[len(ret)] = {
+                    'name': name,
+                    'path': path
+                }
 
             
-
-        
+        return ret
+        # for i in range(0, 10):
+        #     img = self.image_handler.load_image(
+        #         self.parrent_dir+label+'/result/face_'+str(i)+'.png')
+        #     self.orb_handler.set_image(img)
+        #     keypoint, descriptor = self.orb_handler.get_keypoint_descriptor()
+        #     keypoint = [{'angle': k.angle, 'response': k.response}
+        #                 for k in keypoint]
+        #     descriptor = descriptor.tolist()

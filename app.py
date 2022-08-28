@@ -1,11 +1,18 @@
 from flask import Flask
 import json
-import znotherversion as z
+
+from src.bll.Data import Data
+from src.controller.IdentificationController import IdentificationController
+
+
 app = Flask(__name__)
 
-@app.route('/identificaiton2')
+
+@app.route('/wajah')
 def test():
-  data = z.identification_2()
-  return json.dumps(data)
+    iden = IdentificationController()
+    lo = iden.load_data_image()
+    return json.dumps(lo)
+
 if __name__ == "__main__":
-  app.run(debug=True)
+    app.run(debug=True)
