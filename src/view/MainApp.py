@@ -30,8 +30,8 @@ class MainApp:
         self.toast = Alert()
         self.identification_controller = IdentificationController()
         # END INSTANCE
-        self.x = 108
-        self.y = 100
+        self.x = 360
+        self.y = 52
         self.width = 512
         self.height = 512
         self.log = ""
@@ -195,11 +195,14 @@ class MainApp:
 
         ran = random.randint(0, 2)
         region = self.x, self.y, self.width, self.height
-        self.identification_controller.identification_task(region=region)
-        found = self.identification_controller.get_result()
-        print(found)
-        if(found == FALSE):
+        task = self.identification_controller.identification_task(region=region)
+        
+        if(task == FALSE):
             self.insert_notification("Kesalahan pengambilan gambar,", "wajah tidak didapatkan\n", 'danger')
+            return
+        found = self.identification_controller.get_result()
+        self.insert_notification('Identifikasi selesai, ', "{} hadir \n".format(found), 'success')
+        self.toast.send('Identifikasi selesai, ', "{} hadir".format(found))
 
 # END EVENT LISTENERS
 

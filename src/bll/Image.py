@@ -15,16 +15,28 @@ class Image:
     def get_image(self):
         return self.image
 
-    def capture_image(self, x, y, width, height):
-        image = pyautogui.screenshot(region=(x, y, width, height))
+    def capture_image(self, x=0, y=0, width=0, height=0, fullscreen=False):
+        if not fullscreen:
+            image = pyautogui.screenshot(region=(x, y, width, height))
+        else:
+            image = pyautogui.screenshot()
+
         self.image = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
 
-    def segment_face(self):
+    def segment_face(self, get_all=False):
         face_cascade = cv2.CascadeClassifier(
             'other/haarcascade_frontalface_default.xml')
 
         gray = cv2.cvtColor(self.image, cv2.COLOR_BGR2GRAY)
         faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+
+        if get_all:
+            ret_face = []
+            for (x, y, w, h) in faces:
+                # draw the face bounding box on the image
+                ret_face.append(self.image[y:y+h, x:x+w])
+
+            return ret_face
 
         if len(faces) < 1:
             return False
@@ -36,6 +48,7 @@ class Image:
 
     def show_image(self, image):
         cv2.imshow('preview', image)
+        cv2.waitKey(0)
 
     def save_image(self, path, image):
         cv2.imwrite(path, image)

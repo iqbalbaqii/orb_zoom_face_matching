@@ -11,7 +11,7 @@ class ORB:
 
     def __init__(self):
         self.image = None
-        self.orb = cv2.ORB_create(nfeatures=512)
+        self.orb = cv2.ORB_create(nfeatures=512, fastThreshold = 12, patchSize = 31)
         
     def set_image(self, image):
         self.image = image
@@ -23,9 +23,9 @@ class ORB:
         return self.orb.detectAndCompute(test_gray, None)
 
 
-    def compare_2_face(self,main_desc, train_desc):
+    def compare_2_face(self, main_desc, train_desc):
 
-        bf = cv2.BFMatcher(cv2.NORM_HAMMING)
+        bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
         matches = bf.match(main_desc, train_desc)
         matches = sorted(matches, key=lambda x: x.distance)
         return matches
