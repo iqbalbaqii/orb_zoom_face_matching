@@ -11,7 +11,7 @@ class ORB:
 
     def __init__(self):
         self.image = None
-        self.orb = cv2.ORB_create(nfeatures=512, fastThreshold = 12, patchSize = 31)
+        self.orb = cv2.ORB_create(nfeatures=128, fastThreshold = 12, patchSize = 31)
         
     def set_image(self, image):
         self.image = image

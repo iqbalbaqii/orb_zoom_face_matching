@@ -83,29 +83,30 @@ class IdentificationController:
         keypoints = []
         descriptors = []
         responses = []
+        img = []
         for idx, row in raw_label.items():
             try:
                 image = self.image_handler.load_image(row['path'])
                 self.orb_handler.set_image(image)
                 face_keypoints, face_descriptors = self.orb_handler.get_keypoint_descriptor()
 
-                desc_row = face_descriptors.shape[0]
-                desc_col = face_descriptors.shape[1]
+                # desc_row = face_descriptors.shape[0]
+                # desc_col = face_descriptors.shape[1]
                 
-                flat_face_descriptors = face_descriptors.reshape(desc_row*desc_col)
+                # flat_face_descriptors = face_descriptors.reshape(desc_row*desc_col)
 
                 keypoints.append(face_keypoints)
                 descriptors.append(face_descriptors)
                 responses.append(row['name'])
+                img.append(image)
             except:
                 continue
 
         
-        data = []
-        for row in descriptors:
-            data.append([x.tolist() for x in row])
-        return data
-        descriptors = np.asarray(descriptors, dtype=np.float32)
+        
+        
+        
+        return keypoints, descriptors, responses, img
         responses = np.asarray(responses)
 
         
