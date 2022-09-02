@@ -49,9 +49,6 @@ class IdentificationController:
 
         self.identify(frontal_face)
 
-        self.image_handler.save_image(self.APP_PATH.format(
-            "assets/result/unknow_{}.png".format(self.file_count)), self.image_handler.get_image())
-        self.file_count = self.file_count + 1
 
     # def do_the_comparation(self, face):
 
@@ -101,10 +98,6 @@ class IdentificationController:
                 img.append(image)
             except:
                 continue
-
-        
-        
-        
         
         return keypoints, descriptors, responses, img
         responses = np.asarray(responses)
