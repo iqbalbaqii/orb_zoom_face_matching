@@ -44,7 +44,7 @@ class Data:
     def define_orb_on_label(self, kelas="group_0"):
 
         students = self.data_label.get(
-            'nama', "kelas =    '{}' ORDER BY nama asc".format(kelas))
+            'id, nama', "kelas =    '{}' ORDER BY nama asc".format(kelas))
         ret = {}
         not_found = []
         for i, student in enumerate(students):
@@ -61,6 +61,7 @@ class Data:
                 path = os.path.join(directory, filename)
                 
                 ret[len(ret)] = {
+                    'id': "stdn_{}_image_{}".format(student.id, j),
                     'name': name,
                     'path': path
                 }

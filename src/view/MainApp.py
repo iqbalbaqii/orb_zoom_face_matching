@@ -30,8 +30,8 @@ class MainApp:
         self.toast = Alert()
         self.identification_controller = IdentificationController()
         # END INSTANCE
-        self.x = 360
-        self.y = 52
+        self.x = 0#360
+        self.y = 0 #52
         self.width = 512
         self.height = 512
         self.log = ""
@@ -202,7 +202,7 @@ class MainApp:
             return
         found = self.identification_controller.get_result()
         self.insert_notification('Identifikasi selesai, ', "{} hadir \n".format(found), 'success')
-        self.toast.send('Identifikasi selesai, ', "{} hadir".format(found))
+        # self.toast.send('Identifikasi selesai, ', "{} hadir".format(found))
 
 # END EVENT LISTENERS
 
