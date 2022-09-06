@@ -15,7 +15,7 @@ class Data:
         self.data_label = DatasetLabel()
         self.image_handler = Image()
         self.orb_handler = ORB()
-        self.parrent_dir = '/home/bucky/Documents/Py/final/orb_zoom_face_matching/assets/datasource/'
+        self.parrent_dir = '/home/bucky/Documents/Py/final/orb_zoom_face_matching/static/datasource/'
 
     # the output is showing image face only to result folder
 
@@ -61,7 +61,7 @@ class Data:
                 path = os.path.join(directory, filename)
                 
                 ret[len(ret)] = {
-                    'id': "stdn_{}_image_{}".format(student.id, j),
+                    'id': student.id,
                     'name': name,
                     'path': path
                 }

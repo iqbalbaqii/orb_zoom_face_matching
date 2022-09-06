@@ -10,16 +10,17 @@ class Image:
         self.id = None
         self.label = None
 
+        # Image
         self.original = None
-
-        # =====
         self.face = None
+        self.draw_keypoint = None
+        self.draw_match = None
+        # =====
         self.face_cordinat = None
 
         # =====
         self.keypoint = None
         self.descriptor = None
-        self.draw_keypoint = None
         self.descriptor_match = None
         self.similarity = -1
 
@@ -43,6 +44,10 @@ class Image:
     def set_similarity(self, data):
         self.similarity = data
 
+    def set_draw_match(self, test_image, test_keypoints, matches):
+        self.draw_match = cv2.drawMatches(self.face, self.keypoint,
+                                          test_image, test_keypoints, matches[:32], test_image, flags=2)
+
     # GETTER
     def get_id(self):
         return self.id
@@ -50,14 +55,17 @@ class Image:
     def get_label(self):
         return self.label
 
-    def get_image(self):
+    def get_original_image(self):
         return self.original
+
+    def get_draw_keypoint_image(self):
+        return self.draw_keypoint
+
+    def get_draw_match_image(self):
+        return self.draw_match
 
     def get_face(self):
         return self.face
-
-    def get_draw_keypoint(self):
-        return self.draw_keypoint
 
     def get_similarity(self):
         return self.similarity
@@ -101,12 +109,22 @@ class Image:
         kp, desc = self.orb_handle.get_keypoint_descriptor()
         self.keypoint = kp
         self.descriptor = desc
+
+    def mask_original_image(self):
         face_keypoint = cv2.drawKeypoints(
-            self.face, kp, np.copy(self.face), color=(200, 255, 200))
-        self.draw_keypoint = face_keypoint
+            self.face, self.keypoint, np.copy(self.face), color=(77, 255, 121))
 
+        copy_ori = self.original.copy()
+        start_x, start_y, w, h = self.face_cordinat
 
+        for i in range(w):
+            for j in range(h):
+                x = i + start_x
+                y = j + start_y
+                copy_ori[y, x] = face_keypoint[j, i]
+        self.draw_keypoint = copy_ori
     # MISC
+
     def show_original_image(self):
         cv2.imshow('preview', self.original)
         cv2.waitKey(0)

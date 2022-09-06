@@ -1,0 +1,37 @@
+<nav class="sidebar sidebar-offcanvas mt-4" id="sidebar">
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" href="{{'/'}}">
+        <i class="mdi mdi-grid-large menu-icon"></i>
+        <span class="menu-title">About</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{'/about'}}">
+        <i class="mdi mdi-grid-large menu-icon"></i>
+        <span class="menu-title">About</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{'/analyze'}}">
+        <i class="mdi mdi-tune menu-icon"></i>
+        <span class="menu-title">Analyze</span>
+      </a>
+    </li>
+    <li class="nav-item nav-category">Datas</li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#ui-datas" aria-expanded="false" aria-controls="ui-datas">
+        <i class="menu-icon mdi mdi-floor-plan"></i>
+        <span class="menu-title">Faces Student</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="ui-datas">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="{{'/faces/raw'}}">Raw</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{'/faces/clean'}}">Clean</a></li>
+        </ul>
+      </div>
+    </li>
+
+  </ul>
+</nav>

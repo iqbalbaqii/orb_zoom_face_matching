@@ -3,6 +3,7 @@ from src.controller.IdentificationController import IdentificationController
 import pyautogui
 import time
 import random
+import webbrowser
 from tkinter import *
 
 
@@ -30,16 +31,17 @@ class MainApp:
         self.toast = Alert()
         self.identification_controller = IdentificationController()
         # END INSTANCE
-        self.x = 0#360
-        self.y = 0 #52
-        self.width = 512
-        self.height = 512
+        self.x = 110
+        self.y = 39
+        self.width = 600
+        self.height = 600
         self.log = ""
 
         self.master = None
         self.grey_dragging_frame = None
         self.capture_window = None
 
+        # self.identification_controller.make_meeting()
         self.main_window()
 
 # WINDOWS
@@ -69,7 +71,7 @@ class MainApp:
         option_menu = Menu(menu)
         menu.add_cascade(label="Option", menu=option_menu)
 
-        option_menu.add_command(label="Analisis Kehadiran")
+        option_menu.add_command(label="Analisis Kehadiran", command=self.open_browser)
         option_menu.add_separator()
         option_menu.add_command(
             label="Informasi Area Tangkapan Layar", command=self.region_information)
@@ -200,9 +202,14 @@ class MainApp:
         if(task == FALSE):
             self.insert_notification("Kesalahan pengambilan gambar,", "wajah tidak didapatkan\n", 'danger')
             return
-        found = self.identification_controller.get_result()
+        found = self.identification_controller.get_result()[0]
         self.insert_notification('Identifikasi selesai, ', "{} hadir \n".format(found), 'success')
         # self.toast.send('Identifikasi selesai, ', "{} hadir".format(found))
+
+
+    def open_browser(self):
+        self.insert_notification('Opened Zoom ORB Attendence Web', '', 'light')
+        webbrowser.open('http://127.0.0.1:5000/analyze', new=0)
 
 # END EVENT LISTENERS
 

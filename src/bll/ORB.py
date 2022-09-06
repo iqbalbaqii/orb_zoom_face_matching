@@ -32,12 +32,12 @@ class ORB:
         matches = bf.match(main_desc, train_desc)
         matches = sorted(matches, key=lambda x: x.distance)
 
-        similar_regions = [i for i in matches if i.distance < 45]
+        similar_regions = [i for i in matches if i.distance < 40]
         similarity = 0;
         if (len(matches) != 0):
             similarity = len(similar_regions) / len(matches)
 
-        return matches, similarity
+        return similar_regions, similarity
 
     def get_keypoint_descriptor2(self, img):
         image = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
