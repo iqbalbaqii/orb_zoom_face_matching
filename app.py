@@ -1,11 +1,8 @@
 from flask import Flask, render_template
-
-# flask read views in "templates" folder
-# flask read asset in "static" folder
-
+from src.controller.ViewController import ViewController
 
 app = Flask(__name__)
-
+data_handler = ViewController()
 
 @app.route('/')
 def index():
@@ -34,7 +31,8 @@ def to_about():
 
 @app.route('/analyze')
 def analyze_page():
-    return render_template('/views/analyze.html')
+    data = data_handler.front_analyze()
+    return render_template('/views/analyze.html', capture = data)
 
 
 app.run(debug=True)

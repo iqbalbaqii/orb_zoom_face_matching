@@ -126,8 +126,7 @@ class IdentificationController:
             average_similarity / int(sort_orders[0][1]), 3)
         identification_accuracy = round(int(sort_orders[0][1]) / self.k, 3)
 
-        face_path = self.APP_PATH.format(
-            'static/flask'+'/meeting_{}/capture_{}'.format(self.meeting_id, self.capture_count))
+        face_path = 'static/flask'+'/meeting_{}/capture_{}'.format(self.meeting_id, self.capture_count)
 
         try:
             os.makedirs(face_path)
