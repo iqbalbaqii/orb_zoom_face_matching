@@ -16,7 +16,7 @@ class Transaction:
                             '('+keys+') VALUES ('+mark+')', values)
         connection.cnn.commit()
 
-    def get(self, select_clause, by=""):
+    def get(self, select_clause = "*", by=""):
 
         if by == "":
             where_clause = by
@@ -25,4 +25,8 @@ class Transaction:
 
         self.cursor.execute("SELECT "+select_clause +
                             " FROM "+self.table+where_clause)
-        return self.cursor.fetchall()
+        desc = self.cursor.description
+        column_names = [col[0] for col in desc]
+        data = [dict(zip(column_names, row))
+                for row in self.cursor.fetchall()]
+        return data

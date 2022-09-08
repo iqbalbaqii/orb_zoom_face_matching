@@ -8,4 +8,9 @@ class General:
     def select(self,select: str):
         
         self.cursor.execute(select)
-        return self.cursor.fetchall()
+
+        desc = self.cursor.description
+        column_names = [col[0] for col in desc]
+        data = [dict(zip(column_names, row))
+                for row in self.cursor.fetchall()]
+        return data

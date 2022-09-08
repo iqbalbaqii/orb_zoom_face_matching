@@ -24,7 +24,13 @@ class Image:
         self.descriptor_match = None
         self.similarity = -1
 
+        # TIME
+        self.execution_time = 0
+
         self.orb_handle = ORB()
+
+    def set_execution_time(self, time):
+        self.execution_time = time
 
     def set_id(self, id):
         self.id = id
@@ -49,6 +55,9 @@ class Image:
                                           test_image, test_keypoints, matches[:32], test_image, flags=2)
 
     # GETTER
+    def get_execution_time(self):
+        return self.execution_time
+
     def get_id(self):
         return self.id
 

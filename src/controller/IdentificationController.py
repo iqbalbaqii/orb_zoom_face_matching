@@ -53,6 +53,9 @@ class IdentificationController:
 
         self.meeting_id = self.Meeting.get_latest()[0].id
 
+    def get_meeting_id(self):
+        return self.Meeting.get_latest()[0].id
+
     def get_result(self):
         return self.result
 
@@ -94,12 +97,15 @@ class IdentificationController:
 
         label = ''
         for i, student in enumerate(students):
+            start_time = time.time()
             matches, similarity = self.orb_handler.compare_2_face(
                 student.get_descriptor(), face.get_descriptor())
+
             students[i].set_descriptor_match(len(matches))
             students[i].set_similarity(similarity)
             students[i].set_draw_match(
                 face.get_face(), face.get_keypoint(), matches)
+            students[i].set_execution_time(str(round(time.time() - start_time, 3)))
 
         result = sorted(students,
                         key=lambda x: x.get_similarity(), reverse=True)
@@ -126,31 +132,32 @@ class IdentificationController:
             average_similarity / int(sort_orders[0][1]), 3)
         identification_accuracy = round(int(sort_orders[0][1]) / self.k, 3)
 
-        face_path = 'static/flask'+'/meeting_{}/capture_{}'.format(self.meeting_id, self.capture_count)
+        face_path = 'flask/meeting_{}/capture_{}'.format(self.meeting_id, self.capture_count)
+        
 
         try:
-            os.makedirs(face_path)
+            os.makedirs('static/'+face_path)
         except Exception as e:
             pass
 
         try:
-            os.makedirs(face_path+'/matches')
+            os.makedirs('static/'+face_path+'/matches')
         except Exception as e:
             pass
 
-        face.save_image(face_path+"/original.png", face.get_original_image())
+        face.save_image('static/'+face_path+"/original.png", face.get_original_image())
         face.mask_original_image()
-        face.save_image(face_path+"/keypoint.png",
+        face.save_image('static/'+face_path+"/keypoint.png",
                         face.get_draw_keypoint_image())
 
         for i, data in enumerate(nb):
-            filename = face_path+'/matches/{}_capture_{}__compare__face_{}.png'.format(
+            filename = 'static/'+face_path+'/matches/{}_capture_{}__compare__face_{}.png'.format(
                 i, self.capture_count, data.get_id())
             data.save_image(filename, data.get_draw_match_image())
 
             self.Transaction.store({
                 'id_image_test': 'meeting_{}__capture_{}'.format(self.meeting_id, self.capture_count),
-                'execution_time': str(round(time.time() - self.start_time, 3)),
+                'execution_time': data.get_execution_time(),
                 'keypoint_match': str(data.get_descriptor_match()),
                 'file_name': filename,
                 'comparation_label': data.get_label()

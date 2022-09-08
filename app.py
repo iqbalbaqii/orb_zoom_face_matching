@@ -31,8 +31,9 @@ def to_about():
 
 @app.route('/analyze')
 def analyze_page():
-    data = data_handler.front_analyze()
-    return render_template('/views/analyze.html', capture = data)
+    front_image, data = data_handler.front_analyze()
+    return render_template('/views/analyze.html', capture = enumerate(front_image), data=data)
 
 
 app.run(debug=True)
+

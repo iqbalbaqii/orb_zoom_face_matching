@@ -41,7 +41,7 @@ class MainApp:
         self.grey_dragging_frame = None
         self.capture_window = None
 
-        # self.identification_controller.make_meeting()
+        self.identification_controller.make_meeting()
         self.main_window()
 
 # WINDOWS
