@@ -13,7 +13,6 @@ class Data:
     def __init__(self):
         self.data_image = DatasetImage()
         self.data_label = DatasetLabel()
-        self.image_handler = Image()
         self.orb_handler = ORB()
         self.parrent_dir = '/home/bucky/Documents/Py/final/orb_zoom_face_matching/static/datasource/'
 
@@ -31,13 +30,14 @@ class Data:
             pass
 
         for i, filename in enumerate(os.listdir(self.parrent_dir+user+'/raw')):
-            img = self.image_handler.load_image(
-                self.parrent_dir+user+'/raw/'+filename)
-
-            self.image_handler.set_image(img)
-            segmented = self.image_handler.segment_face()
-            self.image_handler.save_image(
-                self.parrent_dir+user+'/result/face_' + str(i)+'.png', segmented)
+            try:
+                raw_image = Image()
+                raw_image.load_image(self.parrent_dir+user+'/raw/'+filename)
+                raw_image.segment_face()
+                raw_image.save_image(self.parrent_dir+user+'/result/face_' + str(i)+'.png', raw_image.get_face())
+            except Exception as e:
+                # directory
+                continue
 
     # the result is put ORB info to image (resul forlder) dan the label
 

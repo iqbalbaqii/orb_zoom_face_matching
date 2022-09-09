@@ -21,7 +21,7 @@ class IdentificationController:
         # STATIC VARIABLE
         self.APP_PATH = "/home/bucky/Documents/Py/final/orb_zoom_face_matching/{}"
         self.TODAY = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
-        self.k = 20
+        self.k = 15
         self.start_time = None
         # END STATIC VARIABLE
 
@@ -105,7 +105,8 @@ class IdentificationController:
             students[i].set_similarity(similarity)
             students[i].set_draw_match(
                 face.get_face(), face.get_keypoint(), matches)
-            students[i].set_execution_time(str(round(time.time() - start_time, 3)))
+            students[i].set_execution_time(
+                str(round(time.time() - start_time, 3)))
 
         result = sorted(students,
                         key=lambda x: x.get_similarity(), reverse=True)
@@ -132,8 +133,8 @@ class IdentificationController:
             average_similarity / int(sort_orders[0][1]), 3)
         identification_accuracy = round(int(sort_orders[0][1]) / self.k, 3)
 
-        face_path = 'flask/meeting_{}/capture_{}'.format(self.meeting_id, self.capture_count)
-        
+        face_path = 'flask/meeting_{}/capture_{}'.format(
+            self.meeting_id, self.capture_count)
 
         try:
             os.makedirs('static/'+face_path)
@@ -145,7 +146,8 @@ class IdentificationController:
         except Exception as e:
             pass
 
-        face.save_image('static/'+face_path+"/original.png", face.get_original_image())
+        face.save_image('static/'+face_path+"/original.png",
+                        face.get_original_image())
         face.mask_original_image()
         face.save_image('static/'+face_path+"/keypoint.png",
                         face.get_draw_keypoint_image())
