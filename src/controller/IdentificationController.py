@@ -21,7 +21,7 @@ class IdentificationController:
         # STATIC VARIABLE
         self.APP_PATH = "/home/bucky/Documents/Py/final/orb_zoom_face_matching/{}"
         self.TODAY = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
-        self.k = 15
+        self.k = 30
         self.start_time = None
         # END STATIC VARIABLE
 
@@ -153,15 +153,16 @@ class IdentificationController:
                         face.get_draw_keypoint_image())
 
         for i, data in enumerate(nb):
-            filename = 'static/'+face_path+'/matches/{}_capture_{}__compare__face_{}.png'.format(
+            filename = face_path+'/matches/{}_capture_{}__compare__face_{}.png'.format(
                 i, self.capture_count, data.get_id())
-            data.save_image(filename, data.get_draw_match_image())
+            data.save_image('static/'+filename, data.get_draw_match_image())
 
             self.Transaction.store({
                 'id_image_test': 'meeting_{}__capture_{}'.format(self.meeting_id, self.capture_count),
                 'execution_time': data.get_execution_time(),
                 'keypoint_match': str(data.get_descriptor_match()),
                 'file_name': filename,
+                'similarity': str(data.get_similarity()),
                 'comparation_label': data.get_label()
             })
 

@@ -12,11 +12,11 @@ class ViewController:
         self.IdentificationController = IdentificationController()
 
     def front_analyze(self):
-        meeting_id = self.IdentificationController.get_meeting_id()
+        meeting_id = 5
         print(meeting_id)
         raw = self.DataTest.get(by="meeting_id = {}".format(meeting_id))
         identification_image = self.Transaction.get(
-            select_clause="id_image_test, file_name, execution_time, comparation_label", by="id_image_test LIKE '%meeting_{}%'".format(meeting_id))
+            select_clause="*", by="id_image_test LIKE '%meeting_{}%'".format(meeting_id))
         front = []
         data = []
         for row in raw:
