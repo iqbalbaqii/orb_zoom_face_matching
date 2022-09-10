@@ -15,6 +15,7 @@ class Image:
         self.face = None
         self.draw_keypoint = None
         self.draw_match = None
+        self.gray = None
         # =====
         self.face_cordinat = None
 
@@ -38,9 +39,14 @@ class Image:
     def set_label(self, label):
         self.label = label
 
-    def load_image(self, path):
+    def load_image(self, path, resize=False):
         image = cv2.imread(path)
-        self.original = np.copy(image)
+
+        if(resize):
+            self.original = cv2.resize(image, (960, 540))
+        else:
+            self.original = np.copy(image)
+
         # we asume this function will use by clean face image data
         self.face = np.copy(image)
 
@@ -66,6 +72,9 @@ class Image:
 
     def get_original_image(self):
         return self.original
+
+    def get_image_gray(self):
+        return self.gray
 
     def get_draw_keypoint_image(self):
         return self.draw_keypoint
@@ -102,6 +111,8 @@ class Image:
             'other/haarcascade_frontalface_default.xml')
 
         gray = cv2.cvtColor(self.original, cv2.COLOR_BGR2GRAY)
+        gray = cv2.GaussianBlur(np.copy(gray), (5, 5), cv2.BORDER_DEFAULT)
+        self.gray = gray
         faces = face_cascade.detectMultiScale(gray, 1.3, 5)
 
         if len(faces) < 1:

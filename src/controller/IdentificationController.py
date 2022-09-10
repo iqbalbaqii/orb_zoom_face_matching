@@ -148,6 +148,7 @@ class IdentificationController:
 
         face.save_image('static/'+face_path+"/original.png",
                         face.get_original_image())
+        face.save_image('static/'+face_path+"/gray.png", face.get_image_gray())
         face.mask_original_image()
         face.save_image('static/'+face_path+"/keypoint.png",
                         face.get_draw_keypoint_image())

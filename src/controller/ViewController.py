@@ -12,7 +12,7 @@ class ViewController:
         self.IdentificationController = IdentificationController()
 
     def front_analyze(self):
-        meeting_id = 5
+        meeting_id = self.IdentificationController.get_meeting_id()
         print(meeting_id)
         raw = self.DataTest.get(by="meeting_id = {}".format(meeting_id))
         identification_image = self.Transaction.get(
@@ -23,6 +23,7 @@ class ViewController:
             front.append({
                 'original_image': row['base_path']+'/original.png',
                 'keypoint_image': row['base_path']+'/keypoint.png',
+                'gray_image': row['base_path']+'/gray.png',
             })
 
             comparation = list(filter(

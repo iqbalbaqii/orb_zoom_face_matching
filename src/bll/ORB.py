@@ -11,11 +11,8 @@ class ORB:
 
     def __init__(self):
         self.image = None
-        self.img_gray = None
-        self.orb = cv2.ORB_create(3000, fastThreshold=12, patchSize=31)
+        self.orb = cv2.ORB_create(512, fastThreshold=12, patchSize=31)
 
-    def get_img_gray(self):
-        return self.img_gray
 
     def set_image(self, image):
         self.image = image
@@ -23,7 +20,6 @@ class ORB:
     def get_keypoint_descriptor(self):
         image = cv2.cvtColor(self.image, cv2.COLOR_BGR2RGB)
         test_gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
-        self.img_gray = test_gray
         return self.orb.detectAndCompute(test_gray, None)
 
     def compare_2_face(self, main_desc, train_desc):
@@ -32,7 +28,7 @@ class ORB:
         matches = bf.match(main_desc, train_desc)
         matches = sorted(matches, key=lambda x: x.distance)
 
-        similar_regions = [i for i in matches if i.distance < 40]
+        similar_regions = [i for i in matches if i.distance < 50]
         similarity = 0;
         if (len(matches) != 0):
             similarity = len(similar_regions) / len(matches)
@@ -44,3 +40,5 @@ class ORB:
         test_gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
 
         return self.orb.detectAndCompute(test_gray, None)
+
+    
