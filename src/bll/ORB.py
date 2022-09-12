@@ -1,60 +1,44 @@
 import cv2
 import numpy as np
-from src.model import DatasetImage
-from src.model import DatasetLabel
-from hashlib import sha256
+from src.model.DatasetImage import DatasetImage
+from src.model.DatasetLabel import DatasetLabel
 import json
 import time
 
 
 class ORB:
+    # Kelas untuk mengakomodasi kebutuhan utama ORB
 
     def __init__(self):
         self.image = None
+        self.orb = cv2.ORB_create(512, fastThreshold=12, patchSize=31)
 
-    def setImage(self, image):
+
+    def set_image(self, image):
         self.image = image
 
-    def run(self):
-        orb = cv2.ORB_create(scoreType=cv2.ORB_FAST_SCORE)
-
+    def get_keypoint_descriptor(self):
         image = cv2.cvtColor(self.image, cv2.COLOR_BGR2RGB)
         test_gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
+        return self.orb.detectAndCompute(test_gray, None)
 
-        keypoint, descriptor = orb.detectAndCompute(test_gray, None)
+    def compare_2_face(self, main_desc, train_desc):
 
-        img2_kp = cv2.drawKeypoints(self.image, keypoint, None, color=(120, 255, 0),
-                                    flags=cv2.DrawMatchesFlags_DEFAULT)
-        return img2_kp
+        bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
+        matches = bf.match(main_desc, train_desc)
+        matches = sorted(matches, key=lambda x: x.distance)
 
-        # keypoints_without_size = np.copy(self.image)
-        # keypoints_with_size = np.copy(self.image)
-        return keypoint, descriptor
+        similar_regions = [i for i in matches if i.distance < 50]
+        similarity = 0;
+        if (len(matches) != 0):
+            similarity = len(similar_regions) / len(matches)
 
-    def definedataset(self):
-        label = 'Muhammad_Iqbal_Baqi'
-        files = label.lower()
+        return similar_regions, similarity
 
-        for i in range(1, 11):
-            img = cv2.imread(
-                '/home/bucky/Documents/Py/final/orb_zoom_face_matching/assets/datasource/'+label+'/result/'+files+'_'+str(i)+'.png')
-            self.setImage(img)
-            keypoint, descriptor = self.run()
-            keypoint = [{'angle': k.angle, 'response': k.response}
-                        for k in keypoint]
-            descriptor = descriptor.tolist()
+    def get_keypoint_descriptor2(self, img):
+        image = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        test_gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
 
-            DatasetImage.store({
-                'label': '453b02',
-                'image': '/home/bucky/Documents/Py/final/orb_zoom_face_matching/assets/datasource/'+label+'/result/'+files+'_'+str(i)+'.png',
-                'keypoint': json.dumps(keypoint),
-                'deskriptor': json.dumps(descriptor),
-                'meet_id': '0',
-                'created_at': time.strftime('%Y-%m-%d %H:%M:%S'),
-                'updated_at': time.strftime('%Y-%m-%d %H:%M:%S')
-            })
+        return self.orb.detectAndCompute(test_gray, None)
 
-    def locatekeypoint():
-        fast = cv2.FastFeatureDetector_create(threshold=25)
-        # find and draw the keypoints
-        kp = fast.detect(self.image,)
+    

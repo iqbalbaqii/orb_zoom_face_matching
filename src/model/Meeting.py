@@ -1,11 +1,11 @@
 from src.model.connection import connection
 
-class DatasetLabel:
-    
+
+class Meeting:
+
     def __init__(self):
         self.cursor = connection.cursor
-        self.table = 'dataset_label'
-
+        self.table = 'meeting'
 
     def store(self, data: dict):
         keys = ', '.join(data.keys())
@@ -13,16 +13,12 @@ class DatasetLabel:
         quest_mark = ['?' for k in range(len(values))]
         mark = ','.join(quest_mark)
         self.cursor.execute('INSERT INTO '+self.table +
-                    '('+keys+') VALUES ('+mark+')', values)
+                            '('+keys+') VALUES ('+mark+')', values)
         connection.cnn.commit()
 
+    def get_latest(self):
 
-    def get(self, select_clause, by=""):
-
-        if by == "":
-            where_clause = by
-        else:
-            where_clause = " WHERE "+by
-
-        self.cursor.execute("SELECT "+select_clause+" FROM "+self.table+where_clause)
+        self.cursor.execute(
+            "SELECT TOP 1 * FROM meeting ORDER BY created_at DESC"
+        )
         return self.cursor.fetchall()
