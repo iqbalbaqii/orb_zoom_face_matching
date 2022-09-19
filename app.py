@@ -29,9 +29,9 @@ def to_about():
     return render_template('/views/about.html')
 
 
-@app.route('/analyze')
-def analyze_page():
-    front_image, data = data_handler.front_analyze()
+@app.route('/analyze/<meeting_id>')
+def analyze_page(meeting_id):
+    front_image, data = data_handler.front_analyze(meeting_id)
     return render_template('/views/analyze.html', capture = enumerate(front_image), data=data)
 
 

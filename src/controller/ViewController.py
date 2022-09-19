@@ -3,6 +3,7 @@ from src.model.Transaction import Transaction
 from src.controller.IdentificationController import IdentificationController
 import os
 import json
+import pickle
 
 
 class ViewController:
@@ -11,9 +12,10 @@ class ViewController:
         self.Transaction = Transaction()
         self.IdentificationController = IdentificationController()
 
-    def front_analyze(self):
-        meeting_id = self.IdentificationController.get_meeting_id()
-        print(meeting_id)
+    def front_analyze(self, meeting_id = 0):
+        if (meeting_id == '0'):
+            meeting_id = self.IdentificationController.get_meeting_id()
+        
         raw = self.DataTest.get(by="meeting_id = {}".format(meeting_id))
         identification_image = self.Transaction.get(
             select_clause="*", by="id_image_test LIKE '%meeting_{}%'".format(meeting_id))
@@ -57,3 +59,7 @@ class ViewController:
                 'comparation_image': comparation
             })
         return front, data
+
+    def summary(self):
+        data = pickle.load(open('testing_data.pkl', 'rb'))
+        print(data)

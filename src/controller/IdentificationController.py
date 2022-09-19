@@ -1,19 +1,16 @@
 import numpy as np
-import json
 from src.bll.Image import Image
-from src.bll.Data import Data as DataHandler
+from src.controller.DataController import DataController as DataHandler
 from src.bll.ORB import ORB as OrbHandler
-from src.model.DatasetImage import DatasetImage
-from src.model.DatasetLabel import DatasetLabel
 from src.model.DataTest import DataTest
 from src.model.Meeting import Meeting
 from src.model.Transaction import Transaction
-from src.model.General import General
-import cv2
 import operator
 import os
 from datetime import datetime
 import time
+import statistics
+import pickle
 
 
 class IdentificationController:
@@ -26,15 +23,12 @@ class IdentificationController:
         # END STATIC VARIABLE
 
         # INSTANCE MODEL
-        self.DataLabel = DatasetLabel()
-        self.DB = General()
         self.DataTest = DataTest()
         self.Transaction = Transaction()
         self.Meeting = Meeting()
         # END
 
         self.orb_handler = OrbHandler()
-        self.DataImage = DatasetImage()
         self.data_handler = DataHandler()
 
         self.data_set = None
@@ -76,7 +70,7 @@ class IdentificationController:
         self.identify(test_image)
 
     def load_data_image(self):
-        raw_label = self.data_handler.define_orb_on_label()
+        raw_label = self.data_handler.load_group_image()
         self.data_set = []
         for idx, row in raw_label.items():
             try:
@@ -180,3 +174,95 @@ class IdentificationController:
             'identification_result': self.result[0]
         })
         self.capture_count = self.capture_count + 1
+
+        # TESTING
+
+    def analyze_task(self):
+        image_tests = self.data_handler.load_data_test()
+
+        ret = []
+
+        for j, current in enumerate(image_tests):
+            start_process = time.time()
+            students = np.copy(self.data_set)
+            orb_times = []
+            for i, student in enumerate(students):
+                start_orb = time.time()
+                matches, similarity = self.orb_handler.compare_2_face(
+                    student.get_descriptor(), current.get_descriptor())
+
+                students[i].set_descriptor_match(len(matches))
+                students[i].set_similarity(similarity)
+                students[i].set_draw_match(
+                    current.get_face(), current.get_keypoint(), matches)
+                temp_time = round(time.time() - start_orb, 3)
+                students[i].set_execution_time(
+                    str(temp_time))
+
+                orb_times.append(temp_time)
+
+            result = sorted(students,
+                            key=lambda x: x.get_similarity(), reverse=True)
+
+            nb = result[0:self.k]
+            count = {}
+            for data in nb:
+                try:
+                    count[data.get_label()]
+                except:
+                    count[data.get_label()] = 1
+                    continue
+                count[data.get_label()] = count[data.get_label()]+1
+
+            sort_orders = sorted(
+                count.items(), key=lambda x: x[1], reverse=True)
+            the_label = filter(lambda x: x.get_label()
+                               == sort_orders[0][0], nb)
+            average_similarity = 0
+            for data in list(the_label):
+                average_similarity = average_similarity + data.get_similarity()
+
+            average_similarity = round(
+                average_similarity / int(sort_orders[0][1]), 3)
+            identification_accuracy = round(int(sort_orders[0][1]) / self.k, 3)
+
+            face_path = 'flask/testing/capture_{}'.format(j)
+
+            try:
+                os.makedirs('static/'+face_path)
+            except Exception as e:
+                pass
+
+            try:
+                os.makedirs('static/'+face_path+'/matches')
+            except Exception as e:
+                pass
+
+            current.save_image('static/'+face_path+"/original.png",
+                            current.get_original_image())
+            current.save_image('static/'+face_path+"/gray.png",
+                            current.get_image_gray())
+            current.mask_original_image()
+            current.save_image('static/'+face_path+"/keypoint.png",
+                            current.get_draw_keypoint_image())
+
+            
+            for i, data in enumerate(nb):
+                filename = face_path+'/matches/{}_capture_{}__compare__face_{}.png'.format(i, j, data.get_id())
+                data.save_image('static/'+filename,
+                                data.get_draw_match_image())
+
+            final_label = sort_orders[:3]
+
+            ret.append({
+                'label': current.get_label(),
+                'identification_result': final_label,
+                'keypoint_length': len(current.get_keypoint()),
+                'average_similarity': average_similarity,
+                'identification_accuracy': identification_accuracy,
+                'identification_time': round(time.time() - start_process, 3),
+                'average_orb_executiion': round(statistics.fmean(orb_times), 3),
+            })
+            print(j)
+        ret_name = "testing_data.pkl"
+        pickle.dump(ret, open(ret_name, 'wb'))
