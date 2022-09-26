@@ -13,8 +13,9 @@ import statistics
 import pickle
 
 
-class IdentificationController:
+class IdentificationController(OrbHandler):
     def __init__(self):
+        super().__init__()
         # STATIC VARIABLE
         self.APP_PATH = "/home/bucky/Documents/Py/final/orb_zoom_face_matching/{}"
         self.TODAY = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
@@ -27,8 +28,6 @@ class IdentificationController:
         self.Transaction = Transaction()
         self.Meeting = Meeting()
         # END
-
-        self.orb_handler = OrbHandler()
         self.data_handler = DataHandler()
 
         self.data_set = None
@@ -65,8 +64,9 @@ class IdentificationController:
         found = test_image.segment_face()
         if found is False:
             return found
-
-        test_image.extract_kp_desc()
+        kp, desc = self.get_keypoint_descriptor(test_image.get_face())
+        test_image.set_descriptor(desc)
+        test_image.set_keypoint(kp)
         self.identify(test_image)
 
     def load_data_image(self):
@@ -78,7 +78,9 @@ class IdentificationController:
                 image.load_image(row['path'])
                 image.set_label(row['name'])
                 image.set_id(row['id'])
-                image.extract_kp_desc()
+                kp, desc = self.get_keypoint_descriptor(image.get_face())
+                image.set_descriptor(desc)
+                image.set_keypoint(kp)
                 self.data_set.append(image)
             except:
                 continue
@@ -92,7 +94,7 @@ class IdentificationController:
         label = ''
         for i, student in enumerate(students):
             start_time = time.time()
-            matches, similarity = self.orb_handler.compare_2_face(
+            matches, similarity = self.compare_2_face(
                 student.get_descriptor(), face.get_descriptor())
 
             students[i].set_descriptor_match(len(matches))
@@ -180,89 +182,125 @@ class IdentificationController:
     def analyze_task(self):
         image_tests = self.data_handler.load_data_test()
 
+        nfeature = [512, 1024, 3072]
+        hamming = [50, 64, 32]
+        k_knn = [7, 15, 30]
+
+        test_combination = []
+        count = 0
+        for f in nfeature:
+            for hamm in hamming:
+                for k in k_knn:
+                    count = count + 1
+                    test_combination.append({
+                        'no': count,
+                        'kombinasi': "nfeature: {}, hamming_tolerance: {}, k_knn: {}".format(f, hamm, k),
+                        'data': (f, hamm, k)
+                    })
         ret = []
+        for combination in test_combination:
+            print("Kombinasi "+ str(combination['no']))
+            nfeature, hamming, k_k = combination['data']
+            self.orb.setMaxFeatures(nfeature)
+            self.set_hamming_tolerance(hamming)
 
-        for j, current in enumerate(image_tests):
-            start_process = time.time()
-            students = np.copy(self.data_set)
-            orb_times = []
-            for i, student in enumerate(students):
-                start_orb = time.time()
-                matches, similarity = self.orb_handler.compare_2_face(
-                    student.get_descriptor(), current.get_descriptor())
+            temp = []
+            for j, current in enumerate(np.copy(image_tests)):
+                if(j == int(len(image_tests) * .5) or j == int(len(image_tests) * .3) or j == int(len(image_tests) * .6) or j == len(image_tests)- 1):
+                    print("processing image "+ str(j))
+                start_process = time.time()
+                kp, desc = self.get_keypoint_descriptor(current.get_face())
+                current.set_keypoint(kp)
+                current.set_descriptor(desc)
+                students = np.copy(self.data_set)
+                orb_times = []
+                for i, student in enumerate(students):
+                    start_orb = time.time()
+                    matches, similarity = self.compare_2_face(
+                        student.get_descriptor(), current.get_descriptor())
 
-                students[i].set_descriptor_match(len(matches))
-                students[i].set_similarity(similarity)
-                students[i].set_draw_match(
-                    current.get_face(), current.get_keypoint(), matches)
-                temp_time = round(time.time() - start_orb, 3)
-                students[i].set_execution_time(
-                    str(temp_time))
+                    students[i].set_descriptor_match(len(matches))
+                    students[i].set_similarity(similarity)
+                    students[i].set_draw_match(
+                        current.get_face(), current.get_keypoint(), matches)
+                    temp_time = round(time.time() - start_orb, 3)
+                    students[i].set_execution_time(
+                        str(temp_time))
 
-                orb_times.append(temp_time)
+                    orb_times.append(temp_time)
 
-            result = sorted(students,
-                            key=lambda x: x.get_similarity(), reverse=True)
+                result = sorted(students,
+                                key=lambda x: x.get_similarity(), reverse=True)
 
-            nb = result[0:self.k]
-            count = {}
-            for data in nb:
+                nb = result[0:k_k]
+                count = {}
+                for data in nb:
+                    try:
+                        count[data.get_label()]
+                    except:
+                        count[data.get_label()] = 1
+                        continue
+                    count[data.get_label()] = count[data.get_label()]+1
+
+                sort_orders = sorted(
+                    count.items(), key=lambda x: x[1], reverse=True)
+                the_label = filter(lambda x: x.get_label()
+                                   == sort_orders[0][0], nb)
+                average_similarity = 0
+                for data in list(the_label):
+                    average_similarity = average_similarity + data.get_similarity()
+
+                average_similarity = round(
+                    average_similarity / int(sort_orders[0][1]), 3)
+                identification_accuracy = round(
+                    int(sort_orders[0][1]) / k_k, 3)
+
+                face_path = 'flask/testing/kombinasi_{}/capture_{}'.format(str(combination['no']),j)
+
                 try:
-                    count[data.get_label()]
-                except:
-                    count[data.get_label()] = 1
-                    continue
-                count[data.get_label()] = count[data.get_label()]+1
+                    os.makedirs('static/'+face_path)
+                except Exception as e:
+                    pass
 
-            sort_orders = sorted(
-                count.items(), key=lambda x: x[1], reverse=True)
-            the_label = filter(lambda x: x.get_label()
-                               == sort_orders[0][0], nb)
-            average_similarity = 0
-            for data in list(the_label):
-                average_similarity = average_similarity + data.get_similarity()
+                try:
+                    os.makedirs('static/'+face_path+'/matches')
+                except Exception as e:
+                    pass
 
-            average_similarity = round(
-                average_similarity / int(sort_orders[0][1]), 3)
-            identification_accuracy = round(int(sort_orders[0][1]) / self.k, 3)
+                current.save_image('static/'+face_path+"/original.png",
+                                current.get_original_image())
+                current.save_image('static/'+face_path+"/gray.png",
+                                current.get_image_gray())
+                current.mask_original_image()
+                current.save_image('static/'+face_path+"/keypoint.png",
+                                current.get_draw_keypoint_image())
 
-            face_path = 'flask/testing/capture_{}'.format(j)
+                for i, data in enumerate(nb):
+                    filename = face_path+'/matches/{}_capture_{}__compare__face_{}.png'.format(i, j, data.get_id())
+                    data.save_image('static/'+filename,
+                                    data.get_draw_match_image())
 
-            try:
-                os.makedirs('static/'+face_path)
-            except Exception as e:
-                pass
-
-            try:
-                os.makedirs('static/'+face_path+'/matches')
-            except Exception as e:
-                pass
-
-            current.save_image('static/'+face_path+"/original.png",
-                            current.get_original_image())
-            current.save_image('static/'+face_path+"/gray.png",
-                            current.get_image_gray())
-            current.mask_original_image()
-            current.save_image('static/'+face_path+"/keypoint.png",
-                            current.get_draw_keypoint_image())
-
-            
-            for i, data in enumerate(nb):
-                filename = face_path+'/matches/{}_capture_{}__compare__face_{}.png'.format(i, j, data.get_id())
-                data.save_image('static/'+filename,
-                                data.get_draw_match_image())
-
-            final_label = sort_orders[:3]
+                final_label, _ = sort_orders[0]
+                true_label = str(current.get_label()).split('_')[0]
+                temp.append({
+                    'base_path': "kombinasi_{}/capture_{}".format(str(combination['no']),j),
+                    'valid_result': True if final_label == true_label else False,
+                    'label': true_label,
+                    'identification_result': final_label,
+                    'keypoint_length': len(current.get_keypoint()),
+                    'average_similarity': average_similarity,
+                    'identification_accuracy': identification_accuracy,
+                    'identification_time': round(time.time() - start_process, 3),
+                    'average_orb_executiion': round(statistics.fmean(orb_times), 3),
+                })
 
             ret.append({
-                'label': current.get_label(),
-                'identification_result': final_label,
-                'keypoint_length': len(current.get_keypoint()),
-                'average_similarity': average_similarity,
-                'identification_accuracy': identification_accuracy,
-                'identification_time': round(time.time() - start_process, 3),
-                'average_orb_executiion': round(statistics.fmean(orb_times), 3),
+                'kombinasi': combination['kombinasi'],
+                'data': temp
             })
-            print(j)
-        ret_name = "testing_data.pkl"
+            print( "Kombinasi {} Finish".format(str(combination['no'])))
+
+        
+        ret_name = "kombinasi.pkl"
         pickle.dump(ret, open(ret_name, 'wb'))
+        return 0

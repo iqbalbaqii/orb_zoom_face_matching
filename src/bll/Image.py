@@ -60,6 +60,12 @@ class Image:
         self.draw_match = cv2.drawMatches(self.face, self.keypoint,
                                           test_image, test_keypoints, matches[:32], test_image, flags=2)
 
+    def set_descriptor(self, desc):
+        self.descriptor = desc
+
+    def set_keypoint(self, kp):
+        self.keypoint = kp
+
     # GETTER
     def get_execution_time(self):
         return self.execution_time
@@ -124,11 +130,7 @@ class Image:
         self.face = original_segmented
         return True
 
-    def extract_kp_desc(self):
-        self.orb_handle.set_image(self.face)
-        kp, desc = self.orb_handle.get_keypoint_descriptor()
-        self.keypoint = kp
-        self.descriptor = desc
+    
 
     def mask_original_image(self):
         face_keypoint = cv2.drawKeypoints(

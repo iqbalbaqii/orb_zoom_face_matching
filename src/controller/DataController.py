@@ -70,7 +70,6 @@ class DataController:
                 image.set_label(filename)
                 image.load_image(_dir+filename)
                 image.segment_face()
-                image.extract_kp_desc()
                 image_tests.append(image)
             except Exception as e:
                 print(e)
