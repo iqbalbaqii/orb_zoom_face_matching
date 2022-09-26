@@ -20,25 +20,52 @@ for data in datas:
         valid_call = list(filter(lambda x: x == True, get_valid_status))
 
         try:
-            avg_exe_time = round(statistics.fmean(
-                list(map(lambda x: x['identification_time'], current))), 3)
-            avg_orb_time = round(statistics.fmean(
-                list(map(lambda x: x['average_orb_executiion'], current))), 3)
+            _exe_time = list(map(lambda x: x['identification_time'], current))
+            avg_exe_time = round(statistics.fmean(_exe_time), 3)
+            min_exe_time = min(_exe_time)
+            max_exe_time = max(_exe_time)
 
-            avg_similarity = round(statistics.fmean(
-                list(map(lambda x: x['average_similarity'], current))), 3)
-            avg_akurasi = round(statistics.fmean(
-                list(map(lambda x: x['identification_accuracy'], current))), 3)
+            _orb_time = list(map(lambda x: x['average_orb_executiion'], current))
+            avg_orb_time = round(statistics.fmean(_orb_time), 3)
+            min_orb_time = min(_orb_time)
+            max_orb_time = max(_orb_time)
+
+            _similarity = list(map(lambda x: x['average_similarity'], current))
+            avg_similarity = round(statistics.fmean(_similarity), 3)
+            min_similarity = min(_similarity)
+            max_similarity = max(_similarity)
+
+            _akurasi = list(map(lambda x: x['identification_accuracy'], current))
+            avg_akurasi = round(statistics.fmean(_akurasi), 3)
+            min_akurasi = min(_akurasi)
+            max_akurasi = max(_akurasi)
+
         except Exception as e:
             print(label)
             continue
         group.append({
             'Name': label,
             'valid_identification': "{} / {}".format(str(len(valid_call)), str(len(current))),
-            'avg_execution_time': avg_exe_time,
-            'avg_orb_time': avg_orb_time,
-            'avg_similarity': avg_similarity,
-            'avg_akurasi': avg_akurasi,
+            'execution_time': {
+                'average': avg_exe_time,
+                'min': min_exe_time,
+                'max': max_exe_time
+            },
+            'orb_time': {
+                'average': avg_orb_time,
+                'min': min_orb_time,
+                'max': max_orb_time
+            },
+            'similarity': {
+                'average': avg_similarity,
+                'min': min_similarity,
+                'max': max_similarity
+            },
+            'akurasi': {
+                'average': avg_akurasi,
+                'min': min_akurasi,
+                'max': max_akurasi
+            },
             'other': current
         })
     kelompok.append({
