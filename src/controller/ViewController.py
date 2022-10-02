@@ -47,6 +47,10 @@ class ViewController:
             accuracy = "{0:.1f}".format(accuracy * 100)
 
             similarity = round(float(row['average_similarity']), 3)
+
+            if(float(row['identification_accuracy']) < .5):
+                label = "Tidak Diketahui"
+                accuracy = ''
             data.append({
                 'label': label,
                 'identification_time': row['identification_time'],

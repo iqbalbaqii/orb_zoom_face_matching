@@ -50,7 +50,12 @@ class IdentificationController(OrbHandler):
         return self.Meeting.get_latest()[0].id
 
     def get_result(self):
-        return self.result
+        label, loc  = self.result
+        if( loc / self.k < 0.5): 
+            print('tidak diketahui')
+            return False
+        
+        return label
 
     def get_capture_count(self):
         return self.capture_count

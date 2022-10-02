@@ -203,13 +203,16 @@ class MainApp:
         if(task == FALSE):
             self.insert_notification("Kesalahan pengambilan gambar,", "wajah tidak didapatkan\n", 'danger')
             return
-        found = self.identification_controller.get_result()[0]
-        self.insert_notification('Identifikasi selesai, ', "{} hadir \n".format(found), 'success')
+        found = self.identification_controller.get_result()
+        if not found:
+            self.insert_notification('Wajah tidak diketahui\n ','', 'danger')
+        else:
+            self.insert_notification('Identifikasi selesai, ', "{} hadir \n".format(found), 'success')
         # self.toast.send('Identifikasi selesai, ', "{} hadir".format(found))
 
 
     def open_browser(self):
-        self.insert_notification('Opened Zoom ORB Attendence Web', '', 'light')
+        self.insert_notification('Opening Zoom ORB Attendence Web\n', '', 'light')
         webbrowser.open('http://127.0.0.1:5000/analyze', new=0)
 
 # END EVENT LISTENERS
