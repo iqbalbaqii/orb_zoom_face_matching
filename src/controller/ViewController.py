@@ -46,8 +46,7 @@ class ViewController:
             accuracy = float(row['identification_accuracy'])
             accuracy = "{0:.1f}".format(accuracy * 100)
 
-            similarity = "{0:.1f}".format(
-                float(row['average_similarity']) * 100)
+            similarity = round(float(row['average_similarity']), 3)
             data.append({
                 'label': label,
                 'identification_time': row['identification_time'],

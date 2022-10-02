@@ -55,17 +55,6 @@ class MainApp:
         menu = Menu(self.master)
         self.master.config(menu=menu)
 
-        # EDIT MENU
-        edit_menu = Menu(menu)
-        menu.add_cascade(label="Edit", menu=edit_menu)
-
-        edit_menu.add_command(label="Atur Tangkapan Layar",
-                              command=self.capture_area_window)
-        edit_menu.add_separator()
-        edit_menu.add_command(label="Analisis Kehadiran")
-        edit_menu.add_separator()
-        edit_menu.add_command(label="Keluar", command=self.master.quit)
-
         # OPTION MENU
 
         option_menu = Menu(menu)
@@ -75,7 +64,19 @@ class MainApp:
         option_menu.add_separator()
         option_menu.add_command(
             label="Informasi Area Tangkapan Layar", command=self.region_information)
+        option_menu.add_separator()
+
+        option_menu.add_command(label="Keluar", command=self.master.quit)
         # END MENU BAR
+
+        # EDIT MENU
+        edit_menu = Menu(menu)
+        menu.add_cascade(label="Edit", menu=edit_menu)
+
+        edit_menu.add_command(label="Atur Tangkapan Layar",
+                            command=self.capture_area_window)
+        
+        
 
         # FRAME
 

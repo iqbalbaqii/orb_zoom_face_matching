@@ -19,7 +19,7 @@ class IdentificationController(OrbHandler):
         # STATIC VARIABLE
         self.APP_PATH = "/home/bucky/Documents/Py/final/orb_zoom_face_matching/{}"
         self.TODAY = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
-        self.k = 30
+        self.k = 7
         self.start_time = None
         # END STATIC VARIABLE
 

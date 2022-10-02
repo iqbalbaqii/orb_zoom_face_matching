@@ -13,7 +13,7 @@ class ORB:
         self.image = None
         self.orb = cv2.ORB_create(
             512, fastThreshold=12, patchSize=31, WTA_K=2, scoreType=0)
-        self.hamming_tolerance = 50
+        self.hamming_tolerance = 32
 
     def set_hamming_tolerance(self, data):
         self.hamming_tolerance = data
