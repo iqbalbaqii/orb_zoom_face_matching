@@ -193,10 +193,7 @@ class MainApp:
             self.insert_notification(
                 "Kesalahan identifikasi,", "area tangkapan layar belum terdefinisi", 'danger')
             return
-        name = ['Muhammad Iqbal Baqi', 'Tiara Oktavian',
-                'Luhut Binsar Panjaitan', 'Joko Widodo']
-
-        ran = random.randint(0, 2)
+            
         region = self.x, self.y, self.width, self.height
         task = self.identification_controller.identification_task(region=region)
         
@@ -205,7 +202,7 @@ class MainApp:
             return
         found = self.identification_controller.get_result()
         if not found:
-            self.insert_notification('Wajah tidak diketahui\n ','', 'danger')
+            self.insert_notification('Wajah tidak diketahui\n','', 'danger')
         else:
             self.insert_notification('Identifikasi selesai, ', "{} hadir \n".format(found), 'success')
         # self.toast.send('Identifikasi selesai, ', "{} hadir".format(found))

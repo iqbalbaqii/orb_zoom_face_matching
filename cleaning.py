@@ -1,3 +1,3 @@
 from src.controller.DataController import DataController
 data = DataController()
-data.clean_raw('Arizli_Romadhon')
+data.clean_raw('Toni_Ismail')

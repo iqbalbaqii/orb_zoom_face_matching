@@ -2,6 +2,7 @@ from flask import Flask, render_template
 import json
 import pandas as pd
 import statistics
+import matplotlib.pyplot as plt
 app = Flask(__name__)
 
 
@@ -37,9 +38,33 @@ def read():
 @app.route('/bb')
 def aa():
 
-    raw = json.load(
+    try:
+        raw = json.load(
         open('/home/bucky/Documents/Py/final/orb_zoom_face_matching/kombinasi.json'))
 
+        pengujian_7 = list(filter(
+            lambda x: x['kombinasi'] == 'nfeature: 512, hamming_tolerance: 32, k_knn: 7', raw))
+        temp = []
+        for row in pengujian_7[0]['data']:
+            for i,each in enumerate(row['other']):
+                if i > 4: break;
+                temp.append(each)
+
+        get_testing_name = list(map(lambda x: 'test_'+str(x[0]), enumerate(temp))) 
+        get_just_akurasi = list(map(lambda x: round(x['identification_accuracy'] * 100, 2), temp))
+
+        plt.rcParams["figure.figsize"] = (200,300)
+        plt.plot(get_testing_name, get_just_akurasi, color='blue', marker='o')
+        plt.title('Grafik Akurasi Data Test Di Pengujian 7')
+        plt.xlabel('Test')
+        plt.ylabel('Akurasi')
+        plt.grid(True)
+        plt.xticks(rotation=45)
+        plt.show()
+        return
+        # return json.dumps(get_testing_name)
+    except Exception as e:
+        return str(e)
     kombinasis = list(map(lambda x: x['kombinasi'], raw))
 
     ret = []
@@ -133,4 +158,5 @@ def aa():
     return json.dumps(ret)
 
 
-app.run(debug=True)
+# app.run(debug=True)
+aa()
