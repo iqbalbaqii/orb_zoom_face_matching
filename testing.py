@@ -3,16 +3,20 @@ from src.controller.IdentificationController import IdentificationController
 import pickle
 import statistics
 import json
+import sys
 
 # iden = IdentificationController()
 # iden.load_data_image()
 # iden.analyze_task()
+
+# sys.exit()
+
 datas = pickle.load(open('kombinasi.pkl', 'rb'))
 
 kelompok = []
 for data in datas:
     group = []
-    labels = ["Akhlak Kamiswara", "Muhammad Iqbal Baqi", 'Andrea Ayunove Hutami', 'Toni Ismail', "Ridha Ayu Salsabila",
+    labels = ["Tidak Diketahui", "Akhlak Kamiswara", "Muhammad Iqbal Baqi", 'Andrea Ayunove Hutami', 'Toni Ismail', "Ridha Ayu Salsabila",
               "Rafiqo Rapitasari", "Arizli Romadhon", "Gege Ardiyansyah", "Fanny Yusuf", "Tiara Oktavian"]
     for label in labels:
         current = list(filter(lambda x: x['label'] == label, data['data']))
@@ -25,7 +29,8 @@ for data in datas:
             min_exe_time = min(_exe_time)
             max_exe_time = max(_exe_time)
 
-            _orb_time = list(map(lambda x: x['average_orb_executiion'], current))
+            _orb_time = list(
+                map(lambda x: x['average_orb_executiion'], current))
             avg_orb_time = round(statistics.fmean(_orb_time), 3)
             min_orb_time = min(_orb_time)
             max_orb_time = max(_orb_time)
@@ -35,7 +40,8 @@ for data in datas:
             min_similarity = min(_similarity)
             max_similarity = max(_similarity)
 
-            _akurasi = list(map(lambda x: x['identification_accuracy'], current))
+            _akurasi = list(
+                map(lambda x: x['identification_accuracy'], current))
             avg_akurasi = round(statistics.fmean(_akurasi), 3)
             min_akurasi = min(_akurasi)
             max_akurasi = max(_akurasi)

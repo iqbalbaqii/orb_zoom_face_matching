@@ -188,7 +188,7 @@ class IdentificationController(OrbHandler):
         image_tests = self.data_handler.load_data_test()
 
         nfeature = [512, 1024, 3072]
-        hamming = [50, 64, 32]
+        hamming = [32, 50, 64]
         k_knn = [7, 15, 30]
 
         test_combination = []
@@ -221,9 +221,12 @@ class IdentificationController(OrbHandler):
                 orb_times = []
                 for i, student in enumerate(students):
                     start_orb = time.time()
-                    matches, similarity = self.compare_2_face(
+                    try:
+                        matches, similarity = self.compare_2_face(
                         student.get_descriptor(), current.get_descriptor())
-
+                    except:
+                        print(current.get_label())
+                        return
                     students[i].set_descriptor_match(len(matches))
                     students[i].set_similarity(similarity)
                     students[i].set_draw_match(
@@ -262,30 +265,33 @@ class IdentificationController(OrbHandler):
 
                 face_path = 'flask/testing/kombinasi_{}/capture_{}'.format(str(combination['no']),j)
 
-                try:
-                    os.makedirs('static/'+face_path)
-                except Exception as e:
-                    pass
+                # try:
+                #     os.makedirs('static/'+face_path)
+                # except Exception as e:
+                #     pass
 
-                try:
-                    os.makedirs('static/'+face_path+'/matches')
-                except Exception as e:
-                    pass
+                # try:
+                #     os.makedirs('static/'+face_path+'/matches')
+                # except Exception as e:
+                #     pass
 
-                current.save_image('static/'+face_path+"/original.png",
-                                current.get_original_image())
-                current.save_image('static/'+face_path+"/gray.png",
-                                current.get_image_gray())
-                current.mask_original_image()
-                current.save_image('static/'+face_path+"/keypoint.png",
-                                current.get_draw_keypoint_image())
+                # current.save_image('static/'+face_path+"/original.png",
+                #                 current.get_original_image())
+                # current.save_image('static/'+face_path+"/gray.png",
+                #                 current.get_image_gray())
+                # current.mask_original_image()
+                # current.save_image('static/'+face_path+"/keypoint.png",
+                #                 current.get_draw_keypoint_image())
 
-                for i, data in enumerate(nb):
-                    filename = face_path+'/matches/{}_capture_{}__compare__face_{}.png'.format(i, j, data.get_id())
-                    data.save_image('static/'+filename,
-                                    data.get_draw_match_image())
+                # for i, data in enumerate(nb):
+                #     filename = face_path+'/matches/{}_capture_{}__compare__face_{}.png'.format(i, j, data.get_id())
+                #     data.save_image('static/'+filename,
+                #                     data.get_draw_match_image())
 
                 final_label, _ = sort_orders[0]
+                if(float(identification_accuracy) < 0.5):
+                    final_label = "Tidak Diketahui"
+
                 true_label = str(current.get_label()).split('_')[0]
                 temp.append({
                     'base_path': "kombinasi_{}/capture_{}".format(str(combination['no']),j),
@@ -304,7 +310,7 @@ class IdentificationController(OrbHandler):
                 'data': temp
             })
             print( "Kombinasi {} Finish".format(str(combination['no'])))
-
+            break
         
         ret_name = "kombinasi.pkl"
         pickle.dump(ret, open(ret_name, 'wb'))
