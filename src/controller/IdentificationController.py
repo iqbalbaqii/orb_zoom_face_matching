@@ -265,28 +265,28 @@ class IdentificationController(OrbHandler):
 
                 face_path = 'flask/testing/kombinasi_{}/capture_{}'.format(str(combination['no']),j)
 
-                # try:
-                #     os.makedirs('static/'+face_path)
-                # except Exception as e:
-                #     pass
+                try:
+                    os.makedirs('static/'+face_path)
+                except Exception as e:
+                    pass
 
-                # try:
-                #     os.makedirs('static/'+face_path+'/matches')
-                # except Exception as e:
-                #     pass
+                try:
+                    os.makedirs('static/'+face_path+'/matches')
+                except Exception as e:
+                    pass
 
-                # current.save_image('static/'+face_path+"/original.png",
-                #                 current.get_original_image())
-                # current.save_image('static/'+face_path+"/gray.png",
-                #                 current.get_image_gray())
-                # current.mask_original_image()
-                # current.save_image('static/'+face_path+"/keypoint.png",
-                #                 current.get_draw_keypoint_image())
+                current.save_image('static/'+face_path+"/original.png",
+                                current.get_original_image())
+                current.save_image('static/'+face_path+"/gray.png",
+                                current.get_image_gray())
+                current.mask_original_image()
+                current.save_image('static/'+face_path+"/keypoint.png",
+                                current.get_draw_keypoint_image())
 
-                # for i, data in enumerate(nb):
-                #     filename = face_path+'/matches/{}_capture_{}__compare__face_{}.png'.format(i, j, data.get_id())
-                #     data.save_image('static/'+filename,
-                #                     data.get_draw_match_image())
+                for i, data in enumerate(nb):
+                    filename = face_path+'/matches/{}_capture_{}__compare__face_{}.png'.format(i, j, data.get_id())
+                    data.save_image('static/'+filename,
+                                    data.get_draw_match_image())
 
                 final_label, _ = sort_orders[0]
                 if(float(identification_accuracy) < 0.5):
@@ -310,7 +310,6 @@ class IdentificationController(OrbHandler):
                 'data': temp
             })
             print( "Kombinasi {} Finish".format(str(combination['no'])))
-            break
         
         ret_name = "kombinasi.pkl"
         pickle.dump(ret, open(ret_name, 'wb'))

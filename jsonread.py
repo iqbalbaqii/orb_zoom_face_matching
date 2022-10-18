@@ -112,6 +112,8 @@ def aa():
                 ])
             pd.DataFrame(table).to_excel(
                 kombinasi+".xlsx", header=False, index=False)
+            
+        
         sumary = []
         _exe_time = list(map(lambda x: float(x[1]), table))
         avg_exe_time = round(statistics.fmean(_exe_time), 3)
