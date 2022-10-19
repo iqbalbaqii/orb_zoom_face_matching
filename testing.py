@@ -16,8 +16,8 @@ datas = pickle.load(open('kombinasi.pkl', 'rb'))
 kelompok = []
 for data in datas:
     group = []
-    labels = ["Tidak Diketahui", "Akhlak Kamiswara", "Muhammad Iqbal Baqi", 'Andrea Ayunove Hutami', 'Toni Ismail', "Ridha Ayu Salsabila",
-              "Rafiqo Rapitasari", "Arizli Romadhon", "Gege Ardiyansyah", "Fanny Yusuf", "Tiara Oktavian"]
+    labels = ["Akhlak Kamiswara", "Muhammad Iqbal Baqi", 'Andrea Ayunove Hutami', 'Toni Ismail', "Ridha Ayu Salsabila",
+              "Rafiqo Rapitasari", "Arizli Romadhon", "Gege Ardiyansyah", "Fanny Yusuf", "Tiara Oktavian", "Tidak Diketahui"]
     for label in labels:
         current = list(filter(lambda x: x['label'] == label, data['data']))
         get_valid_status = list(map(lambda x: x['valid_result'], current))

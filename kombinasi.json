@@ -3,76 +3,6 @@
         "kombinasi": "nfeature: 512, hamming_tolerance: 32, k_knn: 7",
         "data": [
             {
-                "Name": "Tidak Diketahui",
-                "valid_identification": "2 / 4",
-                "execution_time": {
-                    "average": 2.52,
-                    "min": 1.214,
-                    "max": 3.977
-                },
-                "orb_time": {
-                    "average": 0.004,
-                    "min": 0.002,
-                    "max": 0.005
-                },
-                "similarity": {
-                    "average": 0.114,
-                    "min": 0.038,
-                    "max": 0.21
-                },
-                "akurasi": {
-                    "average": 0.464,
-                    "min": 0.286,
-                    "max": 0.571
-                },
-                "other": [
-                    {
-                        "base_path": "kombinasi_1/capture_3",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 512,
-                        "average_similarity": 0.038,
-                        "identification_accuracy": 0.286,
-                        "identification_time": 3.637,
-                        "average_orb_executiion": 0.005
-                    },
-                    {
-                        "base_path": "kombinasi_1/capture_11",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 512,
-                        "average_similarity": 0.052,
-                        "identification_accuracy": 0.429,
-                        "identification_time": 3.977,
-                        "average_orb_executiion": 0.005
-                    },
-                    {
-                        "base_path": "kombinasi_1/capture_18",
-                        "valid_result": false,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Fanny Yusuf",
-                        "keypoint_length": 330,
-                        "average_similarity": 0.21,
-                        "identification_accuracy": 0.571,
-                        "identification_time": 1.214,
-                        "average_orb_executiion": 0.002
-                    },
-                    {
-                        "base_path": "kombinasi_1/capture_25",
-                        "valid_result": false,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Fanny Yusuf",
-                        "keypoint_length": 309,
-                        "average_similarity": 0.156,
-                        "identification_accuracy": 0.571,
-                        "identification_time": 1.253,
-                        "average_orb_executiion": 0.002
-                    }
-                ]
-            },
-            {
                 "Name": "Akhlak Kamiswara",
                 "valid_identification": "5 / 5",
                 "execution_time": {
@@ -771,82 +701,82 @@
                         "average_orb_executiion": 0.002
                     }
                 ]
+            },
+            {
+                "Name": "Tidak Diketahui",
+                "valid_identification": "2 / 4",
+                "execution_time": {
+                    "average": 2.52,
+                    "min": 1.214,
+                    "max": 3.977
+                },
+                "orb_time": {
+                    "average": 0.004,
+                    "min": 0.002,
+                    "max": 0.005
+                },
+                "similarity": {
+                    "average": 0.114,
+                    "min": 0.038,
+                    "max": 0.21
+                },
+                "akurasi": {
+                    "average": 0.464,
+                    "min": 0.286,
+                    "max": 0.571
+                },
+                "other": [
+                    {
+                        "base_path": "kombinasi_1/capture_3",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 512,
+                        "average_similarity": 0.038,
+                        "identification_accuracy": 0.286,
+                        "identification_time": 3.637,
+                        "average_orb_executiion": 0.005
+                    },
+                    {
+                        "base_path": "kombinasi_1/capture_11",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 512,
+                        "average_similarity": 0.052,
+                        "identification_accuracy": 0.429,
+                        "identification_time": 3.977,
+                        "average_orb_executiion": 0.005
+                    },
+                    {
+                        "base_path": "kombinasi_1/capture_18",
+                        "valid_result": false,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Fanny Yusuf",
+                        "keypoint_length": 330,
+                        "average_similarity": 0.21,
+                        "identification_accuracy": 0.571,
+                        "identification_time": 1.214,
+                        "average_orb_executiion": 0.002
+                    },
+                    {
+                        "base_path": "kombinasi_1/capture_25",
+                        "valid_result": false,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Fanny Yusuf",
+                        "keypoint_length": 309,
+                        "average_similarity": 0.156,
+                        "identification_accuracy": 0.571,
+                        "identification_time": 1.253,
+                        "average_orb_executiion": 0.002
+                    }
+                ]
             }
         ]
     },
     {
         "kombinasi": "nfeature: 512, hamming_tolerance: 32, k_knn: 15",
         "data": [
-            {
-                "Name": "Tidak Diketahui",
-                "valid_identification": "3 / 4",
-                "execution_time": {
-                    "average": 2.339,
-                    "min": 1.01,
-                    "max": 3.733
-                },
-                "orb_time": {
-                    "average": 0.003,
-                    "min": 0.002,
-                    "max": 0.004
-                },
-                "similarity": {
-                    "average": 0.105,
-                    "min": 0.033,
-                    "max": 0.207
-                },
-                "akurasi": {
-                    "average": 0.35,
-                    "min": 0.2,
-                    "max": 0.533
-                },
-                "other": [
-                    {
-                        "base_path": "kombinasi_2/capture_3",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 512,
-                        "average_similarity": 0.033,
-                        "identification_accuracy": 0.2,
-                        "identification_time": 3.308,
-                        "average_orb_executiion": 0.004
-                    },
-                    {
-                        "base_path": "kombinasi_2/capture_11",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 512,
-                        "average_similarity": 0.047,
-                        "identification_accuracy": 0.333,
-                        "identification_time": 3.733,
-                        "average_orb_executiion": 0.004
-                    },
-                    {
-                        "base_path": "kombinasi_2/capture_18",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 330,
-                        "average_similarity": 0.207,
-                        "identification_accuracy": 0.333,
-                        "identification_time": 1.305,
-                        "average_orb_executiion": 0.002
-                    },
-                    {
-                        "base_path": "kombinasi_2/capture_25",
-                        "valid_result": false,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Fanny Yusuf",
-                        "keypoint_length": 309,
-                        "average_similarity": 0.133,
-                        "identification_accuracy": 0.533,
-                        "identification_time": 1.01,
-                        "average_orb_executiion": 0.002
-                    }
-                ]
-            },
             {
                 "Name": "Akhlak Kamiswara",
                 "valid_identification": "4 / 5",
@@ -1546,19 +1476,14 @@
                         "average_orb_executiion": 0.002
                     }
                 ]
-            }
-        ]
-    },
-    {
-        "kombinasi": "nfeature: 512, hamming_tolerance: 32, k_knn: 30",
-        "data": [
+            },
             {
                 "Name": "Tidak Diketahui",
                 "valid_identification": "3 / 4",
                 "execution_time": {
-                    "average": 2.689,
-                    "min": 1.185,
-                    "max": 4.317
+                    "average": 2.339,
+                    "min": 1.01,
+                    "max": 3.733
                 },
                 "orb_time": {
                     "average": 0.003,
@@ -1566,62 +1491,67 @@
                     "max": 0.004
                 },
                 "similarity": {
-                    "average": 0.089,
-                    "min": 0.018,
-                    "max": 0.186
+                    "average": 0.105,
+                    "min": 0.033,
+                    "max": 0.207
                 },
                 "akurasi": {
-                    "average": 0.342,
-                    "min": 0.233,
-                    "max": 0.5
+                    "average": 0.35,
+                    "min": 0.2,
+                    "max": 0.533
                 },
                 "other": [
                     {
-                        "base_path": "kombinasi_3/capture_3",
+                        "base_path": "kombinasi_2/capture_3",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 512,
-                        "average_similarity": 0.018,
-                        "identification_accuracy": 0.233,
-                        "identification_time": 3.71,
+                        "average_similarity": 0.033,
+                        "identification_accuracy": 0.2,
+                        "identification_time": 3.308,
                         "average_orb_executiion": 0.004
                     },
                     {
-                        "base_path": "kombinasi_3/capture_11",
+                        "base_path": "kombinasi_2/capture_11",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 512,
-                        "average_similarity": 0.041,
-                        "identification_accuracy": 0.267,
-                        "identification_time": 4.317,
+                        "average_similarity": 0.047,
+                        "identification_accuracy": 0.333,
+                        "identification_time": 3.733,
                         "average_orb_executiion": 0.004
                     },
                     {
-                        "base_path": "kombinasi_3/capture_18",
+                        "base_path": "kombinasi_2/capture_18",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 330,
-                        "average_similarity": 0.186,
-                        "identification_accuracy": 0.367,
-                        "identification_time": 1.544,
-                        "average_orb_executiion": 0.003
+                        "average_similarity": 0.207,
+                        "identification_accuracy": 0.333,
+                        "identification_time": 1.305,
+                        "average_orb_executiion": 0.002
                     },
                     {
-                        "base_path": "kombinasi_3/capture_25",
+                        "base_path": "kombinasi_2/capture_25",
                         "valid_result": false,
                         "label": "Tidak Diketahui",
                         "identification_result": "Fanny Yusuf",
                         "keypoint_length": 309,
-                        "average_similarity": 0.113,
-                        "identification_accuracy": 0.5,
-                        "identification_time": 1.185,
+                        "average_similarity": 0.133,
+                        "identification_accuracy": 0.533,
+                        "identification_time": 1.01,
                         "average_orb_executiion": 0.002
                     }
                 ]
-            },
+            }
+        ]
+    },
+    {
+        "kombinasi": "nfeature: 512, hamming_tolerance: 32, k_knn: 30",
+        "data": [
             {
                 "Name": "Akhlak Kamiswara",
                 "valid_identification": "2 / 5",
@@ -2321,82 +2251,82 @@
                         "average_orb_executiion": 0.002
                     }
                 ]
+            },
+            {
+                "Name": "Tidak Diketahui",
+                "valid_identification": "3 / 4",
+                "execution_time": {
+                    "average": 2.689,
+                    "min": 1.185,
+                    "max": 4.317
+                },
+                "orb_time": {
+                    "average": 0.003,
+                    "min": 0.002,
+                    "max": 0.004
+                },
+                "similarity": {
+                    "average": 0.089,
+                    "min": 0.018,
+                    "max": 0.186
+                },
+                "akurasi": {
+                    "average": 0.342,
+                    "min": 0.233,
+                    "max": 0.5
+                },
+                "other": [
+                    {
+                        "base_path": "kombinasi_3/capture_3",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 512,
+                        "average_similarity": 0.018,
+                        "identification_accuracy": 0.233,
+                        "identification_time": 3.71,
+                        "average_orb_executiion": 0.004
+                    },
+                    {
+                        "base_path": "kombinasi_3/capture_11",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 512,
+                        "average_similarity": 0.041,
+                        "identification_accuracy": 0.267,
+                        "identification_time": 4.317,
+                        "average_orb_executiion": 0.004
+                    },
+                    {
+                        "base_path": "kombinasi_3/capture_18",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 330,
+                        "average_similarity": 0.186,
+                        "identification_accuracy": 0.367,
+                        "identification_time": 1.544,
+                        "average_orb_executiion": 0.003
+                    },
+                    {
+                        "base_path": "kombinasi_3/capture_25",
+                        "valid_result": false,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Fanny Yusuf",
+                        "keypoint_length": 309,
+                        "average_similarity": 0.113,
+                        "identification_accuracy": 0.5,
+                        "identification_time": 1.185,
+                        "average_orb_executiion": 0.002
+                    }
+                ]
             }
         ]
     },
     {
         "kombinasi": "nfeature: 512, hamming_tolerance: 50, k_knn: 7",
         "data": [
-            {
-                "Name": "Tidak Diketahui",
-                "valid_identification": "2 / 4",
-                "execution_time": {
-                    "average": 2.352,
-                    "min": 1.161,
-                    "max": 3.553
-                },
-                "orb_time": {
-                    "average": 0.004,
-                    "min": 0.003,
-                    "max": 0.004
-                },
-                "similarity": {
-                    "average": 0.583,
-                    "min": 0.396,
-                    "max": 0.748
-                },
-                "akurasi": {
-                    "average": 0.464,
-                    "min": 0.286,
-                    "max": 0.571
-                },
-                "other": [
-                    {
-                        "base_path": "kombinasi_4/capture_3",
-                        "valid_result": false,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Fanny Yusuf",
-                        "keypoint_length": 512,
-                        "average_similarity": 0.446,
-                        "identification_accuracy": 0.571,
-                        "identification_time": 3.302,
-                        "average_orb_executiion": 0.004
-                    },
-                    {
-                        "base_path": "kombinasi_4/capture_11",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 512,
-                        "average_similarity": 0.396,
-                        "identification_accuracy": 0.429,
-                        "identification_time": 3.553,
-                        "average_orb_executiion": 0.004
-                    },
-                    {
-                        "base_path": "kombinasi_4/capture_18",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 330,
-                        "average_similarity": 0.748,
-                        "identification_accuracy": 0.286,
-                        "identification_time": 1.391,
-                        "average_orb_executiion": 0.003
-                    },
-                    {
-                        "base_path": "kombinasi_4/capture_25",
-                        "valid_result": false,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Fanny Yusuf",
-                        "keypoint_length": 309,
-                        "average_similarity": 0.74,
-                        "identification_accuracy": 0.571,
-                        "identification_time": 1.161,
-                        "average_orb_executiion": 0.003
-                    }
-                ]
-            },
             {
                 "Name": "Akhlak Kamiswara",
                 "valid_identification": "5 / 5",
@@ -3096,19 +3026,14 @@
                         "average_orb_executiion": 0.002
                     }
                 ]
-            }
-        ]
-    },
-    {
-        "kombinasi": "nfeature: 512, hamming_tolerance: 50, k_knn: 15",
-        "data": [
+            },
             {
                 "Name": "Tidak Diketahui",
-                "valid_identification": "4 / 4",
+                "valid_identification": "2 / 4",
                 "execution_time": {
-                    "average": 2.502,
-                    "min": 1.215,
-                    "max": 3.849
+                    "average": 2.352,
+                    "min": 1.161,
+                    "max": 3.553
                 },
                 "orb_time": {
                     "average": 0.004,
@@ -3116,62 +3041,67 @@
                     "max": 0.004
                 },
                 "similarity": {
-                    "average": 0.559,
-                    "min": 0.376,
-                    "max": 0.723
+                    "average": 0.583,
+                    "min": 0.396,
+                    "max": 0.748
                 },
                 "akurasi": {
-                    "average": 0.417,
-                    "min": 0.267,
-                    "max": 0.467
+                    "average": 0.464,
+                    "min": 0.286,
+                    "max": 0.571
                 },
                 "other": [
                     {
-                        "base_path": "kombinasi_5/capture_3",
+                        "base_path": "kombinasi_4/capture_3",
+                        "valid_result": false,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Fanny Yusuf",
+                        "keypoint_length": 512,
+                        "average_similarity": 0.446,
+                        "identification_accuracy": 0.571,
+                        "identification_time": 3.302,
+                        "average_orb_executiion": 0.004
+                    },
+                    {
+                        "base_path": "kombinasi_4/capture_11",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 512,
-                        "average_similarity": 0.424,
-                        "identification_accuracy": 0.467,
-                        "identification_time": 3.481,
+                        "average_similarity": 0.396,
+                        "identification_accuracy": 0.429,
+                        "identification_time": 3.553,
                         "average_orb_executiion": 0.004
                     },
                     {
-                        "base_path": "kombinasi_5/capture_11",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 512,
-                        "average_similarity": 0.376,
-                        "identification_accuracy": 0.467,
-                        "identification_time": 3.849,
-                        "average_orb_executiion": 0.004
-                    },
-                    {
-                        "base_path": "kombinasi_5/capture_18",
+                        "base_path": "kombinasi_4/capture_18",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 330,
-                        "average_similarity": 0.723,
-                        "identification_accuracy": 0.267,
-                        "identification_time": 1.463,
+                        "average_similarity": 0.748,
+                        "identification_accuracy": 0.286,
+                        "identification_time": 1.391,
                         "average_orb_executiion": 0.003
                     },
                     {
-                        "base_path": "kombinasi_5/capture_25",
-                        "valid_result": true,
+                        "base_path": "kombinasi_4/capture_25",
+                        "valid_result": false,
                         "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
+                        "identification_result": "Fanny Yusuf",
                         "keypoint_length": 309,
-                        "average_similarity": 0.712,
-                        "identification_accuracy": 0.467,
-                        "identification_time": 1.215,
+                        "average_similarity": 0.74,
+                        "identification_accuracy": 0.571,
+                        "identification_time": 1.161,
                         "average_orb_executiion": 0.003
                     }
                 ]
-            },
+            }
+        ]
+    },
+    {
+        "kombinasi": "nfeature: 512, hamming_tolerance: 50, k_knn: 15",
+        "data": [
             {
                 "Name": "Akhlak Kamiswara",
                 "valid_identification": "5 / 5",
@@ -3871,82 +3801,82 @@
                         "average_orb_executiion": 0.003
                     }
                 ]
+            },
+            {
+                "Name": "Tidak Diketahui",
+                "valid_identification": "4 / 4",
+                "execution_time": {
+                    "average": 2.502,
+                    "min": 1.215,
+                    "max": 3.849
+                },
+                "orb_time": {
+                    "average": 0.004,
+                    "min": 0.003,
+                    "max": 0.004
+                },
+                "similarity": {
+                    "average": 0.559,
+                    "min": 0.376,
+                    "max": 0.723
+                },
+                "akurasi": {
+                    "average": 0.417,
+                    "min": 0.267,
+                    "max": 0.467
+                },
+                "other": [
+                    {
+                        "base_path": "kombinasi_5/capture_3",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 512,
+                        "average_similarity": 0.424,
+                        "identification_accuracy": 0.467,
+                        "identification_time": 3.481,
+                        "average_orb_executiion": 0.004
+                    },
+                    {
+                        "base_path": "kombinasi_5/capture_11",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 512,
+                        "average_similarity": 0.376,
+                        "identification_accuracy": 0.467,
+                        "identification_time": 3.849,
+                        "average_orb_executiion": 0.004
+                    },
+                    {
+                        "base_path": "kombinasi_5/capture_18",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 330,
+                        "average_similarity": 0.723,
+                        "identification_accuracy": 0.267,
+                        "identification_time": 1.463,
+                        "average_orb_executiion": 0.003
+                    },
+                    {
+                        "base_path": "kombinasi_5/capture_25",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 309,
+                        "average_similarity": 0.712,
+                        "identification_accuracy": 0.467,
+                        "identification_time": 1.215,
+                        "average_orb_executiion": 0.003
+                    }
+                ]
             }
         ]
     },
     {
         "kombinasi": "nfeature: 512, hamming_tolerance: 50, k_knn: 30",
         "data": [
-            {
-                "Name": "Tidak Diketahui",
-                "valid_identification": "4 / 4",
-                "execution_time": {
-                    "average": 2.857,
-                    "min": 1.344,
-                    "max": 4.506
-                },
-                "orb_time": {
-                    "average": 0.004,
-                    "min": 0.003,
-                    "max": 0.005
-                },
-                "similarity": {
-                    "average": 0.538,
-                    "min": 0.365,
-                    "max": 0.694
-                },
-                "akurasi": {
-                    "average": 0.342,
-                    "min": 0.3,
-                    "max": 0.4
-                },
-                "other": [
-                    {
-                        "base_path": "kombinasi_6/capture_3",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 512,
-                        "average_similarity": 0.409,
-                        "identification_accuracy": 0.333,
-                        "identification_time": 3.954,
-                        "average_orb_executiion": 0.004
-                    },
-                    {
-                        "base_path": "kombinasi_6/capture_11",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 512,
-                        "average_similarity": 0.365,
-                        "identification_accuracy": 0.333,
-                        "identification_time": 4.506,
-                        "average_orb_executiion": 0.005
-                    },
-                    {
-                        "base_path": "kombinasi_6/capture_18",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 330,
-                        "average_similarity": 0.694,
-                        "identification_accuracy": 0.3,
-                        "identification_time": 1.622,
-                        "average_orb_executiion": 0.003
-                    },
-                    {
-                        "base_path": "kombinasi_6/capture_25",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 309,
-                        "average_similarity": 0.686,
-                        "identification_accuracy": 0.4,
-                        "identification_time": 1.344,
-                        "average_orb_executiion": 0.003
-                    }
-                ]
-            },
             {
                 "Name": "Akhlak Kamiswara",
                 "valid_identification": "2 / 5",
@@ -4646,82 +4576,82 @@
                         "average_orb_executiion": 0.003
                     }
                 ]
+            },
+            {
+                "Name": "Tidak Diketahui",
+                "valid_identification": "4 / 4",
+                "execution_time": {
+                    "average": 2.857,
+                    "min": 1.344,
+                    "max": 4.506
+                },
+                "orb_time": {
+                    "average": 0.004,
+                    "min": 0.003,
+                    "max": 0.005
+                },
+                "similarity": {
+                    "average": 0.538,
+                    "min": 0.365,
+                    "max": 0.694
+                },
+                "akurasi": {
+                    "average": 0.342,
+                    "min": 0.3,
+                    "max": 0.4
+                },
+                "other": [
+                    {
+                        "base_path": "kombinasi_6/capture_3",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 512,
+                        "average_similarity": 0.409,
+                        "identification_accuracy": 0.333,
+                        "identification_time": 3.954,
+                        "average_orb_executiion": 0.004
+                    },
+                    {
+                        "base_path": "kombinasi_6/capture_11",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 512,
+                        "average_similarity": 0.365,
+                        "identification_accuracy": 0.333,
+                        "identification_time": 4.506,
+                        "average_orb_executiion": 0.005
+                    },
+                    {
+                        "base_path": "kombinasi_6/capture_18",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 330,
+                        "average_similarity": 0.694,
+                        "identification_accuracy": 0.3,
+                        "identification_time": 1.622,
+                        "average_orb_executiion": 0.003
+                    },
+                    {
+                        "base_path": "kombinasi_6/capture_25",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 309,
+                        "average_similarity": 0.686,
+                        "identification_accuracy": 0.4,
+                        "identification_time": 1.344,
+                        "average_orb_executiion": 0.003
+                    }
+                ]
             }
         ]
     },
     {
         "kombinasi": "nfeature: 512, hamming_tolerance: 64, k_knn: 7",
         "data": [
-            {
-                "Name": "Tidak Diketahui",
-                "valid_identification": "3 / 4",
-                "execution_time": {
-                    "average": 2.394,
-                    "min": 1.156,
-                    "max": 3.653
-                },
-                "orb_time": {
-                    "average": 0.004,
-                    "min": 0.003,
-                    "max": 0.004
-                },
-                "similarity": {
-                    "average": 0.898,
-                    "min": 0.787,
-                    "max": 0.99
-                },
-                "akurasi": {
-                    "average": 0.429,
-                    "min": 0.286,
-                    "max": 0.571
-                },
-                "other": [
-                    {
-                        "base_path": "kombinasi_7/capture_3",
-                        "valid_result": false,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Muhammad Iqbal Baqi",
-                        "keypoint_length": 512,
-                        "average_similarity": 0.846,
-                        "identification_accuracy": 0.571,
-                        "identification_time": 3.366,
-                        "average_orb_executiion": 0.004
-                    },
-                    {
-                        "base_path": "kombinasi_7/capture_11",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 512,
-                        "average_similarity": 0.787,
-                        "identification_accuracy": 0.429,
-                        "identification_time": 3.653,
-                        "average_orb_executiion": 0.004
-                    },
-                    {
-                        "base_path": "kombinasi_7/capture_18",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 330,
-                        "average_similarity": 0.971,
-                        "identification_accuracy": 0.429,
-                        "identification_time": 1.402,
-                        "average_orb_executiion": 0.003
-                    },
-                    {
-                        "base_path": "kombinasi_7/capture_25",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 309,
-                        "average_similarity": 0.99,
-                        "identification_accuracy": 0.286,
-                        "identification_time": 1.156,
-                        "average_orb_executiion": 0.003
-                    }
-                ]
-            },
             {
                 "Name": "Akhlak Kamiswara",
                 "valid_identification": "3 / 5",
@@ -5421,82 +5351,82 @@
                         "average_orb_executiion": 0.003
                     }
                 ]
+            },
+            {
+                "Name": "Tidak Diketahui",
+                "valid_identification": "3 / 4",
+                "execution_time": {
+                    "average": 2.394,
+                    "min": 1.156,
+                    "max": 3.653
+                },
+                "orb_time": {
+                    "average": 0.004,
+                    "min": 0.003,
+                    "max": 0.004
+                },
+                "similarity": {
+                    "average": 0.898,
+                    "min": 0.787,
+                    "max": 0.99
+                },
+                "akurasi": {
+                    "average": 0.429,
+                    "min": 0.286,
+                    "max": 0.571
+                },
+                "other": [
+                    {
+                        "base_path": "kombinasi_7/capture_3",
+                        "valid_result": false,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Muhammad Iqbal Baqi",
+                        "keypoint_length": 512,
+                        "average_similarity": 0.846,
+                        "identification_accuracy": 0.571,
+                        "identification_time": 3.366,
+                        "average_orb_executiion": 0.004
+                    },
+                    {
+                        "base_path": "kombinasi_7/capture_11",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 512,
+                        "average_similarity": 0.787,
+                        "identification_accuracy": 0.429,
+                        "identification_time": 3.653,
+                        "average_orb_executiion": 0.004
+                    },
+                    {
+                        "base_path": "kombinasi_7/capture_18",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 330,
+                        "average_similarity": 0.971,
+                        "identification_accuracy": 0.429,
+                        "identification_time": 1.402,
+                        "average_orb_executiion": 0.003
+                    },
+                    {
+                        "base_path": "kombinasi_7/capture_25",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 309,
+                        "average_similarity": 0.99,
+                        "identification_accuracy": 0.286,
+                        "identification_time": 1.156,
+                        "average_orb_executiion": 0.003
+                    }
+                ]
             }
         ]
     },
     {
         "kombinasi": "nfeature: 512, hamming_tolerance: 64, k_knn: 15",
         "data": [
-            {
-                "Name": "Tidak Diketahui",
-                "valid_identification": "4 / 4",
-                "execution_time": {
-                    "average": 2.559,
-                    "min": 1.223,
-                    "max": 3.973
-                },
-                "orb_time": {
-                    "average": 0.004,
-                    "min": 0.003,
-                    "max": 0.005
-                },
-                "similarity": {
-                    "average": 0.884,
-                    "min": 0.773,
-                    "max": 0.98
-                },
-                "akurasi": {
-                    "average": 0.367,
-                    "min": 0.333,
-                    "max": 0.467
-                },
-                "other": [
-                    {
-                        "base_path": "kombinasi_8/capture_3",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 512,
-                        "average_similarity": 0.84,
-                        "identification_accuracy": 0.333,
-                        "identification_time": 3.558,
-                        "average_orb_executiion": 0.004
-                    },
-                    {
-                        "base_path": "kombinasi_8/capture_11",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 512,
-                        "average_similarity": 0.773,
-                        "identification_accuracy": 0.467,
-                        "identification_time": 3.973,
-                        "average_orb_executiion": 0.005
-                    },
-                    {
-                        "base_path": "kombinasi_8/capture_18",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 330,
-                        "average_similarity": 0.945,
-                        "identification_accuracy": 0.333,
-                        "identification_time": 1.482,
-                        "average_orb_executiion": 0.003
-                    },
-                    {
-                        "base_path": "kombinasi_8/capture_25",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 309,
-                        "average_similarity": 0.98,
-                        "identification_accuracy": 0.333,
-                        "identification_time": 1.223,
-                        "average_orb_executiion": 0.003
-                    }
-                ]
-            },
             {
                 "Name": "Akhlak Kamiswara",
                 "valid_identification": "2 / 5",
@@ -6196,82 +6126,82 @@
                         "average_orb_executiion": 0.003
                     }
                 ]
+            },
+            {
+                "Name": "Tidak Diketahui",
+                "valid_identification": "4 / 4",
+                "execution_time": {
+                    "average": 2.559,
+                    "min": 1.223,
+                    "max": 3.973
+                },
+                "orb_time": {
+                    "average": 0.004,
+                    "min": 0.003,
+                    "max": 0.005
+                },
+                "similarity": {
+                    "average": 0.884,
+                    "min": 0.773,
+                    "max": 0.98
+                },
+                "akurasi": {
+                    "average": 0.367,
+                    "min": 0.333,
+                    "max": 0.467
+                },
+                "other": [
+                    {
+                        "base_path": "kombinasi_8/capture_3",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 512,
+                        "average_similarity": 0.84,
+                        "identification_accuracy": 0.333,
+                        "identification_time": 3.558,
+                        "average_orb_executiion": 0.004
+                    },
+                    {
+                        "base_path": "kombinasi_8/capture_11",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 512,
+                        "average_similarity": 0.773,
+                        "identification_accuracy": 0.467,
+                        "identification_time": 3.973,
+                        "average_orb_executiion": 0.005
+                    },
+                    {
+                        "base_path": "kombinasi_8/capture_18",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 330,
+                        "average_similarity": 0.945,
+                        "identification_accuracy": 0.333,
+                        "identification_time": 1.482,
+                        "average_orb_executiion": 0.003
+                    },
+                    {
+                        "base_path": "kombinasi_8/capture_25",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 309,
+                        "average_similarity": 0.98,
+                        "identification_accuracy": 0.333,
+                        "identification_time": 1.223,
+                        "average_orb_executiion": 0.003
+                    }
+                ]
             }
         ]
     },
     {
         "kombinasi": "nfeature: 512, hamming_tolerance: 64, k_knn: 30",
         "data": [
-            {
-                "Name": "Tidak Diketahui",
-                "valid_identification": "4 / 4",
-                "execution_time": {
-                    "average": 2.914,
-                    "min": 1.53,
-                    "max": 4.452
-                },
-                "orb_time": {
-                    "average": 0.004,
-                    "min": 0.003,
-                    "max": 0.004
-                },
-                "similarity": {
-                    "average": 0.874,
-                    "min": 0.758,
-                    "max": 0.978
-                },
-                "akurasi": {
-                    "average": 0.3,
-                    "min": 0.2,
-                    "max": 0.4
-                },
-                "other": [
-                    {
-                        "base_path": "kombinasi_9/capture_3",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 512,
-                        "average_similarity": 0.821,
-                        "identification_accuracy": 0.333,
-                        "identification_time": 4.028,
-                        "average_orb_executiion": 0.004
-                    },
-                    {
-                        "base_path": "kombinasi_9/capture_11",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 512,
-                        "average_similarity": 0.758,
-                        "identification_accuracy": 0.4,
-                        "identification_time": 4.452,
-                        "average_orb_executiion": 0.004
-                    },
-                    {
-                        "base_path": "kombinasi_9/capture_18",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 330,
-                        "average_similarity": 0.939,
-                        "identification_accuracy": 0.267,
-                        "identification_time": 1.648,
-                        "average_orb_executiion": 0.003
-                    },
-                    {
-                        "base_path": "kombinasi_9/capture_25",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 309,
-                        "average_similarity": 0.978,
-                        "identification_accuracy": 0.2,
-                        "identification_time": 1.53,
-                        "average_orb_executiion": 0.003
-                    }
-                ]
-            },
             {
                 "Name": "Akhlak Kamiswara",
                 "valid_identification": "1 / 5",
@@ -6971,82 +6901,82 @@
                         "average_orb_executiion": 0.003
                     }
                 ]
+            },
+            {
+                "Name": "Tidak Diketahui",
+                "valid_identification": "4 / 4",
+                "execution_time": {
+                    "average": 2.914,
+                    "min": 1.53,
+                    "max": 4.452
+                },
+                "orb_time": {
+                    "average": 0.004,
+                    "min": 0.003,
+                    "max": 0.004
+                },
+                "similarity": {
+                    "average": 0.874,
+                    "min": 0.758,
+                    "max": 0.978
+                },
+                "akurasi": {
+                    "average": 0.3,
+                    "min": 0.2,
+                    "max": 0.4
+                },
+                "other": [
+                    {
+                        "base_path": "kombinasi_9/capture_3",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 512,
+                        "average_similarity": 0.821,
+                        "identification_accuracy": 0.333,
+                        "identification_time": 4.028,
+                        "average_orb_executiion": 0.004
+                    },
+                    {
+                        "base_path": "kombinasi_9/capture_11",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 512,
+                        "average_similarity": 0.758,
+                        "identification_accuracy": 0.4,
+                        "identification_time": 4.452,
+                        "average_orb_executiion": 0.004
+                    },
+                    {
+                        "base_path": "kombinasi_9/capture_18",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 330,
+                        "average_similarity": 0.939,
+                        "identification_accuracy": 0.267,
+                        "identification_time": 1.648,
+                        "average_orb_executiion": 0.003
+                    },
+                    {
+                        "base_path": "kombinasi_9/capture_25",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 309,
+                        "average_similarity": 0.978,
+                        "identification_accuracy": 0.2,
+                        "identification_time": 1.53,
+                        "average_orb_executiion": 0.003
+                    }
+                ]
             }
         ]
     },
     {
         "kombinasi": "nfeature: 1024, hamming_tolerance: 32, k_knn: 7",
         "data": [
-            {
-                "Name": "Tidak Diketahui",
-                "valid_identification": "3 / 4",
-                "execution_time": {
-                    "average": 2.546,
-                    "min": 0.988,
-                    "max": 4.182
-                },
-                "orb_time": {
-                    "average": 0.004,
-                    "min": 0.002,
-                    "max": 0.006
-                },
-                "similarity": {
-                    "average": 0.115,
-                    "min": 0.032,
-                    "max": 0.207
-                },
-                "akurasi": {
-                    "average": 0.393,
-                    "min": 0.286,
-                    "max": 0.571
-                },
-                "other": [
-                    {
-                        "base_path": "kombinasi_10/capture_3",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 937,
-                        "average_similarity": 0.032,
-                        "identification_accuracy": 0.286,
-                        "identification_time": 3.764,
-                        "average_orb_executiion": 0.006
-                    },
-                    {
-                        "base_path": "kombinasi_10/capture_11",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 999,
-                        "average_similarity": 0.073,
-                        "identification_accuracy": 0.286,
-                        "identification_time": 4.182,
-                        "average_orb_executiion": 0.006
-                    },
-                    {
-                        "base_path": "kombinasi_10/capture_18",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 339,
-                        "average_similarity": 0.207,
-                        "identification_accuracy": 0.429,
-                        "identification_time": 1.248,
-                        "average_orb_executiion": 0.002
-                    },
-                    {
-                        "base_path": "kombinasi_10/capture_25",
-                        "valid_result": false,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Fanny Yusuf",
-                        "keypoint_length": 326,
-                        "average_similarity": 0.149,
-                        "identification_accuracy": 0.571,
-                        "identification_time": 0.988,
-                        "average_orb_executiion": 0.002
-                    }
-                ]
-            },
             {
                 "Name": "Akhlak Kamiswara",
                 "valid_identification": "5 / 5",
@@ -7746,19 +7676,14 @@
                         "average_orb_executiion": 0.002
                     }
                 ]
-            }
-        ]
-    },
-    {
-        "kombinasi": "nfeature: 1024, hamming_tolerance: 32, k_knn: 15",
-        "data": [
+            },
             {
                 "Name": "Tidak Diketahui",
                 "valid_identification": "3 / 4",
                 "execution_time": {
-                    "average": 2.78,
-                    "min": 1.063,
-                    "max": 4.463
+                    "average": 2.546,
+                    "min": 0.988,
+                    "max": 4.182
                 },
                 "orb_time": {
                     "average": 0.004,
@@ -7766,62 +7691,67 @@
                     "max": 0.006
                 },
                 "similarity": {
-                    "average": 0.104,
-                    "min": 0.028,
-                    "max": 0.199
+                    "average": 0.115,
+                    "min": 0.032,
+                    "max": 0.207
                 },
                 "akurasi": {
-                    "average": 0.4,
-                    "min": 0.267,
-                    "max": 0.6
+                    "average": 0.393,
+                    "min": 0.286,
+                    "max": 0.571
                 },
                 "other": [
                     {
-                        "base_path": "kombinasi_11/capture_3",
+                        "base_path": "kombinasi_10/capture_3",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 937,
-                        "average_similarity": 0.028,
-                        "identification_accuracy": 0.333,
-                        "identification_time": 4.262,
+                        "average_similarity": 0.032,
+                        "identification_accuracy": 0.286,
+                        "identification_time": 3.764,
                         "average_orb_executiion": 0.006
                     },
                     {
-                        "base_path": "kombinasi_11/capture_11",
+                        "base_path": "kombinasi_10/capture_11",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 999,
-                        "average_similarity": 0.066,
-                        "identification_accuracy": 0.267,
-                        "identification_time": 4.463,
+                        "average_similarity": 0.073,
+                        "identification_accuracy": 0.286,
+                        "identification_time": 4.182,
                         "average_orb_executiion": 0.006
                     },
                     {
-                        "base_path": "kombinasi_11/capture_18",
+                        "base_path": "kombinasi_10/capture_18",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 339,
-                        "average_similarity": 0.199,
-                        "identification_accuracy": 0.4,
-                        "identification_time": 1.333,
+                        "average_similarity": 0.207,
+                        "identification_accuracy": 0.429,
+                        "identification_time": 1.248,
                         "average_orb_executiion": 0.002
                     },
                     {
-                        "base_path": "kombinasi_11/capture_25",
+                        "base_path": "kombinasi_10/capture_25",
                         "valid_result": false,
                         "label": "Tidak Diketahui",
                         "identification_result": "Fanny Yusuf",
                         "keypoint_length": 326,
-                        "average_similarity": 0.123,
-                        "identification_accuracy": 0.6,
-                        "identification_time": 1.063,
+                        "average_similarity": 0.149,
+                        "identification_accuracy": 0.571,
+                        "identification_time": 0.988,
                         "average_orb_executiion": 0.002
                     }
                 ]
-            },
+            }
+        ]
+    },
+    {
+        "kombinasi": "nfeature: 1024, hamming_tolerance: 32, k_knn: 15",
+        "data": [
             {
                 "Name": "Akhlak Kamiswara",
                 "valid_identification": "4 / 5",
@@ -8521,19 +8451,14 @@
                         "average_orb_executiion": 0.002
                     }
                 ]
-            }
-        ]
-    },
-    {
-        "kombinasi": "nfeature: 1024, hamming_tolerance: 32, k_knn: 30",
-        "data": [
+            },
             {
                 "Name": "Tidak Diketahui",
                 "valid_identification": "3 / 4",
                 "execution_time": {
-                    "average": 3.008,
-                    "min": 1.191,
-                    "max": 4.897
+                    "average": 2.78,
+                    "min": 1.063,
+                    "max": 4.463
                 },
                 "orb_time": {
                     "average": 0.004,
@@ -8541,62 +8466,67 @@
                     "max": 0.006
                 },
                 "similarity": {
-                    "average": 0.093,
-                    "min": 0.023,
-                    "max": 0.186
+                    "average": 0.104,
+                    "min": 0.028,
+                    "max": 0.199
                 },
                 "akurasi": {
-                    "average": 0.358,
+                    "average": 0.4,
                     "min": 0.267,
-                    "max": 0.533
+                    "max": 0.6
                 },
                 "other": [
                     {
-                        "base_path": "kombinasi_12/capture_3",
+                        "base_path": "kombinasi_11/capture_3",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 937,
-                        "average_similarity": 0.023,
-                        "identification_accuracy": 0.3,
-                        "identification_time": 4.444,
+                        "average_similarity": 0.028,
+                        "identification_accuracy": 0.333,
+                        "identification_time": 4.262,
                         "average_orb_executiion": 0.006
                     },
                     {
-                        "base_path": "kombinasi_12/capture_11",
+                        "base_path": "kombinasi_11/capture_11",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 999,
-                        "average_similarity": 0.055,
+                        "average_similarity": 0.066,
                         "identification_accuracy": 0.267,
-                        "identification_time": 4.897,
+                        "identification_time": 4.463,
                         "average_orb_executiion": 0.006
                     },
                     {
-                        "base_path": "kombinasi_12/capture_18",
+                        "base_path": "kombinasi_11/capture_18",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 339,
-                        "average_similarity": 0.186,
-                        "identification_accuracy": 0.333,
-                        "identification_time": 1.5,
+                        "average_similarity": 0.199,
+                        "identification_accuracy": 0.4,
+                        "identification_time": 1.333,
                         "average_orb_executiion": 0.002
                     },
                     {
-                        "base_path": "kombinasi_12/capture_25",
+                        "base_path": "kombinasi_11/capture_25",
                         "valid_result": false,
                         "label": "Tidak Diketahui",
                         "identification_result": "Fanny Yusuf",
                         "keypoint_length": 326,
-                        "average_similarity": 0.108,
-                        "identification_accuracy": 0.533,
-                        "identification_time": 1.191,
+                        "average_similarity": 0.123,
+                        "identification_accuracy": 0.6,
+                        "identification_time": 1.063,
                         "average_orb_executiion": 0.002
                     }
                 ]
-            },
+            }
+        ]
+    },
+    {
+        "kombinasi": "nfeature: 1024, hamming_tolerance: 32, k_knn: 30",
+        "data": [
             {
                 "Name": "Akhlak Kamiswara",
                 "valid_identification": "2 / 5",
@@ -9296,82 +9226,82 @@
                         "average_orb_executiion": 0.002
                     }
                 ]
+            },
+            {
+                "Name": "Tidak Diketahui",
+                "valid_identification": "3 / 4",
+                "execution_time": {
+                    "average": 3.008,
+                    "min": 1.191,
+                    "max": 4.897
+                },
+                "orb_time": {
+                    "average": 0.004,
+                    "min": 0.002,
+                    "max": 0.006
+                },
+                "similarity": {
+                    "average": 0.093,
+                    "min": 0.023,
+                    "max": 0.186
+                },
+                "akurasi": {
+                    "average": 0.358,
+                    "min": 0.267,
+                    "max": 0.533
+                },
+                "other": [
+                    {
+                        "base_path": "kombinasi_12/capture_3",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 937,
+                        "average_similarity": 0.023,
+                        "identification_accuracy": 0.3,
+                        "identification_time": 4.444,
+                        "average_orb_executiion": 0.006
+                    },
+                    {
+                        "base_path": "kombinasi_12/capture_11",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 999,
+                        "average_similarity": 0.055,
+                        "identification_accuracy": 0.267,
+                        "identification_time": 4.897,
+                        "average_orb_executiion": 0.006
+                    },
+                    {
+                        "base_path": "kombinasi_12/capture_18",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 339,
+                        "average_similarity": 0.186,
+                        "identification_accuracy": 0.333,
+                        "identification_time": 1.5,
+                        "average_orb_executiion": 0.002
+                    },
+                    {
+                        "base_path": "kombinasi_12/capture_25",
+                        "valid_result": false,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Fanny Yusuf",
+                        "keypoint_length": 326,
+                        "average_similarity": 0.108,
+                        "identification_accuracy": 0.533,
+                        "identification_time": 1.191,
+                        "average_orb_executiion": 0.002
+                    }
+                ]
             }
         ]
     },
     {
         "kombinasi": "nfeature: 1024, hamming_tolerance: 50, k_knn: 7",
         "data": [
-            {
-                "Name": "Tidak Diketahui",
-                "valid_identification": "2 / 4",
-                "execution_time": {
-                    "average": 2.799,
-                    "min": 1.298,
-                    "max": 4.441
-                },
-                "orb_time": {
-                    "average": 0.005,
-                    "min": 0.003,
-                    "max": 0.007
-                },
-                "similarity": {
-                    "average": 0.598,
-                    "min": 0.462,
-                    "max": 0.734
-                },
-                "akurasi": {
-                    "average": 0.536,
-                    "min": 0.429,
-                    "max": 0.714
-                },
-                "other": [
-                    {
-                        "base_path": "kombinasi_13/capture_3",
-                        "valid_result": false,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Fanny Yusuf",
-                        "keypoint_length": 937,
-                        "average_similarity": 0.468,
-                        "identification_accuracy": 0.714,
-                        "identification_time": 4.037,
-                        "average_orb_executiion": 0.007
-                    },
-                    {
-                        "base_path": "kombinasi_13/capture_11",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 999,
-                        "average_similarity": 0.462,
-                        "identification_accuracy": 0.429,
-                        "identification_time": 4.441,
-                        "average_orb_executiion": 0.007
-                    },
-                    {
-                        "base_path": "kombinasi_13/capture_18",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 339,
-                        "average_similarity": 0.728,
-                        "identification_accuracy": 0.429,
-                        "identification_time": 1.421,
-                        "average_orb_executiion": 0.003
-                    },
-                    {
-                        "base_path": "kombinasi_13/capture_25",
-                        "valid_result": false,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Fanny Yusuf",
-                        "keypoint_length": 326,
-                        "average_similarity": 0.734,
-                        "identification_accuracy": 0.571,
-                        "identification_time": 1.298,
-                        "average_orb_executiion": 0.003
-                    }
-                ]
-            },
             {
                 "Name": "Akhlak Kamiswara",
                 "valid_identification": "5 / 5",
@@ -10071,19 +10001,14 @@
                         "average_orb_executiion": 0.003
                     }
                 ]
-            }
-        ]
-    },
-    {
-        "kombinasi": "nfeature: 1024, hamming_tolerance: 50, k_knn: 15",
-        "data": [
+            },
             {
                 "Name": "Tidak Diketahui",
-                "valid_identification": "3 / 4",
+                "valid_identification": "2 / 4",
                 "execution_time": {
-                    "average": 2.881,
-                    "min": 1.236,
-                    "max": 4.621
+                    "average": 2.799,
+                    "min": 1.298,
+                    "max": 4.441
                 },
                 "orb_time": {
                     "average": 0.005,
@@ -10091,62 +10016,67 @@
                     "max": 0.007
                 },
                 "similarity": {
-                    "average": 0.588,
-                    "min": 0.448,
-                    "max": 0.728
+                    "average": 0.598,
+                    "min": 0.462,
+                    "max": 0.734
                 },
                 "akurasi": {
-                    "average": 0.367,
-                    "min": 0.2,
-                    "max": 0.6
+                    "average": 0.536,
+                    "min": 0.429,
+                    "max": 0.714
                 },
                 "other": [
                     {
-                        "base_path": "kombinasi_14/capture_3",
+                        "base_path": "kombinasi_13/capture_3",
                         "valid_result": false,
                         "label": "Tidak Diketahui",
                         "identification_result": "Fanny Yusuf",
                         "keypoint_length": 937,
-                        "average_similarity": 0.448,
-                        "identification_accuracy": 0.6,
-                        "identification_time": 4.185,
-                        "average_orb_executiion": 0.006
+                        "average_similarity": 0.468,
+                        "identification_accuracy": 0.714,
+                        "identification_time": 4.037,
+                        "average_orb_executiion": 0.007
                     },
                     {
-                        "base_path": "kombinasi_14/capture_11",
+                        "base_path": "kombinasi_13/capture_11",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 999,
-                        "average_similarity": 0.459,
-                        "identification_accuracy": 0.267,
-                        "identification_time": 4.621,
+                        "average_similarity": 0.462,
+                        "identification_accuracy": 0.429,
+                        "identification_time": 4.441,
                         "average_orb_executiion": 0.007
                     },
                     {
-                        "base_path": "kombinasi_14/capture_18",
+                        "base_path": "kombinasi_13/capture_18",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 339,
                         "average_similarity": 0.728,
-                        "identification_accuracy": 0.2,
-                        "identification_time": 1.481,
+                        "identification_accuracy": 0.429,
+                        "identification_time": 1.421,
                         "average_orb_executiion": 0.003
                     },
                     {
-                        "base_path": "kombinasi_14/capture_25",
-                        "valid_result": true,
+                        "base_path": "kombinasi_13/capture_25",
+                        "valid_result": false,
                         "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
+                        "identification_result": "Fanny Yusuf",
                         "keypoint_length": 326,
-                        "average_similarity": 0.716,
-                        "identification_accuracy": 0.4,
-                        "identification_time": 1.236,
+                        "average_similarity": 0.734,
+                        "identification_accuracy": 0.571,
+                        "identification_time": 1.298,
                         "average_orb_executiion": 0.003
                     }
                 ]
-            },
+            }
+        ]
+    },
+    {
+        "kombinasi": "nfeature: 1024, hamming_tolerance: 50, k_knn: 15",
+        "data": [
             {
                 "Name": "Akhlak Kamiswara",
                 "valid_identification": "5 / 5",
@@ -10846,19 +10776,14 @@
                         "average_orb_executiion": 0.003
                     }
                 ]
-            }
-        ]
-    },
-    {
-        "kombinasi": "nfeature: 1024, hamming_tolerance: 50, k_knn: 30",
-        "data": [
+            },
             {
                 "Name": "Tidak Diketahui",
-                "valid_identification": "4 / 4",
+                "valid_identification": "3 / 4",
                 "execution_time": {
-                    "average": 3.208,
-                    "min": 1.373,
-                    "max": 5.172
+                    "average": 2.881,
+                    "min": 1.236,
+                    "max": 4.621
                 },
                 "orb_time": {
                     "average": 0.005,
@@ -10866,62 +10791,67 @@
                     "max": 0.007
                 },
                 "similarity": {
-                    "average": 0.561,
-                    "min": 0.427,
-                    "max": 0.691
+                    "average": 0.588,
+                    "min": 0.448,
+                    "max": 0.728
                 },
                 "akurasi": {
-                    "average": 0.334,
-                    "min": 0.267,
-                    "max": 0.4
+                    "average": 0.367,
+                    "min": 0.2,
+                    "max": 0.6
                 },
                 "other": [
                     {
-                        "base_path": "kombinasi_15/capture_3",
-                        "valid_result": true,
+                        "base_path": "kombinasi_14/capture_3",
+                        "valid_result": false,
                         "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
+                        "identification_result": "Fanny Yusuf",
                         "keypoint_length": 937,
-                        "average_similarity": 0.436,
-                        "identification_accuracy": 0.4,
-                        "identification_time": 4.644,
-                        "average_orb_executiion": 0.007
+                        "average_similarity": 0.448,
+                        "identification_accuracy": 0.6,
+                        "identification_time": 4.185,
+                        "average_orb_executiion": 0.006
                     },
                     {
-                        "base_path": "kombinasi_15/capture_11",
+                        "base_path": "kombinasi_14/capture_11",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 999,
-                        "average_similarity": 0.427,
-                        "identification_accuracy": 0.3,
-                        "identification_time": 5.172,
+                        "average_similarity": 0.459,
+                        "identification_accuracy": 0.267,
+                        "identification_time": 4.621,
                         "average_orb_executiion": 0.007
                     },
                     {
-                        "base_path": "kombinasi_15/capture_18",
+                        "base_path": "kombinasi_14/capture_18",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 339,
-                        "average_similarity": 0.691,
-                        "identification_accuracy": 0.267,
-                        "identification_time": 1.643,
+                        "average_similarity": 0.728,
+                        "identification_accuracy": 0.2,
+                        "identification_time": 1.481,
                         "average_orb_executiion": 0.003
                     },
                     {
-                        "base_path": "kombinasi_15/capture_25",
+                        "base_path": "kombinasi_14/capture_25",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 326,
-                        "average_similarity": 0.689,
-                        "identification_accuracy": 0.367,
-                        "identification_time": 1.373,
+                        "average_similarity": 0.716,
+                        "identification_accuracy": 0.4,
+                        "identification_time": 1.236,
                         "average_orb_executiion": 0.003
                     }
                 ]
-            },
+            }
+        ]
+    },
+    {
+        "kombinasi": "nfeature: 1024, hamming_tolerance: 50, k_knn: 30",
+        "data": [
             {
                 "Name": "Akhlak Kamiswara",
                 "valid_identification": "2 / 5",
@@ -11621,19 +11551,14 @@
                         "average_orb_executiion": 0.003
                     }
                 ]
-            }
-        ]
-    },
-    {
-        "kombinasi": "nfeature: 1024, hamming_tolerance: 64, k_knn: 7",
-        "data": [
+            },
             {
                 "Name": "Tidak Diketahui",
-                "valid_identification": "3 / 4",
+                "valid_identification": "4 / 4",
                 "execution_time": {
-                    "average": 2.772,
-                    "min": 1.182,
-                    "max": 4.451
+                    "average": 3.208,
+                    "min": 1.373,
+                    "max": 5.172
                 },
                 "orb_time": {
                     "average": 0.005,
@@ -11641,62 +11566,67 @@
                     "max": 0.007
                 },
                 "similarity": {
-                    "average": 0.925,
-                    "min": 0.869,
-                    "max": 0.99
+                    "average": 0.561,
+                    "min": 0.427,
+                    "max": 0.691
                 },
                 "akurasi": {
-                    "average": 0.429,
-                    "min": 0.286,
-                    "max": 0.571
+                    "average": 0.334,
+                    "min": 0.267,
+                    "max": 0.4
                 },
                 "other": [
                     {
-                        "base_path": "kombinasi_16/capture_3",
-                        "valid_result": false,
+                        "base_path": "kombinasi_15/capture_3",
+                        "valid_result": true,
                         "label": "Tidak Diketahui",
-                        "identification_result": "Fanny Yusuf",
+                        "identification_result": "Tidak Diketahui",
                         "keypoint_length": 937,
-                        "average_similarity": 0.87,
-                        "identification_accuracy": 0.571,
-                        "identification_time": 4.042,
+                        "average_similarity": 0.436,
+                        "identification_accuracy": 0.4,
+                        "identification_time": 4.644,
                         "average_orb_executiion": 0.007
                     },
                     {
-                        "base_path": "kombinasi_16/capture_11",
+                        "base_path": "kombinasi_15/capture_11",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 999,
-                        "average_similarity": 0.869,
-                        "identification_accuracy": 0.429,
-                        "identification_time": 4.451,
+                        "average_similarity": 0.427,
+                        "identification_accuracy": 0.3,
+                        "identification_time": 5.172,
                         "average_orb_executiion": 0.007
                     },
                     {
-                        "base_path": "kombinasi_16/capture_18",
+                        "base_path": "kombinasi_15/capture_18",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 339,
-                        "average_similarity": 0.971,
-                        "identification_accuracy": 0.429,
-                        "identification_time": 1.413,
+                        "average_similarity": 0.691,
+                        "identification_accuracy": 0.267,
+                        "identification_time": 1.643,
                         "average_orb_executiion": 0.003
                     },
                     {
-                        "base_path": "kombinasi_16/capture_25",
+                        "base_path": "kombinasi_15/capture_25",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 326,
-                        "average_similarity": 0.99,
-                        "identification_accuracy": 0.286,
-                        "identification_time": 1.182,
+                        "average_similarity": 0.689,
+                        "identification_accuracy": 0.367,
+                        "identification_time": 1.373,
                         "average_orb_executiion": 0.003
                     }
                 ]
-            },
+            }
+        ]
+    },
+    {
+        "kombinasi": "nfeature: 1024, hamming_tolerance: 64, k_knn: 7",
+        "data": [
             {
                 "Name": "Akhlak Kamiswara",
                 "valid_identification": "3 / 5",
@@ -12396,19 +12326,14 @@
                         "average_orb_executiion": 0.003
                     }
                 ]
-            }
-        ]
-    },
-    {
-        "kombinasi": "nfeature: 1024, hamming_tolerance: 64, k_knn: 15",
-        "data": [
+            },
             {
                 "Name": "Tidak Diketahui",
-                "valid_identification": "4 / 4",
+                "valid_identification": "3 / 4",
                 "execution_time": {
-                    "average": 2.924,
-                    "min": 1.248,
-                    "max": 4.657
+                    "average": 2.772,
+                    "min": 1.182,
+                    "max": 4.451
                 },
                 "orb_time": {
                     "average": 0.005,
@@ -12416,62 +12341,67 @@
                     "max": 0.007
                 },
                 "similarity": {
-                    "average": 0.913,
-                    "min": 0.858,
-                    "max": 0.986
+                    "average": 0.925,
+                    "min": 0.869,
+                    "max": 0.99
                 },
                 "akurasi": {
-                    "average": 0.317,
-                    "min": 0.2,
-                    "max": 0.4
+                    "average": 0.429,
+                    "min": 0.286,
+                    "max": 0.571
                 },
                 "other": [
                     {
-                        "base_path": "kombinasi_17/capture_3",
-                        "valid_result": true,
+                        "base_path": "kombinasi_16/capture_3",
+                        "valid_result": false,
                         "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
+                        "identification_result": "Fanny Yusuf",
                         "keypoint_length": 937,
-                        "average_similarity": 0.862,
-                        "identification_accuracy": 0.4,
-                        "identification_time": 4.277,
+                        "average_similarity": 0.87,
+                        "identification_accuracy": 0.571,
+                        "identification_time": 4.042,
                         "average_orb_executiion": 0.007
                     },
                     {
-                        "base_path": "kombinasi_17/capture_11",
+                        "base_path": "kombinasi_16/capture_11",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 999,
-                        "average_similarity": 0.858,
-                        "identification_accuracy": 0.333,
-                        "identification_time": 4.657,
+                        "average_similarity": 0.869,
+                        "identification_accuracy": 0.429,
+                        "identification_time": 4.451,
                         "average_orb_executiion": 0.007
                     },
                     {
-                        "base_path": "kombinasi_17/capture_18",
+                        "base_path": "kombinasi_16/capture_18",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 339,
-                        "average_similarity": 0.946,
-                        "identification_accuracy": 0.333,
-                        "identification_time": 1.515,
+                        "average_similarity": 0.971,
+                        "identification_accuracy": 0.429,
+                        "identification_time": 1.413,
                         "average_orb_executiion": 0.003
                     },
                     {
-                        "base_path": "kombinasi_17/capture_25",
+                        "base_path": "kombinasi_16/capture_25",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 326,
-                        "average_similarity": 0.986,
-                        "identification_accuracy": 0.2,
-                        "identification_time": 1.248,
+                        "average_similarity": 0.99,
+                        "identification_accuracy": 0.286,
+                        "identification_time": 1.182,
                         "average_orb_executiion": 0.003
                     }
                 ]
-            },
+            }
+        ]
+    },
+    {
+        "kombinasi": "nfeature: 1024, hamming_tolerance: 64, k_knn: 15",
+        "data": [
             {
                 "Name": "Akhlak Kamiswara",
                 "valid_identification": "2 / 5",
@@ -13171,19 +13101,14 @@
                         "average_orb_executiion": 0.003
                     }
                 ]
-            }
-        ]
-    },
-    {
-        "kombinasi": "nfeature: 1024, hamming_tolerance: 64, k_knn: 30",
-        "data": [
+            },
             {
                 "Name": "Tidak Diketahui",
                 "valid_identification": "4 / 4",
                 "execution_time": {
-                    "average": 3.226,
-                    "min": 1.359,
-                    "max": 5.215
+                    "average": 2.924,
+                    "min": 1.248,
+                    "max": 4.657
                 },
                 "orb_time": {
                     "average": 0.005,
@@ -13191,62 +13116,67 @@
                     "max": 0.007
                 },
                 "similarity": {
-                    "average": 0.896,
-                    "min": 0.831,
-                    "max": 0.971
+                    "average": 0.913,
+                    "min": 0.858,
+                    "max": 0.986
                 },
                 "akurasi": {
-                    "average": 0.342,
-                    "min": 0.267,
-                    "max": 0.467
+                    "average": 0.317,
+                    "min": 0.2,
+                    "max": 0.4
                 },
                 "other": [
                     {
-                        "base_path": "kombinasi_18/capture_3",
+                        "base_path": "kombinasi_17/capture_3",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 937,
-                        "average_similarity": 0.845,
-                        "identification_accuracy": 0.467,
-                        "identification_time": 4.698,
+                        "average_similarity": 0.862,
+                        "identification_accuracy": 0.4,
+                        "identification_time": 4.277,
                         "average_orb_executiion": 0.007
                     },
                     {
-                        "base_path": "kombinasi_18/capture_11",
+                        "base_path": "kombinasi_17/capture_11",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 999,
-                        "average_similarity": 0.831,
+                        "average_similarity": 0.858,
                         "identification_accuracy": 0.333,
-                        "identification_time": 5.215,
+                        "identification_time": 4.657,
                         "average_orb_executiion": 0.007
                     },
                     {
-                        "base_path": "kombinasi_18/capture_18",
+                        "base_path": "kombinasi_17/capture_18",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 339,
-                        "average_similarity": 0.939,
-                        "identification_accuracy": 0.3,
-                        "identification_time": 1.633,
+                        "average_similarity": 0.946,
+                        "identification_accuracy": 0.333,
+                        "identification_time": 1.515,
                         "average_orb_executiion": 0.003
                     },
                     {
-                        "base_path": "kombinasi_18/capture_25",
+                        "base_path": "kombinasi_17/capture_25",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 326,
-                        "average_similarity": 0.971,
-                        "identification_accuracy": 0.267,
-                        "identification_time": 1.359,
+                        "average_similarity": 0.986,
+                        "identification_accuracy": 0.2,
+                        "identification_time": 1.248,
                         "average_orb_executiion": 0.003
                     }
                 ]
-            },
+            }
+        ]
+    },
+    {
+        "kombinasi": "nfeature: 1024, hamming_tolerance: 64, k_knn: 30",
+        "data": [
             {
                 "Name": "Akhlak Kamiswara",
                 "valid_identification": "1 / 5",
@@ -13946,82 +13876,82 @@
                         "average_orb_executiion": 0.003
                     }
                 ]
+            },
+            {
+                "Name": "Tidak Diketahui",
+                "valid_identification": "4 / 4",
+                "execution_time": {
+                    "average": 3.226,
+                    "min": 1.359,
+                    "max": 5.215
+                },
+                "orb_time": {
+                    "average": 0.005,
+                    "min": 0.003,
+                    "max": 0.007
+                },
+                "similarity": {
+                    "average": 0.896,
+                    "min": 0.831,
+                    "max": 0.971
+                },
+                "akurasi": {
+                    "average": 0.342,
+                    "min": 0.267,
+                    "max": 0.467
+                },
+                "other": [
+                    {
+                        "base_path": "kombinasi_18/capture_3",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 937,
+                        "average_similarity": 0.845,
+                        "identification_accuracy": 0.467,
+                        "identification_time": 4.698,
+                        "average_orb_executiion": 0.007
+                    },
+                    {
+                        "base_path": "kombinasi_18/capture_11",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 999,
+                        "average_similarity": 0.831,
+                        "identification_accuracy": 0.333,
+                        "identification_time": 5.215,
+                        "average_orb_executiion": 0.007
+                    },
+                    {
+                        "base_path": "kombinasi_18/capture_18",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 339,
+                        "average_similarity": 0.939,
+                        "identification_accuracy": 0.3,
+                        "identification_time": 1.633,
+                        "average_orb_executiion": 0.003
+                    },
+                    {
+                        "base_path": "kombinasi_18/capture_25",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 326,
+                        "average_similarity": 0.971,
+                        "identification_accuracy": 0.267,
+                        "identification_time": 1.359,
+                        "average_orb_executiion": 0.003
+                    }
+                ]
             }
         ]
     },
     {
         "kombinasi": "nfeature: 3072, hamming_tolerance: 32, k_knn: 7",
         "data": [
-            {
-                "Name": "Tidak Diketahui",
-                "valid_identification": "3 / 4",
-                "execution_time": {
-                    "average": 3.356,
-                    "min": 0.982,
-                    "max": 6.25
-                },
-                "orb_time": {
-                    "average": 0.007,
-                    "min": 0.002,
-                    "max": 0.013
-                },
-                "similarity": {
-                    "average": 0.13,
-                    "min": 0.075,
-                    "max": 0.207
-                },
-                "akurasi": {
-                    "average": 0.393,
-                    "min": 0.286,
-                    "max": 0.571
-                },
-                "other": [
-                    {
-                        "base_path": "kombinasi_19/capture_3",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 1678,
-                        "average_similarity": 0.087,
-                        "identification_accuracy": 0.286,
-                        "identification_time": 4.947,
-                        "average_orb_executiion": 0.01
-                    },
-                    {
-                        "base_path": "kombinasi_19/capture_11",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 2301,
-                        "average_similarity": 0.075,
-                        "identification_accuracy": 0.286,
-                        "identification_time": 6.25,
-                        "average_orb_executiion": 0.013
-                    },
-                    {
-                        "base_path": "kombinasi_19/capture_18",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 339,
-                        "average_similarity": 0.207,
-                        "identification_accuracy": 0.429,
-                        "identification_time": 1.245,
-                        "average_orb_executiion": 0.002
-                    },
-                    {
-                        "base_path": "kombinasi_19/capture_25",
-                        "valid_result": false,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Fanny Yusuf",
-                        "keypoint_length": 326,
-                        "average_similarity": 0.149,
-                        "identification_accuracy": 0.571,
-                        "identification_time": 0.982,
-                        "average_orb_executiion": 0.002
-                    }
-                ]
-            },
             {
                 "Name": "Akhlak Kamiswara",
                 "valid_identification": "5 / 5",
@@ -14721,19 +14651,14 @@
                         "average_orb_executiion": 0.002
                     }
                 ]
-            }
-        ]
-    },
-    {
-        "kombinasi": "nfeature: 3072, hamming_tolerance: 32, k_knn: 15",
-        "data": [
+            },
             {
                 "Name": "Tidak Diketahui",
                 "valid_identification": "3 / 4",
                 "execution_time": {
-                    "average": 3.514,
-                    "min": 1.054,
-                    "max": 6.499
+                    "average": 3.356,
+                    "min": 0.982,
+                    "max": 6.25
                 },
                 "orb_time": {
                     "average": 0.007,
@@ -14741,62 +14666,67 @@
                     "max": 0.013
                 },
                 "similarity": {
-                    "average": 0.107,
-                    "min": 0.043,
-                    "max": 0.199
+                    "average": 0.13,
+                    "min": 0.075,
+                    "max": 0.207
                 },
                 "akurasi": {
-                    "average": 0.4,
-                    "min": 0.267,
-                    "max": 0.6
+                    "average": 0.393,
+                    "min": 0.286,
+                    "max": 0.571
                 },
                 "other": [
                     {
-                        "base_path": "kombinasi_20/capture_3",
+                        "base_path": "kombinasi_19/capture_3",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 1678,
-                        "average_similarity": 0.043,
-                        "identification_accuracy": 0.267,
-                        "identification_time": 5.178,
+                        "average_similarity": 0.087,
+                        "identification_accuracy": 0.286,
+                        "identification_time": 4.947,
                         "average_orb_executiion": 0.01
                     },
                     {
-                        "base_path": "kombinasi_20/capture_11",
+                        "base_path": "kombinasi_19/capture_11",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 2301,
-                        "average_similarity": 0.064,
-                        "identification_accuracy": 0.333,
-                        "identification_time": 6.499,
+                        "average_similarity": 0.075,
+                        "identification_accuracy": 0.286,
+                        "identification_time": 6.25,
                         "average_orb_executiion": 0.013
                     },
                     {
-                        "base_path": "kombinasi_20/capture_18",
+                        "base_path": "kombinasi_19/capture_18",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 339,
-                        "average_similarity": 0.199,
-                        "identification_accuracy": 0.4,
-                        "identification_time": 1.324,
+                        "average_similarity": 0.207,
+                        "identification_accuracy": 0.429,
+                        "identification_time": 1.245,
                         "average_orb_executiion": 0.002
                     },
                     {
-                        "base_path": "kombinasi_20/capture_25",
+                        "base_path": "kombinasi_19/capture_25",
                         "valid_result": false,
                         "label": "Tidak Diketahui",
                         "identification_result": "Fanny Yusuf",
                         "keypoint_length": 326,
-                        "average_similarity": 0.123,
-                        "identification_accuracy": 0.6,
-                        "identification_time": 1.054,
+                        "average_similarity": 0.149,
+                        "identification_accuracy": 0.571,
+                        "identification_time": 0.982,
                         "average_orb_executiion": 0.002
                     }
                 ]
-            },
+            }
+        ]
+    },
+    {
+        "kombinasi": "nfeature: 3072, hamming_tolerance: 32, k_knn: 15",
+        "data": [
             {
                 "Name": "Akhlak Kamiswara",
                 "valid_identification": "4 / 5",
@@ -15496,19 +15426,14 @@
                         "average_orb_executiion": 0.002
                     }
                 ]
-            }
-        ]
-    },
-    {
-        "kombinasi": "nfeature: 3072, hamming_tolerance: 32, k_knn: 30",
-        "data": [
+            },
             {
                 "Name": "Tidak Diketahui",
                 "valid_identification": "3 / 4",
                 "execution_time": {
-                    "average": 4.216,
-                    "min": 1.491,
-                    "max": 6.938
+                    "average": 3.514,
+                    "min": 1.054,
+                    "max": 6.499
                 },
                 "orb_time": {
                     "average": 0.007,
@@ -15516,62 +15441,67 @@
                     "max": 0.013
                 },
                 "similarity": {
-                    "average": 0.098,
-                    "min": 0.038,
-                    "max": 0.186
+                    "average": 0.107,
+                    "min": 0.043,
+                    "max": 0.199
                 },
                 "akurasi": {
-                    "average": 0.366,
-                    "min": 0.3,
-                    "max": 0.533
+                    "average": 0.4,
+                    "min": 0.267,
+                    "max": 0.6
                 },
                 "other": [
                     {
-                        "base_path": "kombinasi_21/capture_3",
+                        "base_path": "kombinasi_20/capture_3",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 1678,
-                        "average_similarity": 0.038,
-                        "identification_accuracy": 0.3,
-                        "identification_time": 5.562,
+                        "average_similarity": 0.043,
+                        "identification_accuracy": 0.267,
+                        "identification_time": 5.178,
                         "average_orb_executiion": 0.01
                     },
                     {
-                        "base_path": "kombinasi_21/capture_11",
+                        "base_path": "kombinasi_20/capture_11",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 2301,
-                        "average_similarity": 0.058,
-                        "identification_accuracy": 0.3,
-                        "identification_time": 6.938,
+                        "average_similarity": 0.064,
+                        "identification_accuracy": 0.333,
+                        "identification_time": 6.499,
                         "average_orb_executiion": 0.013
                     },
                     {
-                        "base_path": "kombinasi_21/capture_18",
+                        "base_path": "kombinasi_20/capture_18",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 339,
-                        "average_similarity": 0.186,
-                        "identification_accuracy": 0.333,
-                        "identification_time": 1.491,
+                        "average_similarity": 0.199,
+                        "identification_accuracy": 0.4,
+                        "identification_time": 1.324,
                         "average_orb_executiion": 0.002
                     },
                     {
-                        "base_path": "kombinasi_21/capture_25",
+                        "base_path": "kombinasi_20/capture_25",
                         "valid_result": false,
                         "label": "Tidak Diketahui",
                         "identification_result": "Fanny Yusuf",
                         "keypoint_length": 326,
-                        "average_similarity": 0.108,
-                        "identification_accuracy": 0.533,
-                        "identification_time": 2.872,
+                        "average_similarity": 0.123,
+                        "identification_accuracy": 0.6,
+                        "identification_time": 1.054,
                         "average_orb_executiion": 0.002
                     }
                 ]
-            },
+            }
+        ]
+    },
+    {
+        "kombinasi": "nfeature: 3072, hamming_tolerance: 32, k_knn: 30",
+        "data": [
             {
                 "Name": "Akhlak Kamiswara",
                 "valid_identification": "2 / 5",
@@ -16271,82 +16201,82 @@
                         "average_orb_executiion": 0.002
                     }
                 ]
+            },
+            {
+                "Name": "Tidak Diketahui",
+                "valid_identification": "3 / 4",
+                "execution_time": {
+                    "average": 4.216,
+                    "min": 1.491,
+                    "max": 6.938
+                },
+                "orb_time": {
+                    "average": 0.007,
+                    "min": 0.002,
+                    "max": 0.013
+                },
+                "similarity": {
+                    "average": 0.098,
+                    "min": 0.038,
+                    "max": 0.186
+                },
+                "akurasi": {
+                    "average": 0.366,
+                    "min": 0.3,
+                    "max": 0.533
+                },
+                "other": [
+                    {
+                        "base_path": "kombinasi_21/capture_3",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 1678,
+                        "average_similarity": 0.038,
+                        "identification_accuracy": 0.3,
+                        "identification_time": 5.562,
+                        "average_orb_executiion": 0.01
+                    },
+                    {
+                        "base_path": "kombinasi_21/capture_11",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 2301,
+                        "average_similarity": 0.058,
+                        "identification_accuracy": 0.3,
+                        "identification_time": 6.938,
+                        "average_orb_executiion": 0.013
+                    },
+                    {
+                        "base_path": "kombinasi_21/capture_18",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 339,
+                        "average_similarity": 0.186,
+                        "identification_accuracy": 0.333,
+                        "identification_time": 1.491,
+                        "average_orb_executiion": 0.002
+                    },
+                    {
+                        "base_path": "kombinasi_21/capture_25",
+                        "valid_result": false,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Fanny Yusuf",
+                        "keypoint_length": 326,
+                        "average_similarity": 0.108,
+                        "identification_accuracy": 0.533,
+                        "identification_time": 2.872,
+                        "average_orb_executiion": 0.002
+                    }
+                ]
             }
         ]
     },
     {
         "kombinasi": "nfeature: 3072, hamming_tolerance: 50, k_knn: 7",
         "data": [
-            {
-                "Name": "Tidak Diketahui",
-                "valid_identification": "2 / 4",
-                "execution_time": {
-                    "average": 3.582,
-                    "min": 1.176,
-                    "max": 6.485
-                },
-                "orb_time": {
-                    "average": 0.007,
-                    "min": 0.003,
-                    "max": 0.014
-                },
-                "similarity": {
-                    "average": 0.613,
-                    "min": 0.49,
-                    "max": 0.734
-                },
-                "akurasi": {
-                    "average": 0.572,
-                    "min": 0.429,
-                    "max": 0.857
-                },
-                "other": [
-                    {
-                        "base_path": "kombinasi_22/capture_3",
-                        "valid_result": false,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Fanny Yusuf",
-                        "keypoint_length": 1678,
-                        "average_similarity": 0.49,
-                        "identification_accuracy": 0.857,
-                        "identification_time": 5.25,
-                        "average_orb_executiion": 0.01
-                    },
-                    {
-                        "base_path": "kombinasi_22/capture_11",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 2301,
-                        "average_similarity": 0.501,
-                        "identification_accuracy": 0.429,
-                        "identification_time": 6.485,
-                        "average_orb_executiion": 0.014
-                    },
-                    {
-                        "base_path": "kombinasi_22/capture_18",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 339,
-                        "average_similarity": 0.728,
-                        "identification_accuracy": 0.429,
-                        "identification_time": 1.416,
-                        "average_orb_executiion": 0.003
-                    },
-                    {
-                        "base_path": "kombinasi_22/capture_25",
-                        "valid_result": false,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Fanny Yusuf",
-                        "keypoint_length": 326,
-                        "average_similarity": 0.734,
-                        "identification_accuracy": 0.571,
-                        "identification_time": 1.176,
-                        "average_orb_executiion": 0.003
-                    }
-                ]
-            },
             {
                 "Name": "Akhlak Kamiswara",
                 "valid_identification": "5 / 5",
@@ -17046,19 +16976,14 @@
                         "average_orb_executiion": 0.003
                     }
                 ]
-            }
-        ]
-    },
-    {
-        "kombinasi": "nfeature: 3072, hamming_tolerance: 50, k_knn: 15",
-        "data": [
+            },
             {
                 "Name": "Tidak Diketahui",
-                "valid_identification": "3 / 4",
+                "valid_identification": "2 / 4",
                 "execution_time": {
-                    "average": 3.685,
-                    "min": 1.236,
-                    "max": 6.665
+                    "average": 3.582,
+                    "min": 1.176,
+                    "max": 6.485
                 },
                 "orb_time": {
                     "average": 0.007,
@@ -17066,62 +16991,67 @@
                     "max": 0.014
                 },
                 "similarity": {
-                    "average": 0.596,
-                    "min": 0.463,
-                    "max": 0.728
+                    "average": 0.613,
+                    "min": 0.49,
+                    "max": 0.734
                 },
                 "akurasi": {
-                    "average": 0.417,
-                    "min": 0.2,
-                    "max": 0.6
+                    "average": 0.572,
+                    "min": 0.429,
+                    "max": 0.857
                 },
                 "other": [
                     {
-                        "base_path": "kombinasi_23/capture_3",
+                        "base_path": "kombinasi_22/capture_3",
                         "valid_result": false,
                         "label": "Tidak Diketahui",
                         "identification_result": "Fanny Yusuf",
                         "keypoint_length": 1678,
-                        "average_similarity": 0.476,
-                        "identification_accuracy": 0.6,
-                        "identification_time": 5.355,
+                        "average_similarity": 0.49,
+                        "identification_accuracy": 0.857,
+                        "identification_time": 5.25,
                         "average_orb_executiion": 0.01
                     },
                     {
-                        "base_path": "kombinasi_23/capture_11",
+                        "base_path": "kombinasi_22/capture_11",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 2301,
-                        "average_similarity": 0.463,
-                        "identification_accuracy": 0.467,
-                        "identification_time": 6.665,
+                        "average_similarity": 0.501,
+                        "identification_accuracy": 0.429,
+                        "identification_time": 6.485,
                         "average_orb_executiion": 0.014
                     },
                     {
-                        "base_path": "kombinasi_23/capture_18",
+                        "base_path": "kombinasi_22/capture_18",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 339,
                         "average_similarity": 0.728,
-                        "identification_accuracy": 0.2,
-                        "identification_time": 1.484,
+                        "identification_accuracy": 0.429,
+                        "identification_time": 1.416,
                         "average_orb_executiion": 0.003
                     },
                     {
-                        "base_path": "kombinasi_23/capture_25",
-                        "valid_result": true,
+                        "base_path": "kombinasi_22/capture_25",
+                        "valid_result": false,
                         "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
+                        "identification_result": "Fanny Yusuf",
                         "keypoint_length": 326,
-                        "average_similarity": 0.716,
-                        "identification_accuracy": 0.4,
-                        "identification_time": 1.236,
+                        "average_similarity": 0.734,
+                        "identification_accuracy": 0.571,
+                        "identification_time": 1.176,
                         "average_orb_executiion": 0.003
                     }
                 ]
-            },
+            }
+        ]
+    },
+    {
+        "kombinasi": "nfeature: 3072, hamming_tolerance: 50, k_knn: 15",
+        "data": [
             {
                 "Name": "Akhlak Kamiswara",
                 "valid_identification": "5 / 5",
@@ -17821,19 +17751,14 @@
                         "average_orb_executiion": 0.003
                     }
                 ]
-            }
-        ]
-    },
-    {
-        "kombinasi": "nfeature: 3072, hamming_tolerance: 50, k_knn: 30",
-        "data": [
+            },
             {
                 "Name": "Tidak Diketahui",
-                "valid_identification": "4 / 4",
+                "valid_identification": "3 / 4",
                 "execution_time": {
-                    "average": 4.037,
-                    "min": 1.376,
-                    "max": 7.224
+                    "average": 3.685,
+                    "min": 1.236,
+                    "max": 6.665
                 },
                 "orb_time": {
                     "average": 0.007,
@@ -17841,62 +17766,67 @@
                     "max": 0.014
                 },
                 "similarity": {
-                    "average": 0.576,
-                    "min": 0.457,
-                    "max": 0.691
+                    "average": 0.596,
+                    "min": 0.463,
+                    "max": 0.728
                 },
                 "akurasi": {
-                    "average": 0.325,
-                    "min": 0.267,
-                    "max": 0.367
+                    "average": 0.417,
+                    "min": 0.2,
+                    "max": 0.6
                 },
                 "other": [
                     {
-                        "base_path": "kombinasi_24/capture_3",
-                        "valid_result": true,
+                        "base_path": "kombinasi_23/capture_3",
+                        "valid_result": false,
                         "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
+                        "identification_result": "Fanny Yusuf",
                         "keypoint_length": 1678,
-                        "average_similarity": 0.468,
-                        "identification_accuracy": 0.367,
-                        "identification_time": 5.892,
+                        "average_similarity": 0.476,
+                        "identification_accuracy": 0.6,
+                        "identification_time": 5.355,
                         "average_orb_executiion": 0.01
                     },
                     {
-                        "base_path": "kombinasi_24/capture_11",
+                        "base_path": "kombinasi_23/capture_11",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 2301,
-                        "average_similarity": 0.457,
-                        "identification_accuracy": 0.3,
-                        "identification_time": 7.224,
+                        "average_similarity": 0.463,
+                        "identification_accuracy": 0.467,
+                        "identification_time": 6.665,
                         "average_orb_executiion": 0.014
                     },
                     {
-                        "base_path": "kombinasi_24/capture_18",
+                        "base_path": "kombinasi_23/capture_18",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 339,
-                        "average_similarity": 0.691,
-                        "identification_accuracy": 0.267,
-                        "identification_time": 1.655,
+                        "average_similarity": 0.728,
+                        "identification_accuracy": 0.2,
+                        "identification_time": 1.484,
                         "average_orb_executiion": 0.003
                     },
                     {
-                        "base_path": "kombinasi_24/capture_25",
+                        "base_path": "kombinasi_23/capture_25",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 326,
-                        "average_similarity": 0.689,
-                        "identification_accuracy": 0.367,
-                        "identification_time": 1.376,
+                        "average_similarity": 0.716,
+                        "identification_accuracy": 0.4,
+                        "identification_time": 1.236,
                         "average_orb_executiion": 0.003
                     }
                 ]
-            },
+            }
+        ]
+    },
+    {
+        "kombinasi": "nfeature: 3072, hamming_tolerance: 50, k_knn: 30",
+        "data": [
             {
                 "Name": "Akhlak Kamiswara",
                 "valid_identification": "2 / 5",
@@ -18596,19 +18526,14 @@
                         "average_orb_executiion": 0.003
                     }
                 ]
-            }
-        ]
-    },
-    {
-        "kombinasi": "nfeature: 3072, hamming_tolerance: 64, k_knn: 7",
-        "data": [
+            },
             {
                 "Name": "Tidak Diketahui",
                 "valid_identification": "4 / 4",
                 "execution_time": {
-                    "average": 3.543,
-                    "min": 1.185,
-                    "max": 6.433
+                    "average": 4.037,
+                    "min": 1.376,
+                    "max": 7.224
                 },
                 "orb_time": {
                     "average": 0.007,
@@ -18616,62 +18541,67 @@
                     "max": 0.014
                 },
                 "similarity": {
-                    "average": 0.947,
-                    "min": 0.909,
-                    "max": 0.99
+                    "average": 0.576,
+                    "min": 0.457,
+                    "max": 0.691
                 },
                 "akurasi": {
-                    "average": 0.357,
-                    "min": 0.286,
-                    "max": 0.429
+                    "average": 0.325,
+                    "min": 0.267,
+                    "max": 0.367
                 },
                 "other": [
                     {
-                        "base_path": "kombinasi_25/capture_3",
+                        "base_path": "kombinasi_24/capture_3",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 1678,
-                        "average_similarity": 0.909,
-                        "identification_accuracy": 0.429,
-                        "identification_time": 5.144,
+                        "average_similarity": 0.468,
+                        "identification_accuracy": 0.367,
+                        "identification_time": 5.892,
                         "average_orb_executiion": 0.01
                     },
                     {
-                        "base_path": "kombinasi_25/capture_11",
+                        "base_path": "kombinasi_24/capture_11",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 2301,
-                        "average_similarity": 0.918,
-                        "identification_accuracy": 0.286,
-                        "identification_time": 6.433,
+                        "average_similarity": 0.457,
+                        "identification_accuracy": 0.3,
+                        "identification_time": 7.224,
                         "average_orb_executiion": 0.014
                     },
                     {
-                        "base_path": "kombinasi_25/capture_18",
+                        "base_path": "kombinasi_24/capture_18",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 339,
-                        "average_similarity": 0.971,
-                        "identification_accuracy": 0.429,
-                        "identification_time": 1.412,
+                        "average_similarity": 0.691,
+                        "identification_accuracy": 0.267,
+                        "identification_time": 1.655,
                         "average_orb_executiion": 0.003
                     },
                     {
-                        "base_path": "kombinasi_25/capture_25",
+                        "base_path": "kombinasi_24/capture_25",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 326,
-                        "average_similarity": 0.99,
-                        "identification_accuracy": 0.286,
-                        "identification_time": 1.185,
+                        "average_similarity": 0.689,
+                        "identification_accuracy": 0.367,
+                        "identification_time": 1.376,
                         "average_orb_executiion": 0.003
                     }
                 ]
-            },
+            }
+        ]
+    },
+    {
+        "kombinasi": "nfeature: 3072, hamming_tolerance: 64, k_knn: 7",
+        "data": [
             {
                 "Name": "Akhlak Kamiswara",
                 "valid_identification": "3 / 5",
@@ -19371,19 +19301,14 @@
                         "average_orb_executiion": 0.003
                     }
                 ]
-            }
-        ]
-    },
-    {
-        "kombinasi": "nfeature: 3072, hamming_tolerance: 64, k_knn: 15",
-        "data": [
+            },
             {
                 "Name": "Tidak Diketahui",
                 "valid_identification": "4 / 4",
                 "execution_time": {
-                    "average": 3.75,
-                    "min": 1.408,
-                    "max": 6.696
+                    "average": 3.543,
+                    "min": 1.185,
+                    "max": 6.433
                 },
                 "orb_time": {
                     "average": 0.007,
@@ -19391,62 +19316,67 @@
                     "max": 0.014
                 },
                 "similarity": {
-                    "average": 0.933,
-                    "min": 0.9,
-                    "max": 0.986
+                    "average": 0.947,
+                    "min": 0.909,
+                    "max": 0.99
                 },
                 "akurasi": {
-                    "average": 0.3,
-                    "min": 0.2,
-                    "max": 0.333
+                    "average": 0.357,
+                    "min": 0.286,
+                    "max": 0.429
                 },
                 "other": [
                     {
-                        "base_path": "kombinasi_26/capture_3",
+                        "base_path": "kombinasi_25/capture_3",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 1678,
-                        "average_similarity": 0.902,
-                        "identification_accuracy": 0.333,
-                        "identification_time": 5.398,
+                        "average_similarity": 0.909,
+                        "identification_accuracy": 0.429,
+                        "identification_time": 5.144,
                         "average_orb_executiion": 0.01
                     },
                     {
-                        "base_path": "kombinasi_26/capture_11",
+                        "base_path": "kombinasi_25/capture_11",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 2301,
-                        "average_similarity": 0.9,
-                        "identification_accuracy": 0.333,
-                        "identification_time": 6.696,
+                        "average_similarity": 0.918,
+                        "identification_accuracy": 0.286,
+                        "identification_time": 6.433,
                         "average_orb_executiion": 0.014
                     },
                     {
-                        "base_path": "kombinasi_26/capture_18",
+                        "base_path": "kombinasi_25/capture_18",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 339,
-                        "average_similarity": 0.946,
-                        "identification_accuracy": 0.333,
-                        "identification_time": 1.497,
+                        "average_similarity": 0.971,
+                        "identification_accuracy": 0.429,
+                        "identification_time": 1.412,
                         "average_orb_executiion": 0.003
                     },
                     {
-                        "base_path": "kombinasi_26/capture_25",
+                        "base_path": "kombinasi_25/capture_25",
                         "valid_result": true,
                         "label": "Tidak Diketahui",
                         "identification_result": "Tidak Diketahui",
                         "keypoint_length": 326,
-                        "average_similarity": 0.986,
-                        "identification_accuracy": 0.2,
-                        "identification_time": 1.408,
+                        "average_similarity": 0.99,
+                        "identification_accuracy": 0.286,
+                        "identification_time": 1.185,
                         "average_orb_executiion": 0.003
                     }
                 ]
-            },
+            }
+        ]
+    },
+    {
+        "kombinasi": "nfeature: 3072, hamming_tolerance: 64, k_knn: 15",
+        "data": [
             {
                 "Name": "Akhlak Kamiswara",
                 "valid_identification": "2 / 5",
@@ -20146,82 +20076,82 @@
                         "average_orb_executiion": 0.003
                     }
                 ]
+            },
+            {
+                "Name": "Tidak Diketahui",
+                "valid_identification": "4 / 4",
+                "execution_time": {
+                    "average": 3.75,
+                    "min": 1.408,
+                    "max": 6.696
+                },
+                "orb_time": {
+                    "average": 0.007,
+                    "min": 0.003,
+                    "max": 0.014
+                },
+                "similarity": {
+                    "average": 0.933,
+                    "min": 0.9,
+                    "max": 0.986
+                },
+                "akurasi": {
+                    "average": 0.3,
+                    "min": 0.2,
+                    "max": 0.333
+                },
+                "other": [
+                    {
+                        "base_path": "kombinasi_26/capture_3",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 1678,
+                        "average_similarity": 0.902,
+                        "identification_accuracy": 0.333,
+                        "identification_time": 5.398,
+                        "average_orb_executiion": 0.01
+                    },
+                    {
+                        "base_path": "kombinasi_26/capture_11",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 2301,
+                        "average_similarity": 0.9,
+                        "identification_accuracy": 0.333,
+                        "identification_time": 6.696,
+                        "average_orb_executiion": 0.014
+                    },
+                    {
+                        "base_path": "kombinasi_26/capture_18",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 339,
+                        "average_similarity": 0.946,
+                        "identification_accuracy": 0.333,
+                        "identification_time": 1.497,
+                        "average_orb_executiion": 0.003
+                    },
+                    {
+                        "base_path": "kombinasi_26/capture_25",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 326,
+                        "average_similarity": 0.986,
+                        "identification_accuracy": 0.2,
+                        "identification_time": 1.408,
+                        "average_orb_executiion": 0.003
+                    }
+                ]
             }
         ]
     },
     {
         "kombinasi": "nfeature: 3072, hamming_tolerance: 64, k_knn: 30",
         "data": [
-            {
-                "Name": "Tidak Diketahui",
-                "valid_identification": "4 / 4",
-                "execution_time": {
-                    "average": 4.064,
-                    "min": 1.416,
-                    "max": 7.341
-                },
-                "orb_time": {
-                    "average": 0.008,
-                    "min": 0.003,
-                    "max": 0.014
-                },
-                "similarity": {
-                    "average": 0.915,
-                    "min": 0.87,
-                    "max": 0.971
-                },
-                "akurasi": {
-                    "average": 0.3,
-                    "min": 0.267,
-                    "max": 0.367
-                },
-                "other": [
-                    {
-                        "base_path": "kombinasi_27/capture_3",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 1678,
-                        "average_similarity": 0.88,
-                        "identification_accuracy": 0.367,
-                        "identification_time": 5.842,
-                        "average_orb_executiion": 0.011
-                    },
-                    {
-                        "base_path": "kombinasi_27/capture_11",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 2301,
-                        "average_similarity": 0.87,
-                        "identification_accuracy": 0.267,
-                        "identification_time": 7.341,
-                        "average_orb_executiion": 0.014
-                    },
-                    {
-                        "base_path": "kombinasi_27/capture_18",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 339,
-                        "average_similarity": 0.939,
-                        "identification_accuracy": 0.3,
-                        "identification_time": 1.655,
-                        "average_orb_executiion": 0.003
-                    },
-                    {
-                        "base_path": "kombinasi_27/capture_25",
-                        "valid_result": true,
-                        "label": "Tidak Diketahui",
-                        "identification_result": "Tidak Diketahui",
-                        "keypoint_length": 326,
-                        "average_similarity": 0.971,
-                        "identification_accuracy": 0.267,
-                        "identification_time": 1.416,
-                        "average_orb_executiion": 0.003
-                    }
-                ]
-            },
             {
                 "Name": "Akhlak Kamiswara",
                 "valid_identification": "1 / 5",
@@ -20918,6 +20848,76 @@
                         "average_similarity": 0.978,
                         "identification_accuracy": 0.467,
                         "identification_time": 1.547,
+                        "average_orb_executiion": 0.003
+                    }
+                ]
+            },
+            {
+                "Name": "Tidak Diketahui",
+                "valid_identification": "4 / 4",
+                "execution_time": {
+                    "average": 4.064,
+                    "min": 1.416,
+                    "max": 7.341
+                },
+                "orb_time": {
+                    "average": 0.008,
+                    "min": 0.003,
+                    "max": 0.014
+                },
+                "similarity": {
+                    "average": 0.915,
+                    "min": 0.87,
+                    "max": 0.971
+                },
+                "akurasi": {
+                    "average": 0.3,
+                    "min": 0.267,
+                    "max": 0.367
+                },
+                "other": [
+                    {
+                        "base_path": "kombinasi_27/capture_3",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 1678,
+                        "average_similarity": 0.88,
+                        "identification_accuracy": 0.367,
+                        "identification_time": 5.842,
+                        "average_orb_executiion": 0.011
+                    },
+                    {
+                        "base_path": "kombinasi_27/capture_11",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 2301,
+                        "average_similarity": 0.87,
+                        "identification_accuracy": 0.267,
+                        "identification_time": 7.341,
+                        "average_orb_executiion": 0.014
+                    },
+                    {
+                        "base_path": "kombinasi_27/capture_18",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 339,
+                        "average_similarity": 0.939,
+                        "identification_accuracy": 0.3,
+                        "identification_time": 1.655,
+                        "average_orb_executiion": 0.003
+                    },
+                    {
+                        "base_path": "kombinasi_27/capture_25",
+                        "valid_result": true,
+                        "label": "Tidak Diketahui",
+                        "identification_result": "Tidak Diketahui",
+                        "keypoint_length": 326,
+                        "average_similarity": 0.971,
+                        "identification_accuracy": 0.267,
+                        "identification_time": 1.416,
                         "average_orb_executiion": 0.003
                     }
                 ]
