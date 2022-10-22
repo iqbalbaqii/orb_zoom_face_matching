@@ -1,0 +1,86 @@
+{% extends 'root.html' %}
+
+{% block css %}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.10.5/viewer.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.10.5/viewer.css" rel="stylesheet">
+
+<link rel="stylesheet" href="{{url_for('static', filename='vendors/datatables.net-bs4/dataTables.bootstrap4.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='vendors/ti-icons/css/themify-icons.css')}}">
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='js/select.dataTables.min.css')}}">
+
+<link rel="stylesheet" href="{{url_for('static', filename='vendors/owl-carousel-2/owl.carousel.min.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='vendors/owl-carousel-2/owl.theme.default.min.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='vendors/lightgallery/css/lightgallery.css')}}">
+
+{% endblock %}
+
+{% block content %}
+<style>
+  .similar-face {
+    margin-top: 2px;
+    margin-right: 2px;
+    max-width: 50px !important;
+    max-height: 50px !important;
+  }
+
+  .modal-lg {
+    max-width: 80% !important;
+    margin-top: 20px !important;
+  }
+
+  #modal-detail_face .modal-body .preview {
+    vertical-align: middle;
+    width: 80%;
+    border-radius: 3px;
+  }
+
+  .detail-info h4 {
+    font-weight: 600;
+  }
+
+  .detail-info h3 {
+    font-weight: 600;
+  }
+
+  img.preview {
+    max-width: 100% !important;
+
+  }
+  label{
+    font-size: 14px !important;
+  }
+</style>
+<div class="content-wrapper">
+
+  <div class="row grid-margin">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Data Wajah Pelajar {{nama}}</h4>
+          <div id="students-face" class="row lightGallery">
+            {% for value in data%}
+            <img code="{{key}}" src="{{url_for('static', filename=value)}}" alt="image small"
+              class="image-tile" keypoint_src="{{url_for('static', filename=value)}}"
+              gray="{{url_for('static', filename=value)}}">
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block js %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.10.5/viewer.min.js"></script>
+
+<script src="{{url_for('static', filename='vendors/owl-carousel-2/owl.carousel.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/owl-carousel.js')}}"></script>
+
+<script type="text/javascript">
+  var data = JSON.parse('{{data | tojson}}');
+  var asset_url = "{{url_for('static', filename='')}}"
+</script>
+<script src="{{url_for('static', filename='js/project/analyze.js')}}"></script>
+
+{% endblock %}

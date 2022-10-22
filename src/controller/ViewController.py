@@ -1,6 +1,7 @@
 from src.model.DataTest import DataTest
 from src.model.Transaction import Transaction
 from src.controller.IdentificationController import IdentificationController
+from src.model.DatasetLabel import DatasetLabel
 import os
 import json
 import pickle
@@ -66,3 +67,29 @@ class ViewController:
     def summary(self):
         data = pickle.load(open('testing_data.pkl', 'rb'))
         print(data)
+
+    def loadstudent(self):
+        obj = DatasetLabel()
+        student = obj.get2("nama, id", "kelas = 'group_0' ORDER BY nama asc")
+        return student
+
+    def loadface(self, id):
+        obj = DatasetLabel()
+        student = obj.get2("nama", "id = "+id)
+        name = student[0]['nama']
+        label = str(name).replace(' ', '_')
+        not_found =[]
+        try:
+            directory = '/datasource/'+label+'/raw/'
+            temp = os.listdir("/home/bucky/Documents/Py/final/orb_zoom_face_matching/static"+directory)
+        except:
+            not_found.append(name)
+
+        ret = []
+        for j, filename in enumerate(temp):
+            if filename == 'not_use' or filename == 'notuse': continue
+            path = os.path.join(directory, filename)
+
+            ret.append(path)
+            
+        return ret, name

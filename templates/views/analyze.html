@@ -46,7 +46,8 @@
     max-width: 100% !important;
 
   }
-  label{
+
+  label {
     font-size: 14px !important;
   }
 </style>
@@ -107,7 +108,8 @@
                     <span class="loc ms-sm-5">Nan</span>
                   </h3>
                 </div>
-                <span class="ms-3" style="font-size: 12px;">Berdasarkan urutan yang diambil dari <b>7</b> ketetanggan</span class="ms-3">
+                <span class="ms-3" style="font-size: 12px;">Berdasarkan urutan yang diambil dari <b>7</b>
+                  ketetanggan</span class="ms-3">
               </div>
             </div>
             <div class="row">
@@ -155,7 +157,7 @@
       <div class="card">
         <div class="card-body">
           <h4 class="card-title">Galeri Identifikasi</h4>
-          <p class="card-text">Pertemuan 0 "Demo Anlisis Hasil Identifikasi"</p>
+          <p class="card-text">Demo Anlisis Hasil Identifikasi</p>
           <div id="students-face" class="row lightGallery">
             {% for key,row in capture%}
             <img code="{{key}}" src="{{url_for('static', filename=row['original_image'])}}" alt="image small"
@@ -164,6 +166,38 @@
             {% endfor %}
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-12">
+      <h4 class="mb-3">Rekap Kehadiran Kelas</h4>
+      <div class="table-responsive">
+        <table class="table table-bordered bg-white">
+          <thead>
+            <tr>
+              <th class="text-center" style="width: 5%;">No</th>
+              <th style="width: 50%;">Nama Siswa</th>
+              <th class="text-center" style="width: 20%;">Kehadiran</th>
+              <th class="text-center" style="width: 10%;">Teridentifkasi</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in table %}
+            <tr>
+              <td class="text-center">{{row['no']}}</td>
+              <td class=""><a class="nav-link" href="http://127.0.0.1:5000/faces/{{row['id']}}">{{row['siswa']}}</a></td>
+              <td class="text-center">{{row['kehadiran']}}</td>
+              <td class="text-center">{{row['kemunculan']}}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+              <td colspan="4"><h4 style="text-align: right;">Total Kehadiran: <span>{{rekap['hadir']}} / {{rekap['total']}}</span></h4></td>
+            </tr>
+
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

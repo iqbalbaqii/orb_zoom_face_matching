@@ -110,8 +110,8 @@ def aa():
                     "Benar" if isvalid else "Salah"
 
                 ])
-            pd.DataFrame(table).to_excel(
-                kombinasi+".xlsx", header=False, index=False)
+            # pd.DataFrame(table).to_excel(
+            #     kombinasi+".xlsx", header=False, index=False)
             
         
         sumary = []
@@ -163,5 +163,5 @@ def aa():
     return json.dumps(ret)
 
 
-# app.run(debug=True)
-print(aa())
+app.run(debug=True)
+# print(aa())

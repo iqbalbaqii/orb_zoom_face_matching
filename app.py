@@ -9,33 +9,58 @@ data_handler = ViewController()
 
 @app.route('/')
 def index():
-    return render_template('/views/dashboard.html')
-
-
-@app.route('/accordions')
-def to_accordions():
-    return render_template('/views/accordions.html')
-
-
-@app.route('/gallery')
-def to_gallery():
-    return render_template('/views/gallery.html')
-
-
-@app.route('/formcontrol')
-def to_form():
-    return render_template('/views/basic_elements.html')
+    return render_template('/views/about.html')
 
 
 @app.route('/about')
 def to_about():
     return render_template('/views/about.html')
 
+@app.route('/student')
+def student():
+    try:
+        student = data_handler.loadstudent()
+        return json.dumps(list(student))
+    except Exception as e:
+        return str(e)
+
+@app.route('/faces/<id>')
+def face(id):
+    try:
+        faces,name = data_handler.loadface(id)
+        return render_template('/views/faces.html', data=faces, nama=name)
+    except Exception as e:
+        return str(e)
+
+
 
 @app.route('/analyze/<meeting_id>')
 def analyze_page(meeting_id):
     front_image, data = data_handler.front_analyze(meeting_id)
-    return render_template('/views/analyze.html', capture=enumerate(front_image), data=data)
+    student = data_handler.loadstudent()
+
+    hasil = list(map(lambda x: x['label'], data))
+
+    table = []
+    hadir = 0
+    for i, row in enumerate(student):
+        kehadiran = row['nama'] in hasil
+        if kehadiran:
+            hadir = hadir+1
+        kemunculan = list(filter(lambda x: x == row['nama'], hasil))
+        table.append({
+            'no' : i+1,
+            'id': row['id'],
+            'siswa': row['nama'],
+            'kehadiran': 'Hadir' if kehadiran else "Tidak Hadir",
+            'kemunculan': str(len(kemunculan))+" kali"
+        })
+
+    rekap = {
+        'hadir': hadir,
+        'total': len(student)
+    }
+    return render_template('/views/analyze.html', capture=enumerate(front_image), data=data, table=table, rekap=rekap)
 
 
 @app.route('/testing')
@@ -80,4 +105,5 @@ def testing():
         })
     
     return json.dumps(kelompok)
+
 app.run(debug=True)

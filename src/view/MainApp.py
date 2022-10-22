@@ -210,7 +210,7 @@ class MainApp:
 
     def open_browser(self):
         self.insert_notification('Opening Zoom ORB Attendence Web\n', '', 'light')
-        webbrowser.open('http://127.0.0.1:5000/analyze', new=0)
+        webbrowser.open('http://127.0.0.1:5000/analyze/0', new=0)
 
 # END EVENT LISTENERS
 
