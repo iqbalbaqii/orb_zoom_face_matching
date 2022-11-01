@@ -5,6 +5,7 @@ from src.bll.ORB import ORB as OrbHandler
 from src.model.DataTest import DataTest
 from src.model.Meeting import Meeting
 from src.model.Transaction import Transaction
+from src.bll.SIFT import SIFT as SF
 import operator
 import os
 from datetime import datetime
@@ -263,6 +264,23 @@ class IdentificationController(OrbHandler):
                 identification_accuracy = round(
                     int(sort_orders[0][1]) / k_k, 3)
 
+                final_label, _ = sort_orders[0]
+                if(float(identification_accuracy) < 0.5):
+                    final_label = "Tidak Diketahui"
+
+                true_label = str(current.get_label()).split('_')[0]
+                temp.append({
+                    'base_path': "kombinasi_{}/capture_{}".format(str(combination['no']),j),
+                    'valid_result': True if final_label == true_label else False,
+                    'label': true_label,
+                    'identification_result': final_label,
+                    'keypoint_length': len(current.get_keypoint()),
+                    'average_similarity': average_similarity,
+                    'identification_accuracy': identification_accuracy,
+                    'identification_time': round(time.time() - start_process, 3),
+                    'average_orb_executiion': round(statistics.fmean(orb_times), 3),
+                })
+
                 face_path = 'flask/testing/kombinasi_{}/capture_{}'.format(str(combination['no']),j)
 
                 try:
@@ -288,23 +306,6 @@ class IdentificationController(OrbHandler):
                     data.save_image('static/'+filename,
                                     data.get_draw_match_image())
 
-                final_label, _ = sort_orders[0]
-                if(float(identification_accuracy) < 0.5):
-                    final_label = "Tidak Diketahui"
-
-                true_label = str(current.get_label()).split('_')[0]
-                temp.append({
-                    'base_path': "kombinasi_{}/capture_{}".format(str(combination['no']),j),
-                    'valid_result': True if final_label == true_label else False,
-                    'label': true_label,
-                    'identification_result': final_label,
-                    'keypoint_length': len(current.get_keypoint()),
-                    'average_similarity': average_similarity,
-                    'identification_accuracy': identification_accuracy,
-                    'identification_time': round(time.time() - start_process, 3),
-                    'average_orb_executiion': round(statistics.fmean(orb_times), 3),
-                })
-
             ret.append({
                 'kombinasi': combination['kombinasi'],
                 'data': temp
@@ -314,3 +315,76 @@ class IdentificationController(OrbHandler):
         ret_name = "kombinasi.pkl"
         pickle.dump(ret, open(ret_name, 'wb'))
         return 0
+
+
+    def compare_with_sift(self):
+        sift = SF()
+        image_tests = self.data_handler.load_data_test()
+        temp = []
+        for j, current in enumerate(np.copy(image_tests)):
+            
+            start_process = time.time()
+            kp, desc = sift.get_keypoint_descriptor(current.get_face())
+            current.set_keypoint(kp)
+            current.set_descriptor(desc)
+            students = np.copy(self.data_set)
+            orb_times = []
+            for i, student in enumerate(students):  
+                start_orb = time.time()
+                matches, similarity = sift.compare_2_face(
+                    student.get_descriptor(), current.get_descriptor())
+                try:
+                    pass
+                except Exception as e:
+                    print(e)
+                    return
+                students[i].set_descriptor_match(len(matches))
+                students[i].set_similarity(similarity)
+                temp_time = round(time.time() - start_orb, 3)
+                students[i].set_execution_time(
+                    str(temp_time))
+
+                orb_times.append(temp_time)
+
+            
+            result = sorted(students,
+                            key=lambda x: x.get_similarity(), reverse=True)
+            nb = result[0:7]                            
+            count = {}
+            for data in nb:
+                try:
+                    count[data.get_label()]
+                except:
+                    count[data.get_label()] = 1
+                    continue
+                count[data.get_label()] = count[data.get_label()]+1
+
+            sort_orders = sorted(
+                count.items(), key=lambda x: x[1], reverse=True)
+            the_label = filter(lambda x: x.get_label()
+                                   == sort_orders[0][0], nb)
+            average_similarity = 0
+            for data in list(the_label):
+                average_similarity = average_similarity + data.get_similarity()
+
+            average_similarity = round(
+                average_similarity / int(sort_orders[0][1]), 3)
+            identification_accuracy = round(
+                int(sort_orders[0][1]) / 7, 3)
+            final_label, _ = sort_orders[0]
+            if(float(identification_accuracy) < 0.5):
+                final_label = "Tidak Diketahui"
+
+            true_label = str(current.get_label()).split('_')[0]
+
+            temp.append({
+                'valid_result': True if final_label == true_label else False,
+                'label': true_label,
+                'identification_result': final_label,
+                'keypoint_length': len(current.get_keypoint()),
+                'average_similarity': average_similarity,
+                'identification_accuracy': identification_accuracy,
+                'identification_time': round(time.time() - start_process, 3),
+                'average_sift_executiion': round(statistics.fmean(orb_times), 3),
+            })
+        return temp

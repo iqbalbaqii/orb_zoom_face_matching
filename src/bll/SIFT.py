@@ -6,14 +6,13 @@ import json
 import time
 
 
-class ORB:
+class SIFT:
     # Kelas untuk mengakomodasi kebutuhan utama ORB
 
     def __init__(self):
         self.image = None
-        self.orb = cv2.ORB_create(
-            1024, fastThreshold=12, patchSize=31, WTA_K=2, scoreType=0)
-        self.hamming_tolerance = 32
+        self.sift = cv2.xfeatures2d.SIFT_create(nfeatures=1024) 
+        
 
     def set_hamming_tolerance(self, data):
         self.hamming_tolerance = data
@@ -27,18 +26,19 @@ class ORB:
     def get_keypoint_descriptor(self, raw):
         image = cv2.cvtColor(raw, cv2.COLOR_BGR2RGB)
         test_gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
-        return self.orb.detectAndCompute(test_gray, None)
+        return self.sift.detectAndCompute(test_gray, None)
 
     def compare_2_face(self, main_desc, train_desc):
 
-        bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
-        matches = bf.match(main_desc, train_desc)
-        matches = sorted(matches, key=lambda x: x.distance)
+        bf = cv2.BFMatcher()        
+        matches = bf.knnMatch(main_desc, train_desc,k=2)
+        # Apply ratio test
+        good = []
+        t = []
+        for m,n in matches:
+            t.append(1)
+            if m.distance < 0.75*n.distance:
+                good.append([m])
 
-        similar_regions = [
-            i for i in matches if i.distance < self.hamming_tolerance]
-        similarity = 0
-        if (len(matches) != 0):
-            similarity = len(similar_regions) / len(matches)
-
-        return similar_regions, similarity
+        similarity = len(good)/len(t)
+        return matches, similarity

@@ -140,7 +140,7 @@ def aa():
         ret.append({
             'pengujian': "pengujian {}".format(jkot+1),
             'kombinasi': kombinasi,
-            'sumary': {
+            'summary': {
 
                 'execution_time': {
                    'min': min_exe_time,
@@ -153,14 +153,32 @@ def aa():
                     'average': avg_orb_time,
                 },
 
-                'identificaation': {
+                'identification': {
                     'salah': len(table) - len(benar),
                     'benar': len(benar),
                     'persen': round(len(benar) / len(table) * 100, 3),
                 }
             },
         })
-    return json.dumps(ret)
+
+    rekap = []
+    for key, row in enumerate(ret):
+        temp = []
+        temp.append(row['kombinasi'])
+        temp.append(key+1)
+        for x, summary in row['summary'].items():
+            item = list(summary.values())
+            temp.append(item[0])
+            temp.append(item[1])
+            temp.append(item[2])
+
+        rekap.append(temp)
+    
+    pd.DataFrame(rekap).to_excel(
+        "rekap.xlsx", header=False, index=False)
+            
+
+    return json.dumps(rekap)
 
 
 app.run(debug=True)

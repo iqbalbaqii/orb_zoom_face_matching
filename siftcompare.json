@@ -1,0 +1,452 @@
+[
+  {
+    "valid_result": true,
+    "label": "Akhlak Kamiswara",
+    "identification_result": "Akhlak Kamiswara",
+    "keypoint_length": 55,
+    "average_similarity": 0.476,
+    "identification_accuracy": 0.857,
+    "identification_time": 0.123,
+    "average_sift_executiion": 0.0
+  },
+  {
+    "valid_result": true,
+    "label": "Fanny Yusuf",
+    "identification_result": "Fanny Yusuf",
+    "keypoint_length": 143,
+    "average_similarity": 0.329,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.228,
+    "average_sift_executiion": 0.001
+  },
+  {
+    "valid_result": true,
+    "label": "Ridha Ayu Salsabila",
+    "identification_result": "Ridha Ayu Salsabila",
+    "keypoint_length": 89,
+    "average_similarity": 0.537,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.153,
+    "average_sift_executiion": 0.0
+  },
+  {
+    "valid_result": false,
+    "label": "Tidak Diketahui",
+    "identification_result": "Andrea Ayunove Hutami",
+    "keypoint_length": 722,
+    "average_similarity": 0.125,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.824,
+    "average_sift_executiion": 0.002
+  },
+  {
+    "valid_result": true,
+    "label": "Andrea Ayunove Hutami",
+    "identification_result": "Andrea Ayunove Hutami",
+    "keypoint_length": 97,
+    "average_similarity": 0.205,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.159,
+    "average_sift_executiion": 0.0
+  },
+  {
+    "valid_result": true,
+    "label": "Rafiqo Rapitasari",
+    "identification_result": "Rafiqo Rapitasari",
+    "keypoint_length": 311,
+    "average_similarity": 0.211,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.366,
+    "average_sift_executiion": 0.001
+  },
+  {
+    "valid_result": true,
+    "label": "Rafiqo Rapitasari",
+    "identification_result": "Rafiqo Rapitasari",
+    "keypoint_length": 285,
+    "average_similarity": 0.218,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.344,
+    "average_sift_executiion": 0.001
+  },
+  {
+    "valid_result": true,
+    "label": "Akhlak Kamiswara",
+    "identification_result": "Akhlak Kamiswara",
+    "keypoint_length": 76,
+    "average_similarity": 0.504,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.145,
+    "average_sift_executiion": 0.0
+  },
+  {
+    "valid_result": true,
+    "label": "Tiara Oktavian",
+    "identification_result": "Tiara Oktavian",
+    "keypoint_length": 31,
+    "average_similarity": 0.518,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.111,
+    "average_sift_executiion": 0.0
+  },
+  {
+    "valid_result": false,
+    "label": "Muhammad Iqbal Baqi",
+    "identification_result": "Rafiqo Rapitasari",
+    "keypoint_length": 252,
+    "average_similarity": 0.163,
+    "identification_accuracy": 0.857,
+    "identification_time": 0.332,
+    "average_sift_executiion": 0.001
+  },
+  {
+    "valid_result": true,
+    "label": "Tiara Oktavian",
+    "identification_result": "Tiara Oktavian",
+    "keypoint_length": 40,
+    "average_similarity": 0.585,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.118,
+    "average_sift_executiion": 0.0
+  },
+  {
+    "valid_result": false,
+    "label": "Tidak Diketahui",
+    "identification_result": "Ridha Ayu Salsabila",
+    "keypoint_length": 1008,
+    "average_similarity": 0.063,
+    "identification_accuracy": 0.857,
+    "identification_time": 1.118,
+    "average_sift_executiion": 0.003
+  },
+  {
+    "valid_result": true,
+    "label": "Akhlak Kamiswara",
+    "identification_result": "Akhlak Kamiswara",
+    "keypoint_length": 91,
+    "average_similarity": 0.546,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.162,
+    "average_sift_executiion": 0.0
+  },
+  {
+    "valid_result": true,
+    "label": "Rafiqo Rapitasari",
+    "identification_result": "Rafiqo Rapitasari",
+    "keypoint_length": 215,
+    "average_similarity": 0.19,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.312,
+    "average_sift_executiion": 0.001
+  },
+  {
+    "valid_result": false,
+    "label": "Muhammad Iqbal Baqi",
+    "identification_result": "Akhlak Kamiswara",
+    "keypoint_length": 177,
+    "average_similarity": 0.128,
+    "identification_accuracy": 0.571,
+    "identification_time": 0.284,
+    "average_sift_executiion": 0.001
+  },
+  {
+    "valid_result": true,
+    "label": "Muhammad Iqbal Baqi",
+    "identification_result": "Muhammad Iqbal Baqi",
+    "keypoint_length": 186,
+    "average_similarity": 0.35,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.364,
+    "average_sift_executiion": 0.001
+  },
+  {
+    "valid_result": true,
+    "label": "Toni Ismail",
+    "identification_result": "Toni Ismail",
+    "keypoint_length": 129,
+    "average_similarity": 0.225,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.227,
+    "average_sift_executiion": 0.001
+  },
+  {
+    "valid_result": true,
+    "label": "Tidak Diketahui",
+    "identification_result": "Tidak Diketahui",
+    "keypoint_length": 206,
+    "average_similarity": 0.079,
+    "identification_accuracy": 0.429,
+    "identification_time": 0.328,
+    "average_sift_executiion": 0.001
+  },
+  {
+    "valid_result": true,
+    "label": "Toni Ismail",
+    "identification_result": "Toni Ismail",
+    "keypoint_length": 128,
+    "average_similarity": 0.214,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.262,
+    "average_sift_executiion": 0.001
+  },
+  {
+    "valid_result": true,
+    "label": "Fanny Yusuf",
+    "identification_result": "Fanny Yusuf",
+    "keypoint_length": 199,
+    "average_similarity": 0.228,
+    "identification_accuracy": 0.857,
+    "identification_time": 0.318,
+    "average_sift_executiion": 0.001
+  },
+  {
+    "valid_result": true,
+    "label": "Tiara Oktavian",
+    "identification_result": "Tiara Oktavian",
+    "keypoint_length": 32,
+    "average_similarity": 0.462,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.156,
+    "average_sift_executiion": 0.0
+  },
+  {
+    "valid_result": false,
+    "label": "Tiara Oktavian",
+    "identification_result": "Tidak Diketahui",
+    "keypoint_length": 1024,
+    "average_similarity": 0.044,
+    "identification_accuracy": 0.429,
+    "identification_time": 1.666,
+    "average_sift_executiion": 0.004
+  },
+  {
+    "valid_result": true,
+    "label": "Ridha Ayu Salsabila",
+    "identification_result": "Ridha Ayu Salsabila",
+    "keypoint_length": 198,
+    "average_similarity": 0.265,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.284,
+    "average_sift_executiion": 0.001
+  },
+  {
+    "valid_result": true,
+    "label": "Gege Ardiyansyah",
+    "identification_result": "Gege Ardiyansyah",
+    "keypoint_length": 241,
+    "average_similarity": 0.361,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.341,
+    "average_sift_executiion": 0.001
+  },
+  {
+    "valid_result": true,
+    "label": "Toni Ismail",
+    "identification_result": "Toni Ismail",
+    "keypoint_length": 114,
+    "average_similarity": 0.581,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.202,
+    "average_sift_executiion": 0.001
+  },
+  {
+    "valid_result": false,
+    "label": "Tidak Diketahui",
+    "identification_result": "Akhlak Kamiswara",
+    "keypoint_length": 120,
+    "average_similarity": 0.118,
+    "identification_accuracy": 0.571,
+    "identification_time": 0.192,
+    "average_sift_executiion": 0.0
+  },
+  {
+    "valid_result": false,
+    "label": "Gege Ardiyansyah",
+    "identification_result": "Rafiqo Rapitasari",
+    "keypoint_length": 87,
+    "average_similarity": 0.162,
+    "identification_accuracy": 0.857,
+    "identification_time": 0.203,
+    "average_sift_executiion": 0.001
+  },
+  {
+    "valid_result": false,
+    "label": "Gege Ardiyansyah",
+    "identification_result": "Ridha Ayu Salsabila",
+    "keypoint_length": 111,
+    "average_similarity": 0.191,
+    "identification_accuracy": 0.714,
+    "identification_time": 0.289,
+    "average_sift_executiion": 0.001
+  },
+  {
+    "valid_result": true,
+    "label": "Ridha Ayu Salsabila",
+    "identification_result": "Ridha Ayu Salsabila",
+    "keypoint_length": 61,
+    "average_similarity": 0.32,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.185,
+    "average_sift_executiion": 0.0
+  },
+  {
+    "valid_result": true,
+    "label": "Toni Ismail",
+    "identification_result": "Toni Ismail",
+    "keypoint_length": 143,
+    "average_similarity": 0.525,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.222,
+    "average_sift_executiion": 0.001
+  },
+  {
+    "valid_result": true,
+    "label": "Ridha Ayu Salsabila",
+    "identification_result": "Ridha Ayu Salsabila",
+    "keypoint_length": 213,
+    "average_similarity": 0.188,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.29,
+    "average_sift_executiion": 0.001
+  },
+  {
+    "valid_result": false,
+    "label": "Muhammad Iqbal Baqi",
+    "identification_result": "Tidak Diketahui",
+    "keypoint_length": 212,
+    "average_similarity": 0.096,
+    "identification_accuracy": 0.429,
+    "identification_time": 0.288,
+    "average_sift_executiion": 0.001
+  },
+  {
+    "valid_result": true,
+    "label": "Akhlak Kamiswara",
+    "identification_result": "Akhlak Kamiswara",
+    "keypoint_length": 65,
+    "average_similarity": 0.488,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.137,
+    "average_sift_executiion": 0.0
+  },
+  {
+    "valid_result": true,
+    "label": "Andrea Ayunove Hutami",
+    "identification_result": "Andrea Ayunove Hutami",
+    "keypoint_length": 179,
+    "average_similarity": 0.507,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.243,
+    "average_sift_executiion": 0.001
+  },
+  {
+    "valid_result": true,
+    "label": "Fanny Yusuf",
+    "identification_result": "Fanny Yusuf",
+    "keypoint_length": 217,
+    "average_similarity": 0.259,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.29,
+    "average_sift_executiion": 0.001
+  },
+  {
+    "valid_result": true,
+    "label": "Andrea Ayunove Hutami",
+    "identification_result": "Andrea Ayunove Hutami",
+    "keypoint_length": 112,
+    "average_similarity": 0.214,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.174,
+    "average_sift_executiion": 0.0
+  },
+  {
+    "valid_result": true,
+    "label": "Akhlak Kamiswara",
+    "identification_result": "Akhlak Kamiswara",
+    "keypoint_length": 63,
+    "average_similarity": 0.519,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.133,
+    "average_sift_executiion": 0.0
+  },
+  {
+    "valid_result": true,
+    "label": "Rafiqo Rapitasari",
+    "identification_result": "Rafiqo Rapitasari",
+    "keypoint_length": 280,
+    "average_similarity": 0.297,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.341,
+    "average_sift_executiion": 0.001
+  },
+  {
+    "valid_result": false,
+    "label": "Tiara Oktavian",
+    "identification_result": "Rafiqo Rapitasari",
+    "keypoint_length": 1024,
+    "average_similarity": 0.187,
+    "identification_accuracy": 1.0,
+    "identification_time": 1.644,
+    "average_sift_executiion": 0.004
+  },
+  {
+    "valid_result": true,
+    "label": "Arizli Romadhon",
+    "identification_result": "Arizli Romadhon",
+    "keypoint_length": 86,
+    "average_similarity": 0.456,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.173,
+    "average_sift_executiion": 0.0
+  },
+  {
+    "valid_result": true,
+    "label": "Rafiqo Rapitasari",
+    "identification_result": "Rafiqo Rapitasari",
+    "keypoint_length": 323,
+    "average_similarity": 0.327,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.392,
+    "average_sift_executiion": 0.001
+  },
+  {
+    "valid_result": false,
+    "label": "Muhammad Iqbal Baqi",
+    "identification_result": "Rafiqo Rapitasari",
+    "keypoint_length": 237,
+    "average_similarity": 0.155,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.311,
+    "average_sift_executiion": 0.001
+  },
+  {
+    "valid_result": true,
+    "label": "Ridha Ayu Salsabila",
+    "identification_result": "Ridha Ayu Salsabila",
+    "keypoint_length": 229,
+    "average_similarity": 0.285,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.296,
+    "average_sift_executiion": 0.001
+  },
+  {
+    "valid_result": true,
+    "label": "Toni Ismail",
+    "identification_result": "Toni Ismail",
+    "keypoint_length": 157,
+    "average_similarity": 0.28,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.224,
+    "average_sift_executiion": 0.001
+  },
+  {
+    "valid_result": true,
+    "label": "Fanny Yusuf",
+    "identification_result": "Fanny Yusuf",
+    "keypoint_length": 147,
+    "average_similarity": 0.159,
+    "identification_accuracy": 1.0,
+    "identification_time": 0.23,
+    "average_sift_executiion": 0.001
+  }
+]

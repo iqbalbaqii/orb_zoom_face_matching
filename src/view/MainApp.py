@@ -205,7 +205,8 @@ class MainApp:
             self.insert_notification('Wajah tidak diketahui\n','', 'danger')
         else:
             self.insert_notification('Identifikasi selesai, ', "{} hadir \n".format(found), 'success')
-        # self.toast.send('Identifikasi selesai, ', "{} hadir".format(found))
+            self.toast.send('Identifikasi selesai, ', "{} hadir".format(found))
+        
 
 
     def open_browser(self):
