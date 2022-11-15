@@ -12,7 +12,7 @@ from datetime import datetime
 import time
 import statistics
 import pickle
-
+import json
 
 class IdentificationController(OrbHandler):
     def __init__(self):
@@ -52,7 +52,7 @@ class IdentificationController(OrbHandler):
 
     def get_result(self):
         label, loc  = self.result
-        if( loc / self.k < 0.5): 
+        if( loc / self.k < 0.68): 
             print('tidak diketahui')
             return False
         
@@ -191,25 +191,32 @@ class IdentificationController(OrbHandler):
         nfeature = [512, 1024, 3072]
         hamming = [32, 50, 64]
         k_knn = [7, 15, 30]
+        loc = [0.20, 0.35, 0.50, 0.65, 0.80]
 
         test_combination = []
         count = 0
         for f in nfeature:
             for hamm in hamming:
                 for k in k_knn:
-                    count = count + 1
-                    test_combination.append({
-                        'no': count,
-                        'kombinasi': "nfeature: {}, hamming_tolerance: {}, k_knn: {}".format(f, hamm, k),
-                        'data': (f, hamm, k)
-                    })
+                    for j in loc:
+                        count = count + 1
+                        test_combination.append({
+                            'no': count,
+                            'kombinasi': "nfeature: {}, hamming_tolerance: {}, k_knn: {}, loc: {}".format(f, hamm, k, j),
+                            'data': (f, hamm, k, j)
+                        })
         ret = []
         for combination in test_combination:
             print("Kombinasi "+ str(combination['no']))
-            nfeature, hamming, k_k = combination['data']
+            nfeature, hamming, k_k, loc_ = combination['data']
             self.orb.setMaxFeatures(nfeature)
             self.set_hamming_tolerance(hamming)
-
+            combo = {
+                'nfeature': nfeature,
+                'hamming_tolerance': hamming,
+                'k_knn': k_k,
+                'loc': loc_
+            }
             temp = []
             for j, current in enumerate(np.copy(image_tests)):
                 if(j == int(len(image_tests) * .5) or j == int(len(image_tests) * .3) or j == int(len(image_tests) * .6) or j == len(image_tests)- 1):
@@ -265,7 +272,7 @@ class IdentificationController(OrbHandler):
                     int(sort_orders[0][1]) / k_k, 3)
 
                 final_label, _ = sort_orders[0]
-                if(float(identification_accuracy) < 0.5):
+                if(float(identification_accuracy) < loc_):
                     final_label = "Tidak Diketahui"
 
                 true_label = str(current.get_label()).split('_')[0]
@@ -281,36 +288,43 @@ class IdentificationController(OrbHandler):
                     'average_orb_executiion': round(statistics.fmean(orb_times), 3),
                 })
 
-                face_path = 'flask/testing/kombinasi_{}/capture_{}'.format(str(combination['no']),j)
+                # face_path = 'flask/testing/kombinasi_{}/capture_{}'.format(str(combination['no']),j)
 
-                try:
-                    os.makedirs('static/'+face_path)
-                except Exception as e:
-                    pass
+                # try:
+                #     os.makedirs('static/'+face_path)
+                # except Exception as e:
+                #     pass
 
-                try:
-                    os.makedirs('static/'+face_path+'/matches')
-                except Exception as e:
-                    pass
+                # try:
+                #     os.makedirs('static/'+face_path+'/matches')
+                # except Exception as e:
+                #     pass
 
-                current.save_image('static/'+face_path+"/original.png",
-                                current.get_original_image())
-                current.save_image('static/'+face_path+"/gray.png",
-                                current.get_image_gray())
-                current.mask_original_image()
-                current.save_image('static/'+face_path+"/keypoint.png",
-                                current.get_draw_keypoint_image())
+                # current.save_image('static/'+face_path+"/original.png",
+                #                 current.get_original_image())
+                # current.save_image('static/'+face_path+"/gray.png",
+                #                 current.get_image_gray())
+                # current.mask_original_image()
+                # current.save_image('static/'+face_path+"/keypoint.png",
+                #                 current.get_draw_keypoint_image())
 
-                for i, data in enumerate(nb):
-                    filename = face_path+'/matches/{}_capture_{}__compare__face_{}.png'.format(i, j, data.get_id())
-                    data.save_image('static/'+filename,
-                                    data.get_draw_match_image())
+                # for i, data in enumerate(nb):
+                #     filename = face_path+'/matches/{}_capture_{}__compare__face_{}.png'.format(i, j, data.get_id())
+                #     data.save_image('static/'+filename,
+                #                     data.get_draw_match_image())
 
             ret.append({
                 'kombinasi': combination['kombinasi'],
+                'combo': combo,
                 'data': temp
             })
             print( "Kombinasi {} Finish".format(str(combination['no'])))
+            
+        
+        with open('kombinasi.json', 'w', encoding='utf-8') as f:
+            json.dump(ret, f, ensure_ascii=False, indent=4)
+
+        return 0
         
         ret_name = "kombinasi.pkl"
         pickle.dump(ret, open(ret_name, 'wb'))
