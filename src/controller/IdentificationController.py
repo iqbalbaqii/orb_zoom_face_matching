@@ -1,3 +1,5 @@
+import math
+import cv2
 import numpy as np
 from src.bll.Image import Image
 from src.controller.DataController import DataController as DataHandler
@@ -13,6 +15,7 @@ import time
 import statistics
 import pickle
 import json
+import dlib
 
 class IdentificationController(OrbHandler):
     def __init__(self):
@@ -73,6 +76,9 @@ class IdentificationController(OrbHandler):
         kp, desc = self.get_keypoint_descriptor(test_image.get_face())
         test_image.set_descriptor(desc)
         test_image.set_keypoint(kp)
+
+        self.face_landmark(test_image)
+        return False
         self.identify(test_image)
 
     def load_data_image(self):
@@ -402,3 +408,35 @@ class IdentificationController(OrbHandler):
                 'average_sift_executiion': round(statistics.fmean(orb_times), 3),
             })
         return temp
+
+    def face_landmark(self, data):
+        print('masuk')
+        gray = data.get_image_gray()
+        face_landmark_lib = dlib.shape_predictor("/home/bucky/Documents/Py/final/orb_zoom_face_matching/other/shape_predictor_68_face_landmarks.dat")
+        hog_face_detector = dlib.get_frontal_face_detector()
+        
+
+        faces = hog_face_detector(gray)
+        frame = data.get_original_image()
+
+        keypoint = data.get_keypoint()
+        kp = []
+        for k in keypoint:
+            x, y = k.pt
+            kp.append([math.floor(x), math.floor(y)])
+        
+        
+        for face in faces:
+            
+            face_landmark = face_landmark_lib(gray, face)
+            i = 1
+            for n in range(0,68):
+                x = face_landmark.part(n).x
+                y = face_landmark.part(n).y
+                pt = [x,y]
+                if(pt in kp):
+                    print(pt)
+                cv2.circle(frame,(x,y), 1, (0,255,255), 1)
+
+        cv2.imshow('test', frame)
+        cv2.waitKey(2000)

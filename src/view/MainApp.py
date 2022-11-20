@@ -31,10 +31,10 @@ class MainApp:
         self.toast = Alert()
         self.identification_controller = IdentificationController()
         # END INSTANCE
-        self.x = 110
-        self.y = 39
-        self.width = 600
-        self.height = 600
+        self.x = 0
+        self.y = 0
+        self.width = 1366
+        self.height = 768
         self.log = ""
 
         self.master = None

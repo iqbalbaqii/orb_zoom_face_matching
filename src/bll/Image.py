@@ -161,3 +161,7 @@ class Image:
 
     def save_image(self, path, image):
         cv2.imwrite(path, image)
+
+    def show_gray_image(self):
+        cv2.imshow('preview', self.gray)
+        cv2.waitKey(2000)
