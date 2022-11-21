@@ -1,5 +1,3 @@
-import math
-import cv2
 import numpy as np
 from src.bll.Image import Image
 from src.controller.DataController import DataController as DataHandler
@@ -15,7 +13,6 @@ import time
 import statistics
 import pickle
 import json
-import dlib
 
 class IdentificationController(OrbHandler):
     def __init__(self):
@@ -55,7 +52,7 @@ class IdentificationController(OrbHandler):
 
     def get_result(self):
         label, loc  = self.result
-        if( loc / self.k < 0.68): 
+        if( loc / self.k < 0.71): 
             print('tidak diketahui')
             return False
         
@@ -76,9 +73,7 @@ class IdentificationController(OrbHandler):
         kp, desc = self.get_keypoint_descriptor(test_image.get_face())
         test_image.set_descriptor(desc)
         test_image.set_keypoint(kp)
-
-        self.face_landmark(test_image)
-        return False
+        test_image.find_landmark()
         self.identify(test_image)
 
     def load_data_image(self):
@@ -160,6 +155,10 @@ class IdentificationController(OrbHandler):
         face.mask_original_image()
         face.save_image('static/'+face_path+"/keypoint.png",
                         face.get_draw_keypoint_image())
+        face.save_image('static/'+face_path+"/landmark.png",
+                        face.get_landmark_img())
+        face.save_image('static/'+face_path+"/landmarkkp.png",
+                        face.get_landmarkkp_img())
 
         for i, data in enumerate(nb):
             filename = face_path+'/matches/{}_capture_{}__compare__face_{}.png'.format(
@@ -409,34 +408,5 @@ class IdentificationController(OrbHandler):
             })
         return temp
 
-    def face_landmark(self, data):
-        print('masuk')
-        gray = data.get_image_gray()
-        face_landmark_lib = dlib.shape_predictor("/home/bucky/Documents/Py/final/orb_zoom_face_matching/other/shape_predictor_68_face_landmarks.dat")
-        hog_face_detector = dlib.get_frontal_face_detector()
+    
         
-
-        faces = hog_face_detector(gray)
-        frame = data.get_original_image()
-
-        keypoint = data.get_keypoint()
-        kp = []
-        for k in keypoint:
-            x, y = k.pt
-            kp.append([math.floor(x), math.floor(y)])
-        
-        
-        for face in faces:
-            
-            face_landmark = face_landmark_lib(gray, face)
-            i = 1
-            for n in range(0,68):
-                x = face_landmark.part(n).x
-                y = face_landmark.part(n).y
-                pt = [x,y]
-                if(pt in kp):
-                    print(pt)
-                cv2.circle(frame,(x,y), 1, (0,255,255), 1)
-
-        cv2.imshow('test', frame)
-        cv2.waitKey(2000)

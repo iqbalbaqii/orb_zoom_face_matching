@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 import pyautogui
 from src.bll.ORB import ORB
+import dlib
 
 
 class Image:
@@ -16,6 +17,8 @@ class Image:
         self.draw_keypoint = None
         self.draw_match = None
         self.gray = None
+        self.landmark = None
+        self.landmark_kp = None
         # =====
         self.face_cordinat = None
 
@@ -91,6 +94,12 @@ class Image:
     def get_face(self):
         return self.face
 
+    def get_landmark_img(self):
+        return self.landmark
+
+    def get_landmarkkp_img(self):
+        return self.landmark_kp
+
     def get_similarity(self):
         return self.similarity
 
@@ -130,13 +139,15 @@ class Image:
         self.face = original_segmented
         return True
 
-    
-
     def mask_original_image(self):
         face_keypoint = cv2.drawKeypoints(
             self.face, self.keypoint, np.copy(self.face), color=(77, 255, 121))
 
         copy_ori = self.original.copy()
+        copy_landmark = None
+        if(self.landmark is not None):
+            copy_landmark = self.landmark.copy()
+
         start_x, start_y, w, h = self.face_cordinat
 
         for i in range(w):
@@ -144,7 +155,31 @@ class Image:
                 x = i + start_x
                 y = j + start_y
                 copy_ori[y, x] = face_keypoint[j, i]
+                if(copy_landmark is not None):
+                    copy_landmark[y, x] = face_keypoint[j, i]
         self.draw_keypoint = copy_ori
+        self.landmark_kp = copy_landmark
+
+    def find_landmark(self):
+        gray = self.gray.copy()
+        face_landmark_lib = dlib.shape_predictor(
+            "/home/bucky/Documents/Py/final/orb_zoom_face_matching/other/shape_predictor_68_face_landmarks.dat")
+        hog_face_detector = dlib.get_frontal_face_detector()
+
+        faces = hog_face_detector(gray)
+        frame = self.original.copy()
+
+        for face in faces:
+
+            face_landmark = face_landmark_lib(gray, face)
+            i = 1
+            for n in range(0, 68):
+                x = face_landmark.part(n).x
+                y = face_landmark.part(n).y
+                cv2.circle(frame, (x, y), 1, (0, 255, 255), 1)
+
+        self.landmark = frame
+
     # MISC
 
     def show_original_image(self):
