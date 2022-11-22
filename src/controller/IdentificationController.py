@@ -73,7 +73,7 @@ class IdentificationController(OrbHandler):
         kp, desc = self.get_keypoint_descriptor(test_image.get_face())
         test_image.set_descriptor(desc)
         test_image.set_keypoint(kp)
-        test_image.find_landmark()
+        # test_image.find_landmark()
         self.identify(test_image)
 
     def load_data_image(self):
@@ -148,11 +148,13 @@ class IdentificationController(OrbHandler):
             os.makedirs('static/'+face_path+'/matches')
         except Exception as e:
             pass
+        face.mask_original_image()
+        face.find_landmark()
 
         face.save_image('static/'+face_path+"/original.png",
                         face.get_original_image())
         face.save_image('static/'+face_path+"/gray.png", face.get_image_gray())
-        face.mask_original_image()
+        
         face.save_image('static/'+face_path+"/keypoint.png",
                         face.get_draw_keypoint_image())
         face.save_image('static/'+face_path+"/landmark.png",

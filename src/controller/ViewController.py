@@ -27,6 +27,7 @@ class ViewController:
                 'original_image': row['base_path']+'/original.png',
                 'keypoint_image': row['base_path']+'/keypoint.png',
                 'gray_image': row['base_path']+'/gray.png',
+                'landmark_image': row['base_path']+'/landmark.png',
             })
 
             comparation = list(filter(

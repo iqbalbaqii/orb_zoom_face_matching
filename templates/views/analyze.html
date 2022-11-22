@@ -70,6 +70,9 @@
               <div class="item">
                 <img class="mx-auto gray preview" src="#" alt="">
               </div>
+              <div class="item">
+                <img class="mx-auto landmark preview" src="#" alt="">
+              </div>
             </div>
           </div>
           <div class="col-sm-6 detail-info">
@@ -162,7 +165,8 @@
             {% for key,row in capture%}
             <img code="{{key}}" src="{{url_for('static', filename=row['original_image'])}}" alt="image small"
               class="image-tile" keypoint_src="{{url_for('static', filename=row['keypoint_image'])}}"
-              gray="{{url_for('static', filename=row['gray_image'])}}">
+              gray="{{url_for('static', filename=row['gray_image'])}}"
+              landmark="{{url_for('static', filename=row['landmark_image'])}}">
             {% endfor %}
           </div>
         </div>

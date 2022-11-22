@@ -141,13 +141,9 @@ class Image:
 
     def mask_original_image(self):
         face_keypoint = cv2.drawKeypoints(
-            self.face, self.keypoint, np.copy(self.face), color=(77, 255, 121))
+            self.face, self.keypoint[:123], np.copy(self.face), color=(77, 255, 121))
 
         copy_ori = self.original.copy()
-        copy_landmark = None
-        if(self.landmark is not None):
-            copy_landmark = self.landmark.copy()
-
         start_x, start_y, w, h = self.face_cordinat
 
         for i in range(w):
@@ -155,10 +151,7 @@ class Image:
                 x = i + start_x
                 y = j + start_y
                 copy_ori[y, x] = face_keypoint[j, i]
-                if(copy_landmark is not None):
-                    copy_landmark[y, x] = face_keypoint[j, i]
         self.draw_keypoint = copy_ori
-        self.landmark_kp = copy_landmark
 
     def find_landmark(self):
         gray = self.gray.copy()
@@ -168,17 +161,17 @@ class Image:
 
         faces = hog_face_detector(gray)
         frame = self.original.copy()
-
-        for face in faces:
-
-            face_landmark = face_landmark_lib(gray, face)
-            i = 1
-            for n in range(0, 68):
-                x = face_landmark.part(n).x
-                y = face_landmark.part(n).y
-                cv2.circle(frame, (x, y), 1, (0, 255, 255), 1)
+        kp_img = self.draw_keypoint.copy()
+        face = faces[0]
+        face_landmark = face_landmark_lib(gray, face)
+        for n in range(0, 68):
+            x = face_landmark.part(n).x
+            y = face_landmark.part(n).y
+            cv2.circle(frame, (x, y), 1, (0, 255, 255), 1)
+            cv2.circle(kp_img, (x, y), 1, (0, 255, 255), 1)
 
         self.landmark = frame
+        self.landmark_kp = kp_img
 
     # MISC
 
