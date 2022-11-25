@@ -193,7 +193,8 @@ class MainApp:
             self.insert_notification(
                 "Kesalahan identifikasi,", "area tangkapan layar belum terdefinisi", 'danger')
             return
-            
+        # print('start identify')
+        self.toast.send("Pemberitahuan", "Identifikasi wajah peserta sedang dilakukan. Harap menunggu")
         region = self.x, self.y, self.width, self.height
         task = self.identification_controller.identification_task(region=region)
         
@@ -203,14 +204,17 @@ class MainApp:
         found = self.identification_controller.get_result()
         if not found:
             self.insert_notification('Wajah tidak diketahui\n','', 'danger')
+            self.toast.send("Pemberitahuan", "Wajah peserta tidak diketahui")
+            # print("face not found")
         else:
             self.insert_notification('Identifikasi selesai, ', "{} hadir \n".format(found), 'success')
             self.toast.send('Identifikasi selesai, ', "{} hadir".format(found))
+            # print("success "+found)
         
 
 
     def open_browser(self):
-        self.insert_notification('Opening Zoom ORB Attendence Web\n', '', 'light')
+        self.insert_notification('Membuka web Zoom ORB Attendence\n', '', 'light')
         webbrowser.open('http://127.0.0.1:5000/analyze/0', new=0)
 
 # END EVENT LISTENERS

@@ -1,0 +1,44 @@
+[
+    {
+        "label": "Rafiqo Rapitasari",
+        "match": 13,
+        "test": 13,
+        "train": 13
+    },
+    {
+        "label": "Rafiqo Rapitasari",
+        "match": 10,
+        "test": 10,
+        "train": 10
+    },
+    {
+        "label": "Gege Ardiyansyah",
+        "match": 15,
+        "test": 15,
+        "train": 15
+    },
+    {
+        "label": "Tiara Oktavian",
+        "match": 12,
+        "test": 12,
+        "train": 12
+    },
+    {
+        "label": "Gege Ardiyansyah",
+        "match": 12,
+        "test": 12,
+        "train": 12
+    },
+    {
+        "label": "Gege Ardiyansyah",
+        "match": 13,
+        "test": 13,
+        "train": 13
+    },
+    {
+        "label": "Gege Ardiyansyah",
+        "match": 14,
+        "test": 14,
+        "train": 14
+    }
+]
