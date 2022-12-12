@@ -22,7 +22,7 @@ class IdentificationController(OrbHandler):
         # STATIC VARIABLE
         self.APP_PATH = "/home/bucky/Documents/Py/final/orb_zoom_face_matching/{}"
         self.TODAY = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
-        self.k = 7
+        self.k = 9
         self.start_time = None
         # END STATIC VARIABLE
 
@@ -144,6 +144,7 @@ class IdentificationController(OrbHandler):
 
         sort_orders = sorted(count.items(), key=lambda x: x[1], reverse=True)
         self.result = sort_orders[0]
+        return 1
         end_time = time.time()
         the_label = filter(lambda x: x.get_label() == sort_orders[0][0], nb)
         average_similarity = 0
@@ -153,7 +154,7 @@ class IdentificationController(OrbHandler):
         average_similarity = round(
             average_similarity / int(sort_orders[0][1]), 3)
         identification_accuracy = round(int(sort_orders[0][1]) / self.k, 3)
-
+        
         face_path = 'flask/meeting_{}/capture_{}'.format(
             self.meeting_id, self.capture_count)
 

@@ -197,8 +197,8 @@ class Image:
         for n in range(0, 68):
             x = face_landmark.part(n).x
             y = face_landmark.part(n).y
-            cv2.circle(frame, (x, y), 1, (0, 255, 255), 1)
-            cv2.circle(landmark_kp, (x, y), 1, (0, 255, 255), 1)
+            cv2.circle(frame, (x, y), 1, (0, 255, 255), 2)
+            cv2.circle(landmark_kp, (x, y), 1, (0, 255, 255), 2)
 
         self.landmark = frame
         self.landmark_kp = landmark_kp
