@@ -40,14 +40,17 @@ class MainApp:
         self.master = None
         self.grey_dragging_frame = None
         self.capture_window = None
+        self.var = None
 
         self.identification_controller.make_meeting()
         self.main_window()
+        
 
 # WINDOWS
 
     def main_window(self):
         self.master = Tk()
+        self.var = IntVar()
         self.master.title("Zoom ORB Face Identification")
         self.master.geometry(
             "{}x{}+{}+{}".format(self.APP_WIDTH, self.APP_HEIGHT, 930, 550))
@@ -75,6 +78,8 @@ class MainApp:
 
         edit_menu.add_command(label="Atur Tangkapan Layar",
                             command=self.capture_area_window)
+        edit_menu.add_separator()
+        edit_menu.add_checkbutton(label="Simpan Gambar", onvalue=True, offvalue=False, command=self.save_image_listener, variable=self.var)
         
         
 
@@ -216,6 +221,13 @@ class MainApp:
     def open_browser(self):
         self.insert_notification('Membuka web Zoom ORB Attendence\n', '', 'light')
         webbrowser.open('http://127.0.0.1:5000/analyze/0', new=0)
+
+    def save_image_listener(self):
+        on = False
+        if(self.var.get() == 1):
+            on = True
+        
+        self.identification_controller.saveImageOn(on)
 
 # END EVENT LISTENERS
 

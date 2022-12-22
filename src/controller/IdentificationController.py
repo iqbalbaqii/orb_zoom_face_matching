@@ -22,7 +22,7 @@ class IdentificationController(OrbHandler):
         # STATIC VARIABLE
         self.APP_PATH = "/home/bucky/Documents/Py/final/orb_zoom_face_matching/{}"
         self.TODAY = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
-        self.k = 9
+        self.k = 7
         self.start_time = None
         # END STATIC VARIABLE
 
@@ -38,6 +38,8 @@ class IdentificationController(OrbHandler):
 
         self.capture_count = 0
         self.meeting_id = 0
+
+        self.save_image = False
 
     def make_meeting(self):
         self.Meeting.store({
@@ -130,9 +132,9 @@ class IdentificationController(OrbHandler):
                         key=lambda x: (-x.get_similarity(), x.get_miss_match()))
         # Checking Kuadran Keypoint
         nb = result[0:self.k]
-
+        
         # print([{'label': p.get_label(),'similarity': round(p.get_similarity(),2), 'miss': round(p.get_miss_match(),2)} for p in nb])
-
+        
         count = {}
         for data in nb:
             try:
@@ -144,7 +146,7 @@ class IdentificationController(OrbHandler):
 
         sort_orders = sorted(count.items(), key=lambda x: x[1], reverse=True)
         self.result = sort_orders[0]
-        return 1
+        
         end_time = time.time()
         the_label = filter(lambda x: x.get_label() == sort_orders[0][0], nb)
         average_similarity = 0
@@ -157,6 +159,12 @@ class IdentificationController(OrbHandler):
         
         face_path = 'flask/meeting_{}/capture_{}'.format(
             self.meeting_id, self.capture_count)
+        
+
+        if self.save_image is False:
+            return
+        
+            
 
         try:
             os.makedirs('static/'+face_path)
@@ -212,8 +220,6 @@ class IdentificationController(OrbHandler):
             'identification_result': self.result[0]
         })
         self.capture_count = self.capture_count + 1
-
-        # TESTING
 
     def analyze_task(self):
         image_tests = self.data_handler.load_data_test()
@@ -466,3 +472,7 @@ class IdentificationController(OrbHandler):
             return 3
         else:
             return 4
+
+
+    def saveImageOn(self, value):
+        self.save_image = value
