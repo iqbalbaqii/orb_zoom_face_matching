@@ -9,9 +9,9 @@
         "min": 0.0,
         "max": 0.004
     },
-    "akurasi": {
+    "kesimpulan": {
         "salah": 11,
         "benar": 34,
-        "average": 75.56
-    }
+    },
+    "akurasi": 0.9206222222
 }
